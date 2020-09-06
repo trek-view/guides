@@ -12,7 +12,13 @@
   * [Kit Setup](trek-pack/v2/kit-setup.md)
   * [Shooting](trek-pack/v2/shooting.md)
 
+## MTP
+
+* [Untitled](mtp/untitled.md)
+
 ## MTP Desktop Uploader
 
 * [Overview](mtp-desktop-uploader/overview.md)
+* [Developer Docs](mtp-desktop-uploader/developer-docs/README.md)
+  * [Untitled](mtp-desktop-uploader/developer-docs/untitled.md)
 
