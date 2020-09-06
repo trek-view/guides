@@ -64,5 +64,5 @@ Don't forget to recharge any batteries ready for the next adventure too.
 
 You can use the [Map the Paths Desktop Uploader](http://mtp.trekview.org/uploader) to process and publish the images to various online services.
 
-[Red the Map the Paths Desktop Uploader documentation here.](../../mtp-desktop-uploader/overview.md)
+[Read the Map the Paths Desktop Uploader documentation here.](../../mtp-desktop-uploader/overview.md)
 
