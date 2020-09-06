@@ -14,9 +14,10 @@
   * [Kit Setup](trek-pack/v2/kit-setup.md)
   * [Shooting](trek-pack/v2/shooting.md)
 
-## MTP
+## MTP Web
 
-* [Untitled](mtp/untitled.md)
+* [Overview](mtp-web/untitled.md)
+* [API](mtp-web/api.md)
 
 ## MTP Desktop Uploader
 
