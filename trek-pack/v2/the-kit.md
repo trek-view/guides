@@ -72,7 +72,7 @@ description: 'What''s in the box, what it looks like...'
       <td style="text-align:left">1</td>
       <td style="text-align:left"></td>
       <td style="text-align:left"></td>
-      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+      <td style="text-align:left"></td>
       <td style="text-align:left"><a href="https://gopro.com/en/gb/shop/mounts-accessories/smart-remote/ARMTE-002-EU.html">&#x1F6D2;</a>
       </td>
     </tr>
@@ -149,6 +149,16 @@ description: 'What''s in the box, what it looks like...'
         </td>
     </tr>
     <tr>
+      <td style="text-align:left">GoPro MAX Tempered Glass Underwater Waterproof Protective Case</td>
+      <td
+      style="text-align:left"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:left">&#x2B55;</td>
+        <td style="text-align:left"><a href="https://www.amazon.co.uk/Lanmei-Waterproof-Protective-Accessories-Underwater/dp/B08F6SQY63/">&#x1F6D2;</a>
+        </td>
+    </tr>
+    <tr>
       <td style="text-align:left">Surface buoy with 10m dive rope</td>
       <td style="text-align:left">1</td>
       <td style="text-align:left"></td>
@@ -207,8 +217,6 @@ description: 'What''s in the box, what it looks like...'
 \[2\] Required, but must be purchased separately.  
 If you believe something is missing or does not work correctly, [please contact us](https://www.trekview.org/contact/).
 
-
-
 ### What it looks like
 
 #### Hike Pack
@@ -221,7 +229,7 @@ If you believe something is missing or does not work correctly, [please contact 
 
 _Helmet not included._
 
-#### Dive Pack
+#### Scuba Dive Pack
 
 ![](https://lh6.googleusercontent.com/PEbrdCrx-GQrFiK5u5Wixkhxuz-BSi3dV4mTuE-GUPEgzrYu5XLXfko5G5R2EeH16Hvbrzh1DgR3YJRfDylKGnFE8EQq9Oe2uC3nJ4X3xYGQmIGu2btwjinDczTVE2ZdQHgzBMXd)
 

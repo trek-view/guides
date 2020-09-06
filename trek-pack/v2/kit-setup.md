@@ -215,7 +215,7 @@ Mounted on the camera it looks like this:
 
 The MAX’s field of view does not usually pick up the cable even if it hangs slightly loose -- even though you might think it will at first \(though be sure to test it\).
 
-#### Setting up the Bike Pack
+### Setting up the Bike Pack
 
 **Attach the adhesive and mount to your helmet**
 
@@ -236,157 +236,114 @@ For reference, the back of the camera is the side with the LCD screen \(this sho
 
 Tighten the camera into position. Just twist until it feels secure. Don’t be tempted to overtighten as doing so will eventually break the nut securing the screw.
 
-Setting up the Dive Pack
+### Setting up the Scuba Dive Pack
 
 The Dive Pack poses unique limitations. Therefore it requires some additional kit for your shoot.
 
 Set up a GPS logger
 
-Firstly, [GPS won’t work underwater](https://www.trekview.org/blog/2020/underwater-google-street-view/). Therefore you need to use the standalone GPS tracker to do this.   
+Firstly, [GPS won’t work underwater](https://www.trekview.org/blog/2020/underwater-google-street-view/). Therefore you need to use the standalone GPS tracker to do this. 
 
+To set up the GPS tracker, turn it on by holding the power button \(top arrow on right hand side of watch\).
 
-To set up the GPS tracker, turn it on by holding the power button \(top arrow on right hand side of watch\).  
+You must first make sure it is configured correctly.
 
-
-You must first make sure it is configured correctly.  
-
-
-To record GPS points you will need to use a custom profile.  
-
+To record GPS points you will need to use a custom profile.
 
 Go to: settings &gt; track log &gt; by time &gt; and select 1 second.
 
 ![](https://lh5.googleusercontent.com/7B9OQ2HWtFdF54Zb7iuftitlOk88zS5dzwsuhXwPEeGWvi0C5LFkWmBh5SD6SBL5MMcNw4LnhDkgGdPrT3-Rip7FjYKoGtlFc1JdhG1B08m3IGa88F0fgjE7y4eCgbKR2sUe4Hvx)
 
-**Now ensure the output is set to CSV \(the filetype the GPS points will be saved in\). To do this;**   
+Now ensure the output is set to CSV \(the filetype the GPS points will be saved in\). To do this; 
 
-
-**Go to: settings &gt; track log &gt; formats &gt; and select CSV.**
+Go to: settings &gt; track log &gt; formats &gt; and select CSV.
 
 ![](https://lh5.googleusercontent.com/ryKjKbUu5eEeoVqtlKgcNYKSMGj_MdAJghOI-t88KEHNPT6kuQwDtseRjEaFXQaGswf7eAFv8qYhkvca8C-xATpDFdC_a-T-bQzeTUeoXcBv5zLbeZmZ7jgzkRHN5nxDl0lKqJL2)
 
-**When on the boat, or about to enter the water, make sure the GPS signal is locked on.**  
+When on the boat, or about to enter the water, make sure the GPS signal is locked on.
 
+The first photo below shows the watch searching for the GPS \(see the satellite icon with the magnifying glass\). The second photo below shows the GPS locked on \(see the satellite icon with the graph\).
 
-**The first photo below shows the watch searching for the GPS \(see the satellite icon with the magnifying glass\). The second photo belows shows the GPS locked on \(see the satellite icon with the graph\).**  
-
-
-**You can see the signal strength by moving to the next view on the watch \(by clicking the top button on the right hand side of the watch\).**  
-
+You can see the signal strength by moving to the next view on the watch \(by clicking the top button on the right hand side of the watch\).
 
 ![](https://lh6.googleusercontent.com/b64my6fWWzSvsDmCNOpD6ZizMh9SqO_3Nvx8WmWKJnVHusC4tVYjJ7ZI_dZodyV241t1QQM7naHZOGw_sa34pJGFxgiVK6kSDrnU-d3KNrjqKByJg0zOA6f2ehcNgW2YkAHggapW)![](https://lh3.googleusercontent.com/kXN3HKj1yEdbZgMSlVX2uYgnqTa5hUeLHlY2xC0BYwILjxHSxjNsobxFcMvB0oehUfj3O5f21HegUONmy-a7u8ocvXfDgN3TWXnR0yHocxlmfSEek4zbEkjNYXbcprmMqeLjM3mn)  
-****
-
-**Once locked onto GPS, to start the capture, navigate to the custom profile screen \(shown below\) and hold down the middle button for 2 seconds \(on the right hand side of the watch\). You should see the points value increase as GPS telemetry is recorded.**  
-
+****Once locked onto GPS, to start the capture, navigate to the custom profile screen \(shown below\) and hold down the middle button for 2 seconds \(on the right hand side of the watch\). You should see the points value increase as GPS telemetry is recorded.
 
 ![](https://lh6.googleusercontent.com/rvfRsxBS0AFSIfxrHY5ZCppQOdtBE_3Eyd_EhitoPBAv3_V50LPRe0Wpl_8YGuNMavidj4dEapdPd73aELNfonqMk3eGAE4M9AO6ohat7HMenvqwNaQdqPLbe_UrHpNIuAoTvK2a)
 
-**To stop the capture once you’re back on the surface, again, hold down the middle button for 2 seconds \(on the right hand side of the watch\).**  
+To stop the capture once you’re back on the surface, again, hold down the middle button for 2 seconds \(on the right hand side of the watch\).
 
+_**Note for those building their own Trek Pack**_
 
-**Note for those building their own Trek Pack**  
+You do have the option, if you don’t want to invest in a GPS logger and are not worried about taking your phone out onto the water, to use it as a GPS logger.
 
+[Mobile phones on land generally offer better positional accuracy where mobile signal is available.](https://www.trekview.org/blog/2020/gps-101)
 
-**You do have the option, if you don’t want to invest in a GPS logger and are not worried about taking your phone out onto the water, to use it as a GPS logger.**  
+Out on the water \(away from onshore mobile signal\) they generally rely on the same technology as GPS loggers to record location.
 
+There are lots of apps that can perform GPS logging functions \(search GPS logger\). Ideally what you want is a tracker that will log telemetry \(at a minimum; time, latitude, longitude, and altitude\) to a CSV file.
 
-[**Mobile phones on land generally offer better positional accuracy where mobile signal is available.**](https://www.trekview.org/blog/2020/gps-101)  
-****
+I have tested the two below which, from my own usage, seem to perform well and meet the above requirements:
 
-**Out on the water \(away from onshore mobile signal\) they generally rely on the same technology as GPS loggers to record location.**
+* [GPS Logger \(Android\)](https://play.google.com/store/apps/details?id=com.mendhak.gpslogger&hl=en_GB)
+* [myTracks \(Apple\)](https://apps.apple.com/gb/app/mytracks-the-gps-logger/id358697908)
 
-**There are lots of apps that can perform GPS logging functions \(search GPS logger\). Ideally what you want is a tracker that will log telemetry \(at a minimum; time, latitude, longitude, and altitude\) to a CSV file.**  
+#### Set up surface buoy
 
-
-**I have tested the two below which, from my own usage, seem to perform well and meet the above requirements:**  
-
-
-* [**GPS Logger \(Android\)**](https://play.google.com/store/apps/details?id=com.mendhak.gpslogger&hl=en_GB)
-* [**myTracks \(Apple\)**](https://apps.apple.com/gb/app/mytracks-the-gps-logger/id358697908)
-
-**Set up surface buoy**
-
-**The orange surface buoy is inflatable. Blow it up by opening the blue valve and blowing until it is fully inflated, then close the valve.**  
-
+The orange surface buoy is inflatable. Blow it up by opening the blue valve and blowing until it is fully inflated, then close the valve.
 
 ![](https://lh3.googleusercontent.com/MAGrhmQbrv0Hnjj0pGqVHfJqEBp2X_pARtqH7-lSLFRph6G1B27o_O_-Nx_pKjQb-3aPU-vZ4tf_heCtOZtfdl13Dp_GhavUp8SeZzr7AZNOJIW8aVrrK0hyHvrLQXtIeYfgUoDb)
 
-**Once blown up you can place your GPS tracker into the buoy. Make sure it’s locked onto a signal and you’ve started recording telemetry. Don’t worry about placing the GPS tracker in the dry buoy –** [**GPS will work through plastic**](https://blog.mapspeople.com/gps-the-complete-guide)**.**  
+Once blown up you can place your GPS tracker into the buoy. Make sure it’s locked onto a signal and you’ve started recording telemetry. Don’t worry about placing the GPS tracker in the dry buoy – [GPS will work through plastic](https://blog.mapspeople.com/gps-the-complete-guide).
 
+Roll up the end of the buoy to create a watertight seal and lock using the clip-strap.
 
-**Roll up the end of the buoy to create a watertight seal and lock using the clip-strap.**  
+When you’re ready to get in the water, wrap the end of the dive rope around your torso and roll it neatly so it does not tangle. Once in the water, the aim is to keep the dive rope between you and the buoy as tight as possible so that the surface buoy records your position in the water as accurately as possible.
 
+One limitation of this approach is that the surface buoy will only record horizontal position, and not depth.
 
-**When you’re ready to get in the water, wrap the end of the dive rope around your torso and roll it neatly so it does not tangle. Once in the water, the aim is to keep the dive rope between you and the buoy as tight as possible so that the surface buoy records your position in the water as accurately as possible.**  
+_**Note for those with dive computers**_
 
+We have omitted dive computers from this documentation simply because of their cost.
 
-**One limitation of this approach is that the surface buoy will only record horizontal position, and not depth.**  
+If you do have a dive computer that can record time, position in the water \(latitude and longitude\) and depth, you can avoid having to use a separate GPS logger and surface buoy.
 
+The only requirements is that the recorded track can be exported from the dive computer onto your computer once out of the water.
 
-**Note for those with dive computers**  
+#### Insert the camera into the bubble
 
-
-**We have omitted dive computers from this documentation simply because of their cost.**  
-
-
-**If you do have a dive computer that can record time, position in the water \(latitude and longitude\) and depth, you can avoid having to use a separate GPS logger and surface buoy.**  
-
-
-**The only requirements is that the recorded track can be exported from the dive computer onto your computer once out of the water.**  
-
-
-**Insert the camera into the bubble**
-
-**Remove the base mount from the Bubble housing and attach the camera to it making sure the camera is as close to vertical as possible.**  
-
+Remove the base mount from the Bubble housing and attach the camera to it making sure the camera is as close to vertical as possible.
 
 ![](https://lh6.googleusercontent.com/PEbrdCrx-GQrFiK5u5Wixkhxuz-BSi3dV4mTuE-GUPEgzrYu5XLXfko5G5R2EeH16Hvbrzh1DgR3YJRfDylKGnFE8EQq9Oe2uC3nJ4X3xYGQmIGu2btwjinDczTVE2ZdQHgzBMXd)![](https://lh6.googleusercontent.com/r0cX1BZ5aRjyJQBAr-9dEIuudSVM8NoIvBz7QC3ABXRO-bTPNbE2SNtW0OUOIg_WCB5tRWwnxFtbKB6U7Pf2egXxeL8hZ-0U3cKPnAcTfLpurFBMJugyKumoOfU12Df_NwAX6n63)  
-****
+****Now, carefully insert the camera into the Bubble \(it is a tight fit\) making sure to lock the base into the housing \(using the locking mechanism\).
 
-**Now, carefully insert the camera into the Bubble \(it is a tight fit\) making sure to lock the base into the housing \(using the locking mechanism\).**  
+For reference, the back of the camera is the side with the LCD screen \(this should be facing behind you\).
 
+Once inside the housing bubble and submerged, it cannot be controlled in the usual way \(app, sound, or touch\).
 
-**For reference, the back of the camera is the side with the LCD screen \(this should be facing behind you\).**  
+Therefore you must start the timelapse in advance.
 
+Before you secure the camera in the 360bubble housing, just before diving, start the timelapse. This will mean the timelapse starts before you enter the water, however, these photos simply be discarded on your machine.
 
-**Once inside the housing bubble and submerged, it cannot be controlled in the usual way \(app, sound, or touch\).**  
+#### Attach the dive weights to the camera
 
+[The bubble will need about 4.5 kg of dive weights \(you will need to supply these\) to be neutrally buoyant in the water. ](https://drive.google.com/file/d/1caj7TADzoh_OH6jWXdBfRBro8xH025B6/view?usp=sharing)
 
-**Therefore you must start the timelapse in one of two ways;**  
+Attach the weights to the dive strap and then attach the strap to the 360bubble housing using the carabiners supplied.
 
+You can not use the weight strap to hold the 360bubble. Alternatively, you can secure the monopod to the base of the 360bubble when shooting with it above you.
 
-**1. Start the timelapse in advance**  
-  
+Note, the 360bubble is rated to a depth of 10m.
 
+_**A note on snorkelling**_
 
-**Before you secure the camera in the 360bubble housing, just before diving, start the timelapse. This will mean the timelapse starts before you enter the water, however, these photos simply be discarded on your machine.**  
+Due to the way the weights are mounted to the bottom of the 360bubble and the volume of air inside it, the 360bubble must be used in the upright position \(with mount at base\). You will quickly realise this when in the water. 
 
+This is less important when using for scuba diving when you will be at some depth in the water and can hold the 360bubble above your body. For snorkelling on the surface, this becomes more problematic as you have to hold the 360bubble beneath than your body in the water.
 
-**2. Use the GoPro Smart Remote \(waterproof to 10m\)**  
+For snorkelling we recommend a more agile case \(with minimal air volume, hence lower buoyancy, and no weights needed\). The trade-off being; lower perceived image quality, lighting issues, and a noticeably increased size of stitching lines in photos/video.
 
+![](https://lh3.googleusercontent.com/YBNuimVxW41zlEn0IqUsNLXwaW1FkeuV-sNOkapAA5VXu9SWtITCgwXXX1ZD7K5Mz2T-mf09mLAR0bEtmB_eKceaXHQ0tv31xGfZoiHOGe-mkKnlJ1ekOjQPnS7O9n2Zg_9uv-oR)
 
-![](https://lh4.googleusercontent.com/byRoZphTkXBPJ4mpu5kR1uGR_n0o2P8NK_VTmAlof7nvyBWgwDavdGy3AinOQhnBPThJzH4ADjCs4q5FbX_B8dmDwaR49Lo2gCLJ780KJ2VQCgCIz_oCms-eC1YQEN7PspazzuY6)
-
-**Like the 360bubble, the smart remote is waterproof rated to a depth of 10 meters. This means once you’ve paired the smart remote with your MAX camera, you can use it to start and stop the time lapse when you’re underwater. The advantage being this can save battery life as you’re not capturing un essary images, and avoids overheating because the camera is not working for such long periods of time**  
-
-
-**You will need to ensure that the correct time lapse settings are set on the camera before entering the water because the GoPro Smart Remote cannot be used to adjust these settings \(e.g. timelapse interval\). The GoPro Smart Remote only supports start/stop and change mode \(photo, timelapse, or video\) actions.**
-
-**Attach monopod and dive weights to the camera**
-
-[**The bubble will need about 4.5 kg of dive weights \(you will need to supply these\) to be neutrally buoyant in the water.** ](https://drive.google.com/file/d/1caj7TADzoh_OH6jWXdBfRBro8xH025B6/view?usp=sharing)  
-****
-
-**Attach the weights to the dive strap and then attach the strap to the 360bubble housing using the carabiners supplied.**  
-
-
-**\[NEED A PHOTO OF THIS HERE\]**  
-
-
-**The monopod simply screws into the bottom of the 360bubble.**  
-
-
-**We recommend extending the monopod by two-thirds \(two clips\). This should give you good control of the camera, avoid capturing the diver, and not put too much stress on the monopod.**  
-
+These cases can be picked up on eBay and Amazon fairly cheaply. Here is one I have used before: [GoPro MAX Tempered Glass Underwater Waterproof Protective Case](https://www.amazon.co.uk/Lanmei-Waterproof-Protective-Accessories-Underwater/dp/B08F6SQY63/). It has a rating to 45m.
 
