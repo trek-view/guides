@@ -4,10 +4,6 @@ description: 'Hello, why we built this...'
 
 # Overview
 
-Version 2.0 \(last updated: July 2020\)
-
-A backpack mounted 360-degree camera system designed to capture stunning 360-degree Street View tours in all terrains.
-
 ![](https://lh3.googleusercontent.com/8cuwZeR4n4ZYwBYcwwlCoonJOI4Ff18eCkcJZ6uS9yhaoqGCkIuqlMtecOiDWG_VndWTdTBTg3_gK1vGbVo-LsyMfbduNhXbM98Uj8qEfEwKowKchqu_jGU3aQRIP9p-YfGN4Qxa)![](https://lh3.googleusercontent.com/FL0yFujdlTMW-Tzy-i51RcvQeMyDP2BFyCinq9GPAwo_3ArIiJ2cJOgxs3PxV4ZsufL6ooKVnY9J2EPLkVY8b5Srk-hv8BfO4BYDrH05K40iNhubOQM2VCghiXWA4T_csme1dO71)![](https://lh3.googleusercontent.com/cOJcXzdA3FNek6a0QBW1vOBJJ8CNl6P9UM35FC6ymGhusw6y1LMsUD2bvRaDqIwDt2jfGJHdiI0I0snKG5ALSP2OaouZLnLNTL1Vkmdxy2Jsn_fFx1NHNcut43hPOXYEnPe8VF-N)![](https://lh5.googleusercontent.com/uct7cMpV7BsfQGKw7uX7JGForDQMdwDhETKa9wu1NXOFib7E6-5sEBUlFsURPbY9FA9pyONvuuHruRNFEhCCvO91FloAiq3nGLBmmyJWhnoWoRVPj2S-TN3BzPVPFdk7UW92gdQh)
 
 ### A Quick Hello

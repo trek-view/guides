@@ -1,6 +1,16 @@
-# Initial page
+---
+description: Welcome to the Trek View product documentation.
+---
 
-Gitbook documentation for all Trek View products.
+# Hello!
 
-Auto-updated when changes to [http://dgreenwood-trekview.gitbook.io/trek-view](http://dgreenwood-trekview.gitbook.io/trek-view) are made in by [https://app.gitbook.com/](https://app.gitbook.com/) UI.
+Choose a product to view its documentation:
+
+Still need help?
+
+Join the Trek View Campfire, our community support forum:
+
+{% embed url="https://campfire.trekview.org/c/support/8" %}
+
+
 
