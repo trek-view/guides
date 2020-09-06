@@ -214,7 +214,8 @@ description: 'What''s in the box, what it looks like...'
 
 \[1\] For use in Multi-Day Pack / optional for longer trips.
 
-\[2\] Required, but must be purchased separately.  
+\[2\] Required, but must be purchased separately.
+
 If you believe something is missing or does not work correctly, [please contact us](https://www.trekview.org/contact/).
 
 ### What it looks like
