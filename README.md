@@ -12,5 +12,3 @@ Join the Trek View Campfire, our community support forum:
 
 {% embed url="https://campfire.trekview.org/c/support/8" %}
 
-
-

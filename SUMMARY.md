@@ -24,8 +24,10 @@
 * [Overview](mtp-desktop-uploader/overview.md)
 * [Developer Docs](mtp-desktop-uploader/developer-docs/README.md)
   * [Install](mtp-desktop-uploader/developer-docs/install.md)
-  * [Functions](mtp-desktop-uploader/developer-docs/untitled.md)
+  * [Functions](mtp-desktop-uploader/developer-docs/functions.md)
   * [Integrations](mtp-desktop-uploader/developer-docs/integrations/README.md)
     * [Mapillary](mtp-desktop-uploader/developer-docs/integrations/mapillary.md)
-    * [\[PROPOSED\]](mtp-desktop-uploader/developer-docs/integrations/proposed.md)
+    * [\[PROPOSED\] Google Street View](mtp-desktop-uploader/developer-docs/integrations/google-street-view.md)
+    * [\[PROPOSED\] Facebook](mtp-desktop-uploader/developer-docs/integrations/facebook.md)
+    * [\[PROPOSED\] OpenTrailView](mtp-desktop-uploader/developer-docs/integrations/opentrailview.md)
 
