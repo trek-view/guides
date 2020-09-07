@@ -14,7 +14,7 @@ description: >-
 * Tours: Tours are collections of sequences that have been curated by their owner. Browse others' tours or create one using your own sequences.
 * Guidebooks: Create a guidebook of street-level photos to show people around a location. View others people have created to help plan your next adventure.
 * Challenges: Help make better maps by contributing to challenges with specific requests for imagery.
-* Leader boards: See who is topping the leader boards for Sequences imported and Viewpoints -- both all time and challenge specific -- to see where you place in the rankings.
+* Leaderboards: See who is topping the leaderboards for Sequences imported and Viewpoints -- both all time and challenge specific -- to see where you place in the rankings.
 * Hire: Find paid help for image collection projects to create fresh street level map data in locations where it's needed for Google Street View, Mapillary, and more...
 * API: Integrate your own app with Map the Paths...
 

@@ -21,6 +21,10 @@
   * [Capture](mtp-web/sequences/capture.md)
   * [Create](mtp-web/sequences/create.md)
   * [Browse](mtp-web/sequences/browse.md)
+* [Tours](mtp-web/tours.md)
+* [Guidebooks](mtp-web/guidebooks.md)
+* [Leaderboards](mtp-web/leaderboards.md)
+* [Hire](mtp-web/hire.md)
 * [API](mtp-web/api.md)
 
 ## MTP Desktop Uploader
