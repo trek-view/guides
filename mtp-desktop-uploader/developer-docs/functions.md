@@ -300,9 +300,13 @@ Step 1 in the diagram above shows the start of the image / video processing work
 
 ### 12. Add GPX track
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/process-no-gps.png)
+![MTPDU no images have resolvable geotags](../../.gitbook/assets/process-no-gps.png)
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/process-some-gps.png)
+![MTPDU some images have resolvable geotags](../../.gitbook/assets/process-some-gps.png)
+
+
+
+![MTPDU add gps track optional](../../.gitbook/assets/add-gps-optional.png)
 
 If;
 
@@ -313,19 +317,19 @@ If;
 * no images have resolvable geotags
   * will warn user no images are not tagged. Giving them option to add gps track \(step 6\), OR abandon tour creation.
 
-#### 11.1 Add GPX track
+#### 12.1 Add GPX track
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/upload-gpx-track.png)
-
-This step is required if: \* no images have geotags
+This step is required if no images have geotags and user will be forced to upload gpx file.
 
 Else is optional.
 
-In such case, the user can access this function on the UI view of step 7. Modify GPS Spacing
+![MTPDU import gpx manually](../../.gitbook/assets/add-gps-optional-button.png)
+
+In such case, the user can access this function on the UI view of step 14. Modify GPS Spacing
 
 User must select a valid `.gpx` track for matching.
 
-#### 6a. How GPS-image matching works
+#### 12.1.1 How GPS-image matching works
 
 A GPX file with trackpoints `<trkpt>` that contain latitude `lat`, longitude `lon`, elevation `ele` and time `<time>` values, e.g.
 
@@ -340,16 +344,58 @@ A GPX file with trackpoints `<trkpt>` that contain latitude `lat`, longitude `lo
 
 Each image file should contain a `DateTimeOriginal` value \(e.g. 2020-08-02T11:05:06\).
 
-The GPS-image process first identified the images `DateTimeOriginal` value to find corresponding time record in `.gpx` file at second resolution.
+The GPS-image process first identified the images `DateTimeOriginal` value to find corresponding time record in `.gpx` file at second resolution. `GPSDateTime` is not used for track assignment, because it is assumed value does not exist or is corrupt.
 
-If:
+Matches are to second resolution. For example, `DateTimeOriginal=10:02:01:00023` and `<time>10:02:01:10288</time>` are considered a match. Whereas, `DateTimeOriginal=10:02:01:00023` and `<time>10:02:02:00000</time>` are not a match.
 
-* a match is found, the image is geotagged with these value
-* a match is not match is found, the image is discarded.
+If multiple times in gpx trackpoints match `DateTimeOriginal` value, the first record is used to assign geotags to image.
 
-#### 13. Calculate temporary sequence
+If
 
-This step is invisible to user.
+* a match is found between`DateTimeOriginal` of image and `<time>` in GPX track , the image is geotagged with these value \(`GPSDateTime`, `GPSLongitude`...\)
+* a match is not match is found between`DateTimeOriginal` of image and `<time>` in GPX track, the image is discarded.
+
+This process will overwrite any existing geotags.
+
+#### **12.1.1 Adjusting image`DateTimeOriginal`**
+
+![MTPDU image times](../../.gitbook/assets/process-gpx-times.png)
+
+> The start time of your GPS Track is: 2020-08-02T11:05:06‌
+>
+> The time in the first photo in the sequence is: 2020-08-02T13:42:06‌
+>
+> There are no matched points between Photos and Gpx Points. Maybe you have to change the start time of Gpx points.
+
+In some cases, the `DateTimeOriginal` of an image may be incorrect. This can happen for a number of reasons. It is usually down to the time on the camera being set incorrectly. Many cameras do not use a central time server, and let user manually define time. As such, it is not uncommon for images`DateTimeOriginal` value to be incorrect.
+
+In such cases, user can manually modify the `DateTimeOriginal` values by setting a global time offset. For example, add 3600 seconds \(1 hour\) to every images `DateTimeOriginal` value.
+
+Time offset can be both positive or negative number \(integer\).
+
+After uploading GPX track user will be presented with screen showing track start time \(first gpx trackpoint\), and first image time \(earliest `DateTimeOriginal` value \).
+
+In the above example, you can see the GPS track time is much earlier then the first photo time \(first photo time is 2 hours 37 minutes after the first gpx point\).
+
+![MTPDU Set photo time offset](../../.gitbook/assets/modify-photo-originaldatetime.png)
+
+In this example, let's assume user knows first gpx time is the time of the first photo.
+
+Therefore the time offset would be -9420 seconds \(2 hours 37 minutes\).
+
+![MTPDU update photo time offset](../../.gitbook/assets/modify-photo-originaldatetime-output.png)
+
+> The start time of your GPS Track is: 2020-08-02T11:05:06
+>
+> The time in the first photo in the sequence is: 2020-08-02T11:05:06
+>
+> We found the first matching gps record in the track for this photo at lat=28.689014 lon=-13.93148 alt=92 at 2020-08-02T11:05:06.
+
+Finishing the example, you can see once the offset is applied, the first gpx trackpoint and first image time now match, and a match has been detected.
+
+### 13. Calculate temporary sequence
+
+This step is invisible to the user.
 
 Once a processing complete \(that is GPS track added, if required\) a temporary sequence \(path\) is calculated using location values.
 
@@ -357,9 +403,11 @@ The sequence connects photos based on ascending `GPSDateTime` time. Essentially 
 
 First and last photos in sequence always have 1 connection \(either forward \(first\) or back \(last\)\). All other photo connections will have 2 connections \(both forward and back\).
 
-[See the attached sample sequence.json for the information held against a sequence. This file is produced as an output for user on sequence creation completion](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/samples/2020-08-28-docs_sequence_example_pretty.json).
+See the linked sample `sequence.json` for the information held against a sequence. This file is produced as an output for user on sequence creation completion.
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/sequence-maker-diagram.jpg)
+{% file src="../../.gitbook/assets/2020-08-28-docs\_sequence\_example\_pretty.json" %}
+
+![MTPDU sequence calculation illustraction](../../.gitbook/assets/sequence-maker-diagram.jpg)
 
 For each connection, the following is calculated:
 
@@ -377,15 +425,15 @@ For each connection, the following is calculated:
 
 ![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/)
 
-In many cases users do not need or want to make changes to their images.
+In many cases users do not need or want to make the following \(optional\) changes to their images \(steps 15 - 18\).
 
-We did not want to force these users to have to skip through the following modification steps and therefore give them the option to skip them.
+We do not want to force these users to have to manually skip through the following modification steps and therefore give them the option to skip them.
 
-If they are happy with the processing step, they can click skip modifications and will move straight to the upload to integrations step.
+If they are happy with the processing step, they can click skip modifications and will move straight to the upload to integrations step \(step 19\).
 
 ### 15. Set image spacing
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/process-image-spacing.png)
+![MTPDU set image spacing](../../.gitbook/assets/process-image-spacing.png)
 
 User can select either to space frames by time OR distance. When value entered into one field, the other will grey out.
 
@@ -451,7 +499,7 @@ When user inputs change, the logic of the calculation is as follows:
    * distance &lt; value entered discards destination photo \(2\) and calculates new connection 1&gt;3
    * distance &gt;= value entered keeps destination photo \(2\) and calculates next connection 2&gt;3
 
-#### 15.2.1 Frames ever \[x\] meters example
+**15.2.1 Frames ever \[x\] meters example**
 
 Photos are 1 meter apart. User enters value in meters of 5.
 
@@ -469,9 +517,9 @@ Photos are 1 meter apart. User enters value in meters of 5.
    * Is 1 meter so photo 7 discarded
 7. ...
 
-#### 16. Fix Photo Outliers
+### 16. Fix Photo Outliers
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/process-image-outliers.png)
+![MTPDU modify photo outliers](../../.gitbook/assets/process-image-outliers.png)
 
 In many cases, a GPS track might be corrupt in places. This happens for a number of reasons. In such case, user might want to discard or normalise these photos based on the deviation from the norm.
 
@@ -494,7 +542,7 @@ When user inputs change, the logic of the calculation is as follows:
 
 #### 16.1.1 Discard photos \[x\] meters off path example
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/discard-viz.jpg)
+![MTPDU discard visualisation](../../.gitbook/assets/discard-viz.jpg)
 
 In the 2 examples above, all photos should be no more than 90m apart. Or put another way the discard value is 90m.
 
@@ -514,7 +562,7 @@ In example 2;
 
 #### 16.2 Discard photos manually
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/process-image-outliers-manual-delete.png)
+![MTPDU discard photos manually](../../.gitbook/assets/process-image-outliers-manual-delete.png)
 
 User can also click a point on the map, and then select the delete icon to delete images manually. This is useful to avoid the simple global discard calculation.
 
@@ -535,7 +583,7 @@ When user inputs change, the logic of the calculation is as follows:
 
 #### 16.3.1 Smooth photos \[x\] meters off path example
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/normalisation-viz.jpg)
+![MTPDU normalise visualisation](../../.gitbook/assets/normalisation-viz.jpg)
 
 In the 2 examples above, all photos should be no more than 90m apart. Or put another way the smooth value is 90m.
 
@@ -553,13 +601,13 @@ In example 2;
 2. Distance from P2 to P3 calculated, and distance from P3 to P4 calculated
    * ...
 
-#### 17. Modify heading
+### 17. Modify heading
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/process-image-heading.png)
+![MTPDU modify heading](../../.gitbook/assets/process-image-heading.png)
 
 If heading value is captured by cameras in images \(some cameras do not report it\), it is under `[XMP] PoseHeadingDegrees`. In cases when this exists, the value remains unmodified.
 
-If it does not exist, the script automatically calculated this value \(see: 5e. Calculate preliminary sequence\).
+If it does not exist, the script automatically calculated this value \(see: Calculate preliminary sequence\).
 
 Note, the same process is done for pitch \(vertical angle\) `[XMP] PosePitchDegrees`. However, modification of this value is not exposed to the user. This is on the roadmap.
 
@@ -573,9 +621,24 @@ For example, entering an offset value of 10 means add 10 degrees to `[XMP] PoseH
 
 Each point on map should show heading set graphically to allow user to get a quick visual understanding of direction.
 
-If user clicks point on map, will show panorama view and all heading and pitch info. User cannot change values individually, it is just for reference.
+If user clicks point on map, will show panorama view and all heading and pitch info. User cannot change values individually, it is just for reference. This is available in all map views during processing.
 
-#### 18. Add nadir
+#### 17.1 Viewing heading of a photo
+
+![MTPDU image data](../../.gitbook/assets/view-map-point-image.png)
+
+  
+When any map point clicked during sequence creation, the corresponding photo is shown to user \(with interactive Pannellum window if 360\). User can also view the following information about the photo when a map point is clicked:‌
+
+* File Name
+* GPS Time
+* Heading / Azimuth \(degrees\)
+* Distance to next photo \(meters\)
+* Time to next photo \(seconds\)
+
+This data is updated as changes are made, and will reflect any previous changes made to sequence edits.
+
+### 18. Add nadir
 
 ![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/add-nadir-1.png)
 
