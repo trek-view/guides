@@ -146,13 +146,24 @@ Inside each directory is a:
 * `module-icon.png`:
   * The image \(.png, 512x512\) used on add camera screen.
 
-`Example module.json`
+**Example of camera `module.json`**
 
-* \`\`
+```text
+{
+    "module_developer": "Trek View",
+    "module_support_url": "https://campfire.trekview.org/c/support/8",
+    "module_name": "GoPro Max",
+    "module_description": "Max HyperSmooth delivers the smoothest video ever from a GoPro—plus game-changing horizon leveling, when you want it.",
+    "module_camera_exif_make": "GoPro",
+    "module_camera_model": "MAX",
+    "module_camara_supports": [ "mp4", "jpg" ],
+    "module_camara_video_telemetry": "gmpf"
+}
+```
 
 ### 9. Add capture method
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/add-capture-method.png)
+![MTPDU add capture method](../../.gitbook/assets/add-capture-method.png)
 
 User can choose either video or image format for sequence.
 
@@ -162,9 +173,9 @@ Both of these items are on the roadmap.
 
 ### 10. Select imagery
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/add-files-to-sequence.png)
+![MTPDU add sequence imagery](../../.gitbook/assets/add-files-to-sequence.png)
 
-Here a user can select a directory of images or video files to create sequence, depending on what option they selected at step 7.
+Here a user can select a directory of images or video files to create sequence, depending on what option they selected at step 9 \(choose capture method\).
 
 Currently the app only supports following file formats
 
@@ -184,9 +195,9 @@ User also has option to select:
 
 > Check for corrupted \(black\) images \(only recommended you tick this box if you suspect the file\(s\) contain black and/or visually corrupted frames\)
 
-If selected, the app uses image magick to analyse the image colours.
+If selected, the app uses imagemagick to analyse the image colours.
 
-Image magick returns statistics on an image, for example;
+Imagemagick returns statistics on an image, for example;
 
 ```text
 Image statistics:
@@ -210,7 +221,7 @@ By default, if user marks checkbox each frame is analysed and if a value of betw
 
 ### 11. Process input
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/process-raw-image-video.png)
+![MTPDU process image](../../.gitbook/assets/process-raw-image-video.png)
 
 #### 11.1 Input Projection
 
@@ -283,9 +294,7 @@ In the case of:
 
 #### 11.5 Image / video processing workflow
 
-
-
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/sequence-create-workflow.jpg)
+![MTPDU image / video processing workflow](../../.gitbook/assets/sequence-create-workflow.jpg)
 
 Step 1 in the diagram above shows the start of the image / video processing workflow that starts at step 10 upload images, and finishes and step 19, blur images.
 
