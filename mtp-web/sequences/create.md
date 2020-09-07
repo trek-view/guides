@@ -1,7 +1,7 @@
 ---
 description: >-
   Once you've captured street-level images or video, there are two ways to
-  create a sequence to share on Map the Paths.
+  create a sequence to share on Map the Paths...
 ---
 
 # Create

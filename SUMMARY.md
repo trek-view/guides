@@ -34,4 +34,5 @@
     * [\[PROPOSED\] Google Street View](mtp-desktop-uploader/developer-docs/integrations/google-street-view.md)
     * [\[PROPOSED\] Facebook](mtp-desktop-uploader/developer-docs/integrations/facebook.md)
     * [\[PROPOSED\] OpenTrailView](mtp-desktop-uploader/developer-docs/integrations/opentrailview.md)
+  * [Changelog](mtp-desktop-uploader/developer-docs/changelog.md)
 
