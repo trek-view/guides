@@ -36,7 +36,7 @@ Map the Paths supports both 2D and 360 imagery \(recommended\) captured using:
 * **Protective cases** Most action cameras are built to withstand rough conditions. If you want to protect your device further, you may buy a protective case for it.
 * **Drones** Map the Paths supports drone imagery. Use a suitable camera that can handle vibration, for example, GoPro. Mounting phones on drones is not a good idea because of the rolling shutter effects from vibration. 
 
-### Capture modes
+### Camera capture mode settings
 
 For Map the purposes it’s best to capture images in timelapse mode \(e.g. 1 photo every 2 seconds\), not video, because you save a lot on data volume, battery life, reviewing and upload time.
 
