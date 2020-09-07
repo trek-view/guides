@@ -719,7 +719,7 @@ The app currently supports the following integrations:
 Note, some integrations only support certain types of images. These are based on:
 
 * projection type: for example some integrations only suppor 360 images \(equirectangular images\)
-* transport type: for example some integrations only support images taken on the ground \(i.e. not method=airA\)
+* transport type: for example some integrations only support images taken on the ground \(i.e. not method=air\)
 
 This information is defined in integration module config. The UI of the app will not show user an integration if the image projection and/or transport type of images in their sequence is not supported by that integration.
 
@@ -727,7 +727,7 @@ The integrations step can be performed in the create sequence workflow, at this 
 
 User can select multiple integrations. For example, once Mapillary Oauth granted, goes back to integrations screen showing Mapillary selected but also shows option to add other destinations \(e.g Google Street View\). User can also unselect a destination on this screen if they change their mind.
 
-App should retry to upload image 3 times, then return error and move to next image.
+App retries to upload image 3 times, then return error and move to next image.
 
 Once user selects a destinations, user can select, "Upload to selected destinations". Upload to destination will start. In UI user will see progress screen showing count of images to be uploaded, and current count of images uploaded to each integration \(e.g 1/200 uploaded to Mapillary, 1/200 uploaded to Google Street View\).
 

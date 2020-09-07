@@ -65,13 +65,13 @@ When an image and sequence is created, the MTPDU stores the Mapillary info for i
 
 ![MTPDU, MTPW and Mapillary sycn](../../../.gitbook/assets/mtpu-mapillary-mtpw.png)
 
-Map the Paths Sequence data and Mapillary sequence ID information gets synced to Map the Paths Web. 
+Mapillary sequence ID information gets synced to Map the Paths Web. 
 
 [This is an automated version of the manual import sequence function in the MTPW UI. I strongly recommend testing how the manual process works here](https://mtp.trekview.org/sequence/import-sequence-list).
 
 The process works in three parts:
 
-1. Get MTPW token \(authentication must be enabled for this integration to work. As such, app will already have MTPW token when user logged in when opening app\)
+1. Get MTPW token \(authentication must be enabled for this integration for MTPW sync to work. As such, app will already have MTPW token when user logged in when opening app\)
 2. Send Mapillary OAuth token to MTPW. In order for MTPW to communicate with Mapillary, it needs a copy of the Mapillary OAuth token. This can be sent using the `api/v1/mapillary/token/verify` endpoint using `mapillary_token` value.
 3. Now the required MTPDU and Mapillary sequence data can be submitted to MTPW. This can be sent using the `/api/v1/sequence/import` endpoint by including: `sequence_key` \(Mapillary\), `name` \(MTPDU\), `description` \(MTPDU\), `transport_type` \(MTPDU\), `tags` \(MTPDU\)
 
