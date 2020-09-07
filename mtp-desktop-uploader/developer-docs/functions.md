@@ -889,11 +889,9 @@ Some sequence information is synced to a user MTPW account if Map the Paths OAut
 
 As they add new integrations, that information is also synced with MTPW.
 
-For example, if user uploads to Mapillary, all the Mapillary metadata associated with that sequence is shared with MTPW.
+For example, if user uploads to Mapillary, all the Mapillary metadata associated with that sequence is shared with MTPW. [Here is a visual example of this demo flow.](integrations/mapillary.md#mtpw-sync)
 
-![MTPDU, MTPW and Mapillary sycn](../../.gitbook/assets/mtpu-mapillary-mtpw.png)
-
-See MTPW API documentation and specific MTPDU Integrations for more specific information about what data is synced.
+You should see [MTPW API documentation](../../mtp-web/api.md#base-url) and specific [MTPDU Integrations](integrations/) for more specific information about what data is synced.
 
 ### 22. Other useful/additional information
 
