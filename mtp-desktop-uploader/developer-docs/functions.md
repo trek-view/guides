@@ -292,6 +292,10 @@ In the case of:
 * photos, this holds the raw photos selected \(essentially a mirror copy of directory user selected\)
 * video, this holds the frames extracted from the video and the raw video
 
+
+
+
+
 #### 11.5 Image / video processing workflow
 
 ![MTPDU image / video processing workflow](../../.gitbook/assets/sequence-create-workflow.jpg)
@@ -420,6 +424,15 @@ For each connection, the following is calculated:
 "adj_heading_deg": ## reported in degrees between 0 and 359.99 degrees. reported for previous photo connection only,
 "pitch_deg": ## reported in degrees between -90 to 90 degrees
 ```
+
+Throughout each step in the process where a change is made \(e.g. modify heading\) a temporary sequence file is recreated reflecting the changes made by the user.
+
+The "Reset modifications" button on each following page resets all values user entered on that page to the original value. Performing this action does not reset any values set on other screen by the user. To edit these, they must go back to the corresponding step.
+
+Whenever user updates variable during modify steps:
+
+* this will be shown in the map view immediately to user to give them an accurate visual representation of how their changes will affect the final imagery 
+* the temporary sequence information will be immediately updated \(e.g. distance to next photo\)
 
 ### 14. Skip modifications
 
@@ -640,7 +653,7 @@ This data is updated as changes are made, and will reflect any previous changes 
 
 ### 18. Add nadir
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/add-nadir-1.png)
+![MTPDU add nadir](../../.gitbook/assets/add-nadir-1.png)
 
 A nadir is a logo placed in the bottom of a 360 image. It often contains a logo.
 
@@ -648,7 +661,7 @@ A nadir is uploaded by user in 2d format, which means it first needs to be trans
 
 If photos are 2D this step is automatically skipped as a nadir cannot be added to a 2D image.
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/add-nadir-2.png)
+![MTPDU select nadir](../../.gitbook/assets/add-nadir-2.png)
 
 Currently the app only supports .png files for nadir, that are have square dimensions \(length = height\) and is more than 500px x 500px \(length x height\).
 
@@ -658,25 +671,30 @@ User can also select default nadir. These are stored \(and new ones can be added
 
 [This standalone script demonstrates how nadirs are overlaid on panoramas](https://github.com/trek-view/nadir-patcher).
 
-Essentially the nadir is converted into equirectangular format, then stretched to width of 360 photo, overlayed onto the 360 photo at the bottom of image, and height of nadir modified as specified \(see nadir preview\).
+Essentially to overlay the nadir, the following processing steps are applied:
 
-The app makes a simple assumption that all photos have the same resution \(width x height\) to reduce processing requirements. Therefore the nadir output is created once during the preview step and overlaid to all sequence images with same dimensions.
+1. the nadir is converted into equirectangular format
+2. then stretched to width of 360 photo
+3. overlayed onto the 360 photo at the bottom of image
+4. and height of nadir modified as specified \(see nadir preview\).
 
-**18.1 Nadir preview**
+The app makes a simple assumption that all photos have the same resolution \(width x height\) to reduce processing requirements. Therefore the nadir output is created once during the preview step and then simply overlaid to all sequence images.
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/add-nadir-3.png)
+#### **18.1 Nadir preview**
+
+![MTPDU Nadir Preview](../../.gitbook/assets/add-nadir-3.png)
 
 This takes the first image in the sequence and renders it with nadir for user to check output of nadir before applying to entire sequence.
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/example-nadir-percentage-of-pano.jpg)
+![MTPDU values for nadir overlay](../../.gitbook/assets/example-nadir-percentage-of-pano.jpg)
 
 16 versions are created with nadir sizes between 10% and 25% of image height. When user modifies % in UI using slider, it calls one of these temporary images. These temporary images are stored in the `ROOT/` directory. If user exits the add nadir step, or once nadir confirmed to be added the app deletes these temporary files.
 
-#### 19. Image blur \(experimental\)
+### 19. Image blur \(experimental\)
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/add-image-blur.png)
+![MTPDU add image blur](../../.gitbook/assets/add-image-blur.png)
 
-Generally photos do not need blurring \(Google, Mapillary, et al. already blur server side\), however this optional step is included for those with a very specific use-case where they need blurring but it is not offered by other services.
+Generally photos do not need blurring \(Google, Mapillary, et al. will blur server side\), however this optional step is included for those with a very specific use-case where they need blurring but it is not offered by other services.
 
 [This standalone script demonstrates how blurring is applied](https://github.com/trek-view/pii-blur/).
 
@@ -684,7 +702,7 @@ As noted to user:
 
 > BEWARE: It requires a lot of computing power.
 
-#### 20. Authenticate to integrations
+### 20. Authenticate to integrations
 
 At the final stage of the process, user can also choose to upload their imagery to a range of destinations.
 
@@ -717,7 +735,7 @@ The app logs all responses \(and oftentimes more\) from each service to keep a l
 
 In sequence list, if user has uploaded to integration should show link \(with logo\) to first photo in sequence uploaded to the destination. For example, will link to Mapillary photo view for 1st photo in sequence, assuming Mapillary integration exists.
 
-#### 21. Creation and upload
+### 21. Creation and upload
 
 Once user confirms the final step;
 
@@ -731,7 +749,9 @@ Once user confirms the final step;
 
 Note `final_original` and `original` subdirectories are different. `original` subdirectory holds all images including those discarded during sequence creation \(due to filtering\). `final_original` contains only the images that remain in the final sequence.
 
-**21.1 Image processing precedence**
+All original metadata in raw images is retained unless changes are made to such value during sequence creation workflow \(e.g. heading updated\).
+
+#### **21.1 Image processing precedence**
 
 Photos are processed one-by-one in the following order;
 
@@ -743,7 +763,7 @@ For example, all images in sequence will be written to `final_original`. When co
 
 Note, blur can have nadir or not have nadir depending on if user chooses to add it. In which case, the source of blurred images will depend on option selected. Is `final_original` if no nadir added OR `final_nadir` in nadir added.
 
-**21.2 ImageDescription JSON object**
+#### **21.2 `ImageDescription` JSON object**
 
 [MTPW uses a JSON object in the \[EXIF\] ImageDescription field to process imagery](https://github.com/trek-view/mtp-api).
 
@@ -768,7 +788,7 @@ An example of a final object in the ImageDescription field will look like this:
 {"MTPUploaderSequenceUUID":"cdc04260-6d8f-4d91-8903-fb79a9197b8a","MTPUploaderPhotoUUID":"a092d009-503c-4e19-9dad-63156f4ff573","MAPAltitude":319.248,"MAPLatitude":28.7151519999722,"MAPLongitude":-13.8921749,"MAPCaptureTime":"2020_08_14_11_43_46_000","MTPSequenceName":"My first sequence","MTPSequenceDescription":"It's description","MTPSequenceTransport":"Water-Paddleboard","MTPSequenceTags":["water","river","lake"],"MTPImageCopy":"final_raw","MTPImageProjection":"flat"}
 ```
 
-**21.3 Sequence JSON file**
+#### **21.3 Sequence JSON file**
 
 The sequence JSON file is used locally by the application to render sequence data in the UI.
 
@@ -852,7 +872,7 @@ The sequence JSON file takes the following format:
 } 
 ```
 
-**21.4 GPX track file**
+#### **21.4 GPX track file**
 
 This is a standard .gpx file containing latitude `lat`, longitude `lon`, `<ele>`, and `<time>` of each image in sequence.
 
@@ -871,44 +891,21 @@ As they add new integrations, that information is also synced with MTPW.
 
 For example, if user uploads to Mapillary, all the Mapillary metadata associated with that sequence is shared with MTPW.
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/mtpu-mapillary-mtpw.png)
+![MTPDU, MTPW and Mapillary sycn](../../.gitbook/assets/mtpu-mapillary-mtpw.png)
 
-See MTPW API documentation and MTPU Integrations for more specific information about what data is synced.
+See MTPW API documentation and specific MTPDU Integrations for more specific information about what data is synced.
 
+### 22. Other useful/additional information
 
+#### 22.1 Exit sequence creation workflow
 
+![MTPDU exist sequence creation warning](../../.gitbook/assets/exit-sequence-creation-warning.png)
 
+If user confirms exit of sequence they will be shown dialog "are you sure you wish to exit?". If they confirm, and data processed/stored will be lost after confirmation.
 
+#### 22.2 Deleting tour data
 
+![MTPDU delete sequence](../../.gitbook/assets/delete-sequence.png)
 
-### Generic Behaviour
-
-#### Before processing:
-
-* If user confirms exit of sequence they will be shown dialog "are you sure you wish to exit?". If they confirm, and data processed/stored will be lost after confirmation.
-* User can delete a tour from the sequence list UI. they will be shown dialog "are you sure you wish to exit?". If they confirm, all data \(including image files\) will also be deleted.
-
-#### After processing:
-
-* After processing \(on step 6. Add GPS track, or 7. Modify GPS spacing\) user cannot go back \(return\) to select files page. If they want to change files \(or sequence name, etc.\) they must completely abandon tour and start again.
-* Throughout each step in the process a temporary sequence is created reflecting the changes made by user in the UI.
-* After processing, the "Reset modifications" button resets all values user entered on the page to the original value. Performing this action does not reset any values set on other screen by the user. To edit these, they must go back to the corresponding step.
-* Whenever user updates variable
-  * this will be shown in the map view immediately to user to give them an accurate visual representation of how their changes will affect the final imagery.
-  * the sequence information will be immediately updated \(e.g. distance to next photo\)
-* * User does not need to make any changes on any pages. The can quickly move to the next page by clicking the confirm button.
-
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/view-map-point-image.png)
-
-When any map point clicked during sequence creation, the corresponding photo is shown to user \(in Pannellum window if 360\). User can also view the following information about the photo when a map point is clicked:
-
-* File Name
-* GPS Time
-* Heading / Azimuth \(degrees\)
-* Distance to next photo \(meters\)
-* Time to next photo \(seconds\)
-
-#### After confirming sequence:
-
-* all original metadata in raw images is retained unless changes made to value during sequence creation \(e.g. heading updated\).
+User can delete all sequence data \(including image files\) on their computer.
 
