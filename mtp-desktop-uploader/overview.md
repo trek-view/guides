@@ -1,7 +1,7 @@
 ---
 description: >-
-  Map the Paths Desktop Uploader allows you to manage your street-level map
-  imagery.
+  Map the Paths Desktop Uploader is a desktop app that allows you to manage and
+  upload your street-level map imagery.
 ---
 
 # Overview
@@ -25,7 +25,7 @@ description: >-
 
 ### Download Now
 
-[**Download the latest version of Desktop Uploader on Map the Paths here**](https://mtp.trekview.org/upload).
+[Download the latest version of Desktop Uploader on Map the Paths here](https://mtp.trekview.org/upload).
 
 ### Support
 

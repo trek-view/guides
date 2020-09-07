@@ -17,6 +17,7 @@
 ## MTP Web
 
 * [Overview](mtp-web/untitled.md)
+* [Sequences](mtp-web/sequences.md)
 * [API](mtp-web/api.md)
 
 ## MTP Desktop Uploader

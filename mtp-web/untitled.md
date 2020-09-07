@@ -1,68 +1,28 @@
+---
+description: >-
+  Map the Paths is a web app that allows you to manage and share your
+  street-level map imagery.
+---
+
 # Overview
 
-{% api-method method="get" host="https://api.cakes.com" path="/v1/cakes/:id" %}
-{% api-method-summary %}
-Get Cakes
-{% endapi-method-summary %}
+### Features
 
-{% api-method-description %}
-This endpoint allows you to get free cakes.
-{% endapi-method-description %}
+\[IMG\]
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="string" %}
-ID of the cake to get, for free of course.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+* Sequences: Sequences are collections of images continuously captured by a user at a give time. Browse those created by others, or import your own from Mapillary.
+* Tours: Tours are collections of sequences that have been curated by their owner. Browse others' tours or create one using your own sequences.
+* Guidebooks: Create a guidebook of street-level photos to show people around a location. View others people have created to help plan your next adventure.
+* Challenges: Help make better maps by contributing to challenges with specific requests for imagery.
+* Leader boards: See who is topping the leader boards for Sequences imported and Viewpoints -- both all time and challenge specific -- to see where you place in the rankings.
+* Hire: Find paid help for image collection projects to create fresh street level map data in locations where it's needed for Google Street View, Mapillary, and more...
+* API: Integrate your own app with Map the Paths...
 
-{% api-method-headers %}
-{% api-method-parameter name="Authentication" type="string" required=true %}
-Authentication token to track down who is emptying our stocks.
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+### Browse / Sign Up
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="recipe" type="string" %}
-The API will do its best to find a cake matching the provided recipe.
-{% endapi-method-parameter %}
+[Browse Map the Paths and create your free account here.](https://mtp.trekview.org/)
 
-{% api-method-parameter name="gluten" type="boolean" %}
-Whether the cake should be gluten-free or not.
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
+### Support
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Cake successfully retrieved.
-{% endapi-method-response-example-description %}
-
-```
-{    "name": "Cake's name",    "recipe": "Cake's recipe name",    "cake": "Binary cake"}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-Could not find a cake matching this query.
-{% endapi-method-response-example-description %}
-
-```
-{    "message": "Ain't no cake like that."}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+Having problems? [Ask a question around the Campfire \(our community forum\)](https://campfire.trekview.org/c/support/8).
 

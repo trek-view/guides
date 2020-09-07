@@ -1,5 +1,5 @@
 ---
-description: Integrate your app with Map the Paths...
+description: Integrate your own app with Map the Paths...
 ---
 
 # API
