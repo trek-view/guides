@@ -48,6 +48,8 @@ When zoomed in closer to ground level, you will see point plotted on the map to 
 
 When you've found the Photo you want to use for the Scene, fill in the name and description and click the "Save New Scene" button.
 
+Your Guidebook will be automatically published after the first Scene is added.
+
 #### **4.** Add a Point of Interest \(POI\)
 
 ![MTP Add new POI](../../../.gitbook/assets/download-2-.png)
@@ -70,15 +72,18 @@ You can add multiple POI's to any Scene.
 
 ![MTP additional Scenes](../../../.gitbook/assets/46823a6d-217d-4038-a67f-860c57c74720.png)
 
-You can continue adding Scenes in the same way to your Guidebook until you're ready to publish.
+You can continue adding Scenes in the same way to your Guidebook.
 
-#### 4. Manage Guidebook
+#### 6. Manage Guidebook
 
-![MTP unpublish tour](../../../.gitbook/assets/12c51aa1-40e6-4835-ac6c-8d44e3a82035.png)
+![MTP Guidebook list](../../../.gitbook/assets/3b2b019a-66ce-4cdb-939b-c0e7397f1940.png)
 
-Guidebook select "Publish Now".
+Once published, your Guidebook will can now be discovered by users in the Guidebook search.
 
-Until you select "Publish Now", other users will not be able to see your Tour.
+![MTP view Guidebook](../../../.gitbook/assets/f14389d9-3881-46b3-aaeb-6a5d774b36ed.png)
 
+  
+When a Guidebook is clicked, it will enter the Guidebook view allowing a user to browse through the content of the Guidebook.
 
+If you are logged in, and own the Guidebook, you can click the edit button to make changes to the Guidebook information, the Scenes and POI's in the Guidebook, or unpublish it so that others cannot view it.
 

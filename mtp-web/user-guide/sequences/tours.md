@@ -44,13 +44,9 @@ To add a Sequence to this Tour, click the "Add to Tour" button.
 
 A Sequence can be added to a Tour once. A Sequence can be added to multiple Tours.
 
-![MTP Sequence Added to Tour successfully and publish](../../../.gitbook/assets/publish-now.png)
+Your Tour will be automatically published after the first Sequence is added.
 
-You can continue to add Sequences to the Tour.
-
-When you've added all Sequences you want included in the Tour, select "Publish Now".
-
-Until you select "Publish Now", other users will not be able to see your Tour.
+You can continue to add Sequences to the Tour in this view.
 
 #### 4. Manage Tour
 
@@ -62,5 +58,5 @@ Once published, your Tour will can now be discovered by users in the Tour search
 
 When a Tour is clicked, it will show a list of Sequences that belong to it.
 
-If you are logged in, and own the Tour, you can click the edit button to make changes to the Tour information, or the Sequences that belong to that Tour.
+If you are logged in, and own the Tour, you can click the edit button to make changes to the Tour information, the Sequences that belong to that Tour, or unpublish it so that others cannot view it.
 
