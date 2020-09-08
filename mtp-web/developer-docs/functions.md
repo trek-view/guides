@@ -72,11 +72,12 @@ Guidebooks are collections of any Mapillary photos with annotations to provide m
 
 **Leaderboard**
 
-Leaderboards show users 
+Leaderboards give users points based on their imagery synced to Map the Paths.
 
-* Leaderboards have two types
+* Leaderboards have three types
   * Photos uploaded \(by user\): counts number of photos uploaded by user
-  * Viewpoints recieved \(by user\): counts number of viewpoints user
+  * Viewpoints received \(by user\): counts number of viewpoints users photos have received
+  * Distance mapped \(by users\): counts the sum of kilometres covered by users Sequences
 * Leaderboards have filters
   * By transport type \(parent/child\)
   * By camera make \(make/model\)

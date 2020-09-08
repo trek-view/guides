@@ -10,7 +10,5 @@ description: >-
 
 {% page-ref page="create.md" %}
 
-{% page-ref page="./" %}
-
-{% page-ref page="browse.md" %}
+{% page-ref page="tours.md" %}
 
