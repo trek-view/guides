@@ -16,7 +16,7 @@ For example, if you take photos of a local park as a series of individual time l
 
 To create new tours.
 
-#### **1 Select create**
+#### **1. Select create**
 
 ![MTP Create tour](../../../.gitbook/assets/create-tour.png)
 
