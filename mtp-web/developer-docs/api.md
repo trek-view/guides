@@ -8,6 +8,10 @@ description: Integrate your own app with Map the Paths...
 v1 of the API has been designed to built for use with the MTP Desktop Uploader. If you have feature requests for v2, please submit them on the forum.
 {% endhint %}
 
+### Outh Applications
+
+
+
 ### Base URL
 
 {% embed url="https://mtp.trekview.org/api/v1/" %}
@@ -55,6 +59,8 @@ The client ID generated when creating the application on Map the Paths Web. Crea
 ```text
 curl --location --request GET 'https://mtp.trekview.org/api/v1/authorize?client_id=98fgjsjduf89388&client_id%3E&response_type=token'
 ```
+
+To create an app
 
 
 
