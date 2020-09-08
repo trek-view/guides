@@ -14,7 +14,7 @@ For example, if you take photos of a local park as a series of individual time l
 
 ### Create
 
-To create new tours.
+To create new Tours:
 
 #### **1. Select create**
 

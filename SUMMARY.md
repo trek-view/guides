@@ -24,7 +24,7 @@
     * [Tours](mtp-web/user-guide/sequences/tours.md)
     * [Browse](mtp-web/user-guide/sequences/browse.md)
   * [Guidebooks](mtp-web/user-guide/guidebooks/README.md)
-    * [Create](mtp-web/user-guide/guidebooks/create.md)
+    * [Curate](mtp-web/user-guide/guidebooks/curate.md)
   * [Leaderboards](mtp-web/user-guide/leaderboards.md)
   * [Hire](mtp-web/user-guide/hire.md)
 * [Developer Docs](mtp-web/developer-docs/README.md)

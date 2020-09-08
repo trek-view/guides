@@ -6,5 +6,5 @@ description: >-
 
 # Guidebooks
 
-{% page-ref page="create.md" %}
+{% page-ref page="curate.md" %}
 
