@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Hello!](README.md)
+* [Hello, Trekker!](README.md)
 
 ## Trek Pack
 

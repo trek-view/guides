@@ -2,7 +2,7 @@
 description: Welcome to the Trek View product documentation.
 ---
 
-# Hello!
+# Hello, Trekker!
 
 Choose a product to view its documentation:
 
@@ -14,7 +14,7 @@ Join the Trek View Campfire, our community support forum:
 
 **Help improve these docs**
 
-You can click the "Edit on Github" to contribute updates or improvements to the documents if needed.
+You can click the "Edit on Github" on each page to contribute updates or improvements to the documentation if needed.
 
 The repository that powers this documentation can be viewed in full on Github here:
 
