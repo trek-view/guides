@@ -2,7 +2,7 @@
 description: Getting started with the Trek Pack v1...
 ---
 
-# Version 1
+# Version 1 \(GoPro Fusion\)
 
 {% hint style="warning" %}
 [**The Trek Pack v2 is now available \(June 2020\). Click here for more information.**](https://app.gitbook.com/@dgreenwood-trekview/s/trek-view/~/drafts/-MGZS3QJdkKSR1bua7Ub/trek-pack/v2)**​**​

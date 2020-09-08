@@ -1,0 +1,92 @@
+---
+description: Learn more about the MTP concept and their relationships to each other...
+---
+
+# Functions
+
+### Relationships
+
+![MTP Relationships](../../.gitbook/assets/explorer-v2-diagrams-3-.jpg)
+
+### Core Concepts
+
+#### Photos
+
+Photos are street-level images of a location.
+
+* Photo belongs to 1 user
+* Photo belongs to 1 sequence
+* Photo has viewpoint count
+  * Any user \(except owner can mark TRUE/FALSE\)
+* Photo has &gt;=0 object tags
+  * Mapillary object tags
+  * MTP object tags
+* [Photo has linked Mapillary photo record](https://www.mapillary.com/developer/api-documentation/#images)
+
+#### Sequences
+
+Sequences are collections of photos continuously captured by a user at a given location.
+
+* Sequence belongs to 1 user
+* Sequence has &gt;= 1 photos
+* Sequence has like count
+  * Any user \(except owner can mark TRUE/FALSE\)
+* Sequence can belong to 1 or more Tour owned by Sequence owner
+* Sequence object has metadata:
+  * A title
+  * A description \(optional\)
+  * A transport type \(parent / child\)
+  * &gt;=0 descriptive tags
+  * Camera make
+  * Captured date
+  * Created date \(uploaded to Mapillary\)
+  * [Mapillary Sequence key](https://www.mapillary.com/developer/api-documentation/#sequences)
+  * Coordinate properties
+    * Mapillary Photo keys
+  * Is panorama
+
+**Tours**
+
+ Tours are collections of Sequences that have some relationship curated by Sequence owner. 
+
+* Tour belongs to 1 user
+* Tour has &gt;= 1 sequences
+  * Sequence must belong to tour creator
+* Tour has like count
+  * Any user \(except owner can mark TRUE/FALSE\)
+* Tour has
+  * A title
+  * A description \(optional\)
+  * &gt;=0 descriptive tags
+
+**Guidebooks**
+
+Guidebooks are collections of any Mapillary photos with annotations to provide more information.
+
+* Guidebook belongs to 1 user
+* Guidebook has &gt;= 1 photos
+  * Photo does not need to belong to imported MTP sequence. Can be any Mapillary image
+* Guidebook has like count
+  * Any user \(except owner can mark TRUE/FALSE\)
+* Guidebook has &gt;=0 descriptive tags
+
+**Leaderboard**
+
+Leaderboard count Photos uploaded.
+
+By default there is a global username that counts photos based on time and transport type filters applied.
+
+When user creates Challenge a "fixed" Leaderboard with time, location and transport type filter automatically applied.
+
+Challenges
+
+A challenge encourages user to capture photos in certain conditions.
+
+
+
+* Hire: Find paid help for image collection projects to create fresh street level map data in locations where it's needed for Google Street View, Mapillary, and more...
+
+
+
+
+

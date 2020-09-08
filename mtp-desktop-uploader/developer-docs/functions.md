@@ -891,7 +891,7 @@ As they add new integrations, that information is also synced with MTPW.
 
 For example, if user uploads to Mapillary, all the Mapillary metadata associated with that sequence is shared with MTPW. [Here is a visual example of this demo flow.](integrations/mapillary.md#mtpw-sync)
 
-You should see [MTPW API documentation](../../mtp-web/api.md#base-url) and specific [MTPDU Integrations](integrations/) for more specific information about what data is synced.
+You should see [MTPW API documentation](../../mtp-web/developer-docs/api.md#base-url) and specific [MTPDU Integrations](integrations/) for more specific information about what data is synced.
 
 ### 22. Other useful/additional information
 

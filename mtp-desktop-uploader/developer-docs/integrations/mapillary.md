@@ -75,5 +75,5 @@ The process works in three parts:
 2. Send Mapillary OAuth token to MTPW. In order for MTPW to communicate with Mapillary, it needs a copy of the Mapillary OAuth token. This can be sent using the `api/v1/mapillary/token/verify` endpoint using `mapillary_token` value.
 3. Now the required MTPDU and Mapillary sequence data can be submitted to MTPW. This can be sent using the `/api/v1/sequence/import` endpoint by including: `sequence_key` \(Mapillary\), `name` \(MTPDU\), `description` \(MTPDU\), `transport_type` \(MTPDU\), `tags` \(MTPDU\)
 
-[View the full MTPW API Docs here.](../../../mtp-web/api.md)
+[View the full MTPW API Docs here.](../../../mtp-web/developer-docs/api.md)
 

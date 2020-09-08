@@ -2,7 +2,7 @@
 description: Getting started with the Trek Pack v2...
 ---
 
-# Version 2
+# Version 2 \(GoPro MAX\)
 
 Version 2.0 \(last updated: July 2020\)
 
