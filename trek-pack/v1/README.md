@@ -12,7 +12,7 @@ Version 1.0 \(last updated: July 2019\)
 
 A backpack mounted 360-degree camera system designed to capture stunning 360-degree Street View tours in all terrains.
 
-{% page-ref page="overview.md" %}
+{% page-ref page="about.md" %}
 
 {% page-ref page="kit-setup.md" %}
 

@@ -5,11 +5,11 @@
 ## Trek Pack
 
 * [Version 1 \(GoPro Fusion\)](trek-pack/v1/README.md)
-  * [Overview](trek-pack/v1/overview.md)
+  * [About](trek-pack/v1/about.md)
   * [Kit Setup](trek-pack/v1/kit-setup.md)
   * [Shooting](trek-pack/v1/shooting.md)
 * [Version 2 \(GoPro MAX\)](trek-pack/v2/README.md)
-  * [Overview](trek-pack/v2/overview.md)
+  * [About](trek-pack/v2/about.md)
   * [The Kit](trek-pack/v2/the-kit.md)
   * [Kit Setup](trek-pack/v2/kit-setup.md)
   * [Shooting](trek-pack/v2/shooting.md)

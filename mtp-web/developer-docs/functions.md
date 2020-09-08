@@ -72,21 +72,26 @@ Guidebooks are collections of any Mapillary photos with annotations to provide m
 
 **Leaderboard**
 
-Leaderboard count Photos uploaded.
+Leaderboards show users 
 
-By default there is a global username that counts photos based on time and transport type filters applied.
+* Leaderboards have two types
+  * Photos uploaded \(by user\): counts number of photos uploaded by user
+  * Viewpoints recieved \(by user\): counts number of viewpoints user
+* Leaderboards have filters
+  * By transport type \(parent/child\)
+  * By camera make \(make/model\)
+  * By date
+* Leaderboards can be
+  * Global: considers all photos and has filters any user can modify
+  * Challenges: are fixed and related to settings defined when challenge was created \(no filters for user\)
 
-When user creates Challenge a "fixed" Leaderboard with time, location and transport type filter automatically applied.
+**Challenges**
 
-Challenges
+A challenge encourages user to capture photos in a defined location, and/or using a defined transport type,  and/or using a defined camera over a defined time period.
 
-A challenge encourages user to capture photos in certain conditions.
+**Hire**
 
+Any user can create a for hire listing to promote their paid street-level mapping services.
 
-
-* Hire: Find paid help for image collection projects to create fresh street level map data in locations where it's needed for Google Street View, Mapillary, and more...
-
-
-
-
+Hire listings are owned by user, but have no relationship to any other objects.
 
