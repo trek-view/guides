@@ -74,7 +74,7 @@ You can continue adding Scenes in the same way to your Guidebook until you're re
 
 #### 4. Manage Guidebook
 
-
+![MTP unpublish tour](../../../.gitbook/assets/12c51aa1-40e6-4835-ac6c-8d44e3a82035.png)
 
 Guidebook select "Publish Now".
 
