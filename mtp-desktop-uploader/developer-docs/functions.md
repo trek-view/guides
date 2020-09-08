@@ -350,7 +350,9 @@ Each image file should contain a `DateTimeOriginal` value \(e.g. 2020-08-02T11:0
 
 The GPS-image process first identified the images `DateTimeOriginal` value to find corresponding time record in `.gpx` file at second resolution. `GPSDateTime` is not used for track assignment, because it is assumed value does not exist or is corrupt.
 
-Matches are to second resolution. For example, `DateTimeOriginal=10:02:01:00023` and `<time>10:02:01:10288</time>` are considered a match. Whereas, `DateTimeOriginal=10:02:01:00023` and `<time>10:02:02:00000</time>` are not a match.
+Matches are to tenth-of-a-second resolution when `DateTimeOriginal` reports to this level of granularity. For example, `DateTimeOriginal=10:02:01:00023` and `<time>10:02:01:00288</time>` are considered a match. Whereas, `DateTimeOriginal=10:02:01:10023` and `<time>10:02:02:20023</time>` are not a match.
+
+Matches are to a second resolution when `DateTimeOriginal` reports to this level of granularity. For example, `DateTimeOriginal=10:02:01` and `<time>10:02:01:00288</time>` are considered a match. Whereas, `DateTimeOriginal=10:02:013` and `<time>10:02:02:20023</time>` are not a match.
 
 If multiple times in gpx trackpoints match `DateTimeOriginal` value, the first record is used to assign geotags to image.
 
