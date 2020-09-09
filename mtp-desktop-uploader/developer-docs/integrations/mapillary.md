@@ -52,7 +52,7 @@ Mapillary DOES NOT accept the following transport types
 
 [For the purpose of testing, you can call the API with query parameter "dry run" to tell the service not publish the session for real \(note that you still won't reach the session after the call\). The session will fail after a few weeks](https://www.mapillary.com/developer/api-documentation/#publish-an-upload-session).
 
-### **Store data**
+### **Get Mapillary Sequence ID**
 
 Unfortunately Mapillary does not provide the Sequence\_Key for an upload session in a response.
 
