@@ -48,7 +48,8 @@ Mapillary DOES NOT accept the following transport types
 2. User authenticates to Mapillary
 3. Create an upload session on Mapillary
 4. Upload the imagery to the upload session on Mapillary
-5. Publish the upload session on Mapillary
+   1. The app checks the status of the open upload session using the [open upload session endpoint](https://www.mapillary.com/developer/api-documentation/#the-open-upload-session-object).
+5. Publish the upload session on Mapillary \(by closing the upload session\)
 
 [For the purpose of testing, you can call the API with query parameter "dry run" to tell the service not publish the session for real \(note that you still won't reach the session after the call\). The session will fail after a few weeks](https://www.mapillary.com/developer/api-documentation/#publish-an-upload-session).
 
@@ -154,7 +155,7 @@ Mapillary sequence ID information gets synced to Map the Paths Web.
 The process works in three parts:
 
 1. Get MTPW token \(authentication must be enabled for this integration for MTPW sync to work. As such, app will already have MTPW token when user logged in when opening app\)
-2. Send Mapillary OAuth token to MTPW. In order for MTPW to communicate with Mapillary, it needs a copy of the Mapillary OAuth token. This can be sent using the `api/v1/mapillary/token/verify` endpoint using `mapillary_token` value.
+2. Send Mapillary OAuth token to MTPW. In order for MTPW to communicate with Mapillary, it needs a copy of the Mapillary OAuth token. This can be sent using the `api/v1/mapillary/token/verify` endpoint using users `mapillary_token` value.
 3. Now the required MTPDU and Mapillary sequence data can be submitted to MTPW. This can be sent using the `/api/v1/sequence/import` endpoint by including: `sequence_key` \(Mapillary\), `name` \(MTPDU\), `description` \(MTPDU\), `transport_type` \(MTPDU\), `tags` \(MTPDU\)
 
 [View the full MTPW API Docs here.](../../../mtp-web/developer-docs/api.md)
