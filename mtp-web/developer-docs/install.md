@@ -86,8 +86,8 @@ python manage.py runserver
 
 We host Map the Paths on Heroku. We use an auto-deployment pipeline from the Github repo:
 
-* Master branch \(master\): deploys to production `https://mtp.trekview.org`
-* Staging branch \(staging\): deploys to staging `https://map-the-paths-develop.herokuapp.com/`
+* Production branch \(`production`\): deploys to production `https://mtp.trekview.org`
+* Staging branch \(`staging`\): deploys to staging `https://map-the-paths-develop.herokuapp.com/`
 
 To deploy on your own Heroku environment.
 
@@ -99,5 +99,5 @@ To deploy on your own Heroku environment.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_heroku')
 ```
 
-4. Make sure Heroku environemental vars are set to match those listed in `config/setting_local.py5.` 5. Push code to Github
+4. Make sure Heroku environemental vars are set to match those listed in `config/setting_local.py.` 5. Push code to Github
 
