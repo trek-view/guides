@@ -29,6 +29,7 @@
   * [Profile](mtp-web/user-guide/profile/README.md)
     * [Hire](mtp-web/user-guide/profile/hire.md)
 * [Developer Docs](mtp-web/developer-docs/README.md)
+  * [Install](mtp-web/developer-docs/install.md)
   * [Functions](mtp-web/developer-docs/functions.md)
   * [API](mtp-web/developer-docs/api.md)
 

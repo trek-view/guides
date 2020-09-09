@@ -1,5 +1,5 @@
 ---
-description: Understand how MTPDU work...
+description: Understand how MTPDU works...
 ---
 
 # Functions
