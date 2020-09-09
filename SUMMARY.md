@@ -34,6 +34,7 @@
     * [Sequences](mtp-web/developer-docs/functions/sequences.md)
     * [Photos](mtp-web/developer-docs/functions/photos.md)
     * [Guidebooks](mtp-web/developer-docs/functions/guidebooks.md)
+    * [Leaderboards](mtp-web/developer-docs/functions/leaderboards.md)
   * [API](mtp-web/developer-docs/api.md)
 
 ## MTP Desktop Uploader
