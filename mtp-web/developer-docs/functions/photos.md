@@ -42,7 +42,7 @@ curl 'https://a.mapillary.com/v3/images/{image_key}/download_original?client_id=
 
 Returned photos are stored in an S3 bucket, defined using the `AWS_S3_MAPILLARY_BUCKET` variable.
 
-Photos are written to the bucket in the following structure: `/USERNAME/SEQUENCE_ID/PHOTO_N.jpg`
+Photos are written to the bucket in the following structure: `/sequences/USERNAME/SEQUENCE_KEY/PHOTO_KEY.jpg`
 
 This bucket is not currently used by the app, but is implemented as a backup \(in case Mapillary ceases operation\).
 
