@@ -30,7 +30,10 @@
     * [Hire](mtp-web/user-guide/profile/hire.md)
 * [Developer Docs](mtp-web/developer-docs/README.md)
   * [Install](mtp-web/developer-docs/install.md)
-  * [Functions](mtp-web/developer-docs/functions.md)
+  * [Objects](mtp-web/developer-docs/functions/README.md)
+    * [Photos](mtp-web/developer-docs/functions/photos.md)
+    * [Sequences](mtp-web/developer-docs/functions/sequences.md)
+    * [Tours](mtp-web/developer-docs/functions/tours.md)
   * [API](mtp-web/developer-docs/api.md)
 
 ## MTP Desktop Uploader
