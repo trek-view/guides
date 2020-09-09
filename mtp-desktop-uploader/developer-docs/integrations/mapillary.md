@@ -67,9 +67,9 @@ After the user obtains the oAuth token, the app makes an API call to [`https://a
 
 It is not possible to query the Mapillary API Search Sequence endpoint to find the Sequence Key of the Sequence uploaded:
 
-* user\_key: obtained in step one
-* start\_time: time of first photo in UTC uploaded in sequence \(`MAPCaptureTime`\)
-* end\_time: time of last photo in UTC uploaded in sequence \(`MAPCaptureTime`\)
+* `user_key`: obtained in step one
+* `start_time`: time of first photo in UTC uploaded in sequence \(`MAPCaptureTime`\)
+* `end_time`: time of last photo in UTC uploaded in sequence \(`MAPCaptureTime`\)
 
 We can now form a request: 
 

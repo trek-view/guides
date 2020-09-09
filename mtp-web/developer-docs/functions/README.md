@@ -13,18 +13,9 @@ description: Learn more about the MTP objects and their relationships to each ot
 * [Photos](photos.md)
 * [Sequences](sequences.md#overview)
   * [Tours](sequences.md#tours)
-* Guidebook
+* [Guidebooks](guidebooks.md)
 
-**Guidebooks**
-
-Guidebooks are collections of any Mapillary photos with annotations to provide more information.
-
-* Guidebook belongs to 1 user
-* Guidebook has &gt;= 1 photos
-  * Photo does not need to belong to imported MTP sequence. Can be any Mapillary image
-* Guidebook has like count
-  * Any user \(except owner can mark TRUE/FALSE\)
-* Guidebook has &gt;=0 descriptive tags
+\*\*\*\*
 
 **Leaderboard**
 
