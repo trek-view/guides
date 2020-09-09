@@ -266,3 +266,13 @@ Design decision: We use the `/v3/images endpoint` NOT `/v3/images_computeted` fo
 Design decision: We chose not to use a digital elevation to get altitude as many of these are paid services, and given Mapillary is free, we are happy to accept the trade-off for potentially reduced inaccuracy at this time.
 {% endhint %}
 
+### MTP object tags
+
+In addition to the objects imported from Mapillary via their API, user can also tag object manually in the Map the Paths using Mapillary JS.
+
+[Create tags example](https://bl.ocks.org/oscarlorentzon/94539cefc33296ab6f28e3a83ecdccf1) // [View tags example](https://bl.ocks.org/oscarlorentzon/04f46dcc3c1c08b8887ed681db0127c4)
+
+
+
+
+

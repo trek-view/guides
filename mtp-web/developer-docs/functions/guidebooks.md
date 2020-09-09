@@ -13,7 +13,11 @@ description: >-
   * Photo does not need to belong to imported MTP sequence. Can be any Mapillary image
 * Guidebook has like count
   * Any user \(except owner can mark TRUE/FALSE\)
-* Guidebook has &gt;=0 descriptive tags
+* Guidebook has 
+  * A title
+  * A description \(optional\)
+  * A category
+  * &gt;=0 descriptive tags
 
 ### Guidebook creation workflow
 
