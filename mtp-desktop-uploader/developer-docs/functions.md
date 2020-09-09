@@ -248,9 +248,21 @@ If the value shown above is missing in video EXIF, app assumes video is not geot
 
 [The app uses ffmpeg to break video into frames \(.jpg image files\)](https://github.com/trek-view/mtp-desktop-uploader/blob/develop/app/scripts/video.ts).
 
-At present we set a fixed extraction of 1 frame per second for performance reasons. We want to improve this resolution and it is on the roadmap.
+At present we set a fixed extraction of 1 frame per second.
 
-The app also extracts GPS telemetry during process of breaking video down into frames.
+The app also extracts GPS telemetry during process of breaking video down into frames. This is done using exiftool. Here is a sample command of how it's done:
+
+```text
+exiftool -ee -G3 VIDEO_7152.mp4 > VIDEO_7152_track_metadata.txt
+```
+
+This .txt file is also outputted into the `SEQUENCE_ID/originals` folder on Sequence creation.
+
+{% hint style="info" %}
+Design decision: we struggled with using ffmpeg and exiftool to extract telemetry tracks from some gpmf and camm files at sub-second resolution. [See this post for gmpf example where only ](https://www.trekview.org/blog/2020/metadata-exif-xmp-360-video-files/)on GPS Date time value is reported per second, but multiple lat/lons are reported per second. This is something on the roadmap to improve. If you have any suggestions, [please email me](https://www.trekview.org/contact/).
+{% endhint %}
+
+Design decision: we struggled with using ffmpeg and exiftool to extract telemetry tracks from some gpmf and camm files at sub-second resolution. [See this post for gmpf example where only ](https://www.trekview.org/blog/2020/metadata-exif-xmp-360-video-files/)on GPS Date time value is reported per second, but multiple lat/lons are reported per second. This is something on the roadmap to improve. If you have any suggestions, [please email me](https://www.trekview.org/contact/).
 
 When frames are extracted, the app then uses exiftool to inject the extracted metadata into the frames.
 
@@ -464,7 +476,9 @@ User can enter value between 1 and 20 seconds. For example, a value of 5 means 1
 
 It is not possible to always have exact times \(i.e. if user has timelapse of 6 seconds and selects 8 second spacing\), As such app assumes time must be &gt;= to value entered.
 
-We want to increase image resolution options \(e.g. more than one photo a second\) in later versions. This is on the roadmap.
+{% hint style="info" %}
+Design decision: We want to increase image resolution options \(e.g. more than one photo a second\) in later versions. This is on the roadmap. See video peo
+{% endhint %}
 
 When user inputs change, the logic of the calculation is as follows:
 

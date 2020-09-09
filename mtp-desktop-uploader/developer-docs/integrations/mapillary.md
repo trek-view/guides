@@ -54,12 +54,94 @@ Mapillary DOES NOT accept the following transport types
 
 ### **Store data**
 
+Unfortunately Mapillary does not provide the Sequence\_Key for an upload session in a response.
+
+Therefore we need to do a bit of filtering with the Mapillary Sequences endpoint to get this info:
+
+#### 1. Get upload user
+
+After the user obtains the oAuth token, the app makes an API call to [`https://a.mapillary.com/v3/me`](https://a.mapillary.com/v3/me) with the users token to get the caller's user\_key.
+
+#### 2. Request user sequences
+
+It is not possible to query the Mapillary API Search Sequence endpoint to find the Sequence Key of the Sequence uploaded:
+
+* user\_key: obtained in step one
+* start\_time: time of first photo in UTC uploaded in sequence
+* end\_time: time of last photo in UTC uploaded in sequence
+
+We can now form a request: 
+
+```text
+curl "https://a.mapillary.com/v3/sequences?userkeys=USER_KEY&start_time=TIME&end_time=TIMEclient_id=<YOUR_CLIENT_ID>"
+```
+
+This will return a response like:
+
+```text
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "camera_make": "Apple",
+        "captured_at": "2016-03-14T13:44:53.860Z",
+        "coordinateProperties": {
+          "cas": [
+            323.032,
+            320.892,
+            333.622,
+            329.948
+          ],
+          "image_keys": [
+            "LwrHXqFRN_pszCopTKHF_Q",
+            "Aufjv2hdCKwg9LySWWVSwg",
+            "QEVZ1tp-PmrwtqhSwdW9fQ",
+            "G_SIwxNcioYeutZuA8Rurw"
+          ]
+        },
+        "created_at": "2016-03-17T10:47:53.106Z",
+        "key": "LMlIPUNhaj24h_q9v4ArNw",
+        "pano": false,
+        "user_key": "AGfe-07BEJX0-kxpu9J3rA",
+        "username": "pierregeo"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            16.432958,
+            7.246497
+          ],
+          [
+            16.432955,
+            7.246567
+          ],
+          [
+            16.432971,
+            7.248372
+          ],
+          [
+            16.432976,
+            7.249027
+          ]
+        ]
+      }
+    }
+  ]
+}
+```
+
+Where `features.key` is the value of the Sequence Key we need to store.
+
+{% hint style="info" %}
+Design decision: theoretically it is possible a user has two sequences in different places with start and end times in the specified range. However, it was decided because such a scenario is VERY unlikely, we accepted the risk of such collisions.
+{% endhint %}
+
 Mapillary provides ongoing status of an [upload session](https://www.mapillary.com/developer/api-documentation/#the-open-upload-session-object), [including failures](https://www.mapillary.com/developer/api-documentation/#the-failed-upload-session-object).
 
-When an image and sequence is created, the MTPDU stores the Mapillary info for it as shown in linked JSON examples for:
-
-* [Sequences](https://www.mapillary.com/developer/api-documentation/#the-sequence-object)
-* [Images](https://www.mapillary.com/developer/api-documentation/#the-image-object)
+When an image and sequence is created, the MTPDU stores the Mapillary Sequence Key.
 
 ### **MTPW sync**
 

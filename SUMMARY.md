@@ -33,7 +33,6 @@
   * [Objects](mtp-web/developer-docs/functions/README.md)
     * [Sequences](mtp-web/developer-docs/functions/sequences.md)
     * [Photos](mtp-web/developer-docs/functions/photos.md)
-    * [Tours](mtp-web/developer-docs/functions/tours.md)
   * [API](mtp-web/developer-docs/api.md)
 
 ## MTP Desktop Uploader

@@ -10,11 +10,10 @@ description: Learn more about the MTP objects and their relationships to each ot
 
 ### Core Concepts
 
-#### 
-
-#### 
-
-\*\*\*\*
+* [Photos](photos.md)
+* [Sequences](sequences.md#overview)
+  * [Tours](sequences.md#tours)
+* Guidebook
 
 **Guidebooks**
 
