@@ -63,7 +63,7 @@ When an image and sequence is created, the MTPDU stores the Mapillary info for i
 
 ### **MTPW sync**
 
-![MTPDU, MTPW and Mapillary sycn](../../../.gitbook/assets/mtpu-mapillary-mtpw.png)
+![MTPDU, MTPW and Mapillary sycn](../../../.gitbook/assets/explorer-v2-diagrams-3-%20%281%29.jpg)
 
 Mapillary sequence ID information gets synced to Map the Paths Web. 
 
@@ -76,4 +76,6 @@ The process works in three parts:
 3. Now the required MTPDU and Mapillary sequence data can be submitted to MTPW. This can be sent using the `/api/v1/sequence/import` endpoint by including: `sequence_key` \(Mapillary\), `name` \(MTPDU\), `description` \(MTPDU\), `transport_type` \(MTPDU\), `tags` \(MTPDU\)
 
 [View the full MTPW API Docs here.](../../../mtp-web/developer-docs/api.md)
+
+[You can see the way the Sequence is then created on Map the Paths web here.](../../../mtp-web/developer-docs/functions/sequences.md)
 

@@ -31,8 +31,8 @@
 * [Developer Docs](mtp-web/developer-docs/README.md)
   * [Install](mtp-web/developer-docs/install.md)
   * [Objects](mtp-web/developer-docs/functions/README.md)
-    * [Photos](mtp-web/developer-docs/functions/photos.md)
     * [Sequences](mtp-web/developer-docs/functions/sequences.md)
+    * [Photos](mtp-web/developer-docs/functions/photos.md)
     * [Tours](mtp-web/developer-docs/functions/tours.md)
   * [API](mtp-web/developer-docs/api.md)
 
