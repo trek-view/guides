@@ -242,7 +242,7 @@ Object detections look like this:
 
 The app stores this data in the response for each photo.
 
-#### Get Mapillary Elevation data 
+#### Get Mapillary Elevation data
 
 Mapillary decided not to expose elevation under `/v3/images` . Because mentioned that altitude is not relative to sea level but relative to an arbitrary reference and therefore it can not be use altitude globally. So its values is not useful in general. 
 
@@ -262,5 +262,7 @@ The app stores only the elevation/altitude data in the response for each photo.
 Design decision: We use the `/v3/images endpoint` NOT `/v3/images_computeted` for most image data because this the `/v3/images_computeted` endpoint is not documented in the official docs, and we decided not to use it for fear it is removed
 {% endhint %}
 
-####  
+{% hint style="info" %}
+Design decision: We chose not to use a digital elevation to get altitude as many of these are paid services, and given Mapillary is free, we are happy to accept the trade-off for potentially reduced inaccuracy at this time.
+{% endhint %}
 
