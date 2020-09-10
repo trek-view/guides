@@ -236,6 +236,19 @@ Only one historical record is stored against the Sequence record. Put another wa
 Design decision: because most Sequence are &lt; 1 hour in duration and WeatherStack data has an hourly resolution, we do not see the point of querying the API for each image
 {% endhint %}
 
+Despite storing all weather data, currently we show the following values in UI;
+
+* `historical.astro.sunrise`
+* `historical.astro.sunset`
+* `historical.hourly.temperature`
+* `historical.hourly.wind_speed`
+* `historical.hourly.wind_dir`
+* `historical.hourly.weather_description + historical.hourly.weather_icons`
+* `historical.hourly.precip`
+* `historical.hourly.humidity`
+* `historical.hourly.cloudcover`
+* `historical.hourly.visibility`
+
 ### **Tours**
 
  Tours are collections of Sequences that have some relationship curated by Sequence owner. 

@@ -923,3 +923,7 @@ If user confirms exit of sequence they will be shown dialog "are you sure you wi
 
 User can delete all sequence data \(including image files\) on their computer.
 
+{% hint style="info" %}
+[Design note: this action does not currently delete any data from integrations.](https://github.com/trek-view/mtp-desktop-uploader/issues/75)
+{% endhint %}
+
