@@ -24,9 +24,11 @@ The `MTP_WEB_AUTH_URL=` allows you to change the MTPW server. In production this
 
 You can create an application in MTPW under developers. You can then use `CLIENT_ID` and `CLIENT_SECRET` generated in the web app in the `.env` file.
 
-Upon starting the app, if there is no valid authentication token, user will be prompted to authorise MTPDU to access their MTPW account.
+When user token obtained, it is stored in the app.
 
-MTPW OAuth tokens do not have any expiration time. The user can at any time revoke the token directly from their account settings page on MTPW.
+Upon starting the app, if there is no valid authentication token \(does not exist or gets unauthorized response\), user will be prompted to authorise MTPDU to access their MTPW account.
+
+MTPW OAuth tokens do not have any expiration time so typically last forever. However, the user can at any time manually revoke the token directly from their account settings page \(authorized apps\) on MTPW.
 
 For testing, or when MTPW is not required you can use these values blank and this authentication to MTPW will not be required in the app.
 
