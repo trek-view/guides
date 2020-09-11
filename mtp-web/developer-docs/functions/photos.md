@@ -333,7 +333,7 @@ Design decision: We chose not to use a digital elevation to get altitude as many
 
 In addition to the objects imported from Mapillary via their API, user can also tag object manually in the Map the Paths using Mapillary JS.
 
-[Create tags example](https://bl.ocks.org/oscarlorentzon/94539cefc33296ab6f28e3a83ecdccf1) // [View tags example](https://bl.ocks.org/oscarlorentzon/04f46dcc3c1c08b8887ed681db0127c4)
+MTP object tags are most similar to Mapillary Photo object data. That is, they are a geojson object that includes the geographic location of the image that contains the detection, but not the specific location of the detected object.
 
 Map the Paths Photo object tags have a Parent / Child relationship. For example:
 
@@ -347,6 +347,82 @@ Map the Paths Photo object tags have a Parent / Child relationship. For example:
   * Gravel
   * Sand
   * ...
+
+Object tags are either defined by
+
+* Admin: in Django admin panel
+* Users: when creating [Challenges](leaderboards/challenges.md)
+
+When tagging images, users can only select from defined Parent / Child tags.
+
+[Users can create tags using Mapillary JS](https://bl.ocks.org/oscarlorentzon/94539cefc33296ab6f28e3a83ecdccf1) as either:
+
+* Point: single co-ordinate in image
+* Rectangle: four co-ordinates in image
+* Polygon: two or more co-ordinates in image
+
+
+
+ [View tags example](https://bl.ocks.org/oscarlorentzon/04f46dcc3c1c08b8887ed681db0127c4)
+
+MTP object tags look like this:
+
+```text
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "area": 0.0010786056518554688,
+        "captured_at": "2020-02-03T10:22:50.000Z",
+        "image_key": "---wuOuOEBSdTC1FT_cOwA",
+        "key": "QKCxMqlOmNrHUoRTSrKBlg",
+        "shape": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                0.7685546875,
+                0.6494140625
+              ],
+              [
+                0.7939453125,
+                0.6494140625
+              ],
+              [
+                0.7939453125,
+                0.69189453125
+              ],
+              [
+                0.7685546875,
+                0.69189453125
+              ],
+              [
+                0.7685546875,
+                0.6494140625
+              ]
+            ]
+          ]
+        },
+        "value_parent": "tree",
+        "value_child": "oak",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.010694722222222,
+          55.59290138888889
+        ]
+      }
+    }
+  ]
+}
+```
+
+
+
+
 
 
 
