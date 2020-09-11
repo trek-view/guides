@@ -361,10 +361,6 @@ When tagging images, users can only select from defined Parent / Child tags.
 * Rectangle: four co-ordinates in image
 * Polygon: two or more co-ordinates in image
 
-
-
- [View tags example](https://bl.ocks.org/oscarlorentzon/04f46dcc3c1c08b8887ed681db0127c4)
-
 MTP object tags look like this:
 
 ```text

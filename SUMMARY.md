@@ -22,6 +22,7 @@
     * [Capture](mtp-web/user-guide/sequences/capture.md)
     * [Create](mtp-web/user-guide/sequences/create.md)
     * [Tours](mtp-web/user-guide/sequences/tours.md)
+  * [Photos](mtp-web/user-guide/photos.md)
   * [Guidebooks](mtp-web/user-guide/guidebooks/README.md)
     * [Curate](mtp-web/user-guide/guidebooks/curate.md)
   * [Leaderboards](mtp-web/user-guide/leaderboards/README.md)
