@@ -246,7 +246,7 @@ Object detections look like this:
 
 The app stores this data in the response for each photo.
 
-#### Get Mapillary features data
+#### Get Mapillary Photo features data
 
  Unlike the images and object detections APIs, the [map features API](https://www.mapillary.com/developer/api-documentation/#map-features) returns locations of objects as point features on the map extracted from multiple images, rather than the location of the images.
 
