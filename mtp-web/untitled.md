@@ -10,6 +10,7 @@ description: >-
 
 \[IMG\]
 
+* Photos: Photos are street-level images that belong to a Sequence
 * Sequences: Sequences are collections of images continuously captured by a user at a give time. Browse those created by others, or import your own from Mapillary.
 * Tours: Tours are collections of sequences that have been curated by their owner. Browse others' tours or create one using your own sequences.
 * Guidebooks: Create a guidebook of street-level photos to show people around a location. View others people have created to help plan your next adventure.
