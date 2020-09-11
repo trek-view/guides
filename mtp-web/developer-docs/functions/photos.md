@@ -355,11 +355,7 @@ Object tags are either defined by
 
 When tagging images, users can only select from defined Parent / Child tags.
 
-[Users can create tags using Mapillary JS](https://bl.ocks.org/oscarlorentzon/94539cefc33296ab6f28e3a83ecdccf1) as either:
-
-* Point: single co-ordinate in image
-* Rectangle: four co-ordinates in image
-* Polygon: two or more co-ordinates in image
+[Users can create tags using Mapillary JS](https://bl.ocks.org/oscarlorentzon/94539cefc33296ab6f28e3a83ecdccf1) as a polygon \(two or more co-ordinates in image\).
 
 MTP object tags look like this:
 

@@ -23,13 +23,15 @@ There are two types of photo tags you will come across in Map the Paths Web:
 
 When in Photo view, you will see all object tags \(both Mapillary and MTP tags\) in the sidebar. Clicking a tag will highlight that object\(s\) in the photo viewer.
 
-### Creating MTP Object tags
+### Mark MTP Object
 
-You might notice objects that have not been tagged in an image
+\[ADD image\]
 
-### Challenges and MTP Object tags
+You might notice objects that have not been tagged in an image. In which case, you can add them youself.
 
+To do this select Add Tag and draw the tag using the polygon creation tool.
 
+Once the Polygon has been drawn, select the parent tag category and the associated child tag.
 
-h
+If you don't see the type of tag you want to add, [you can create a Challenge](../challenges/). This will not only add the tag to our tag database, but also encourage others to use this tag across all Map the Paths imagery.
 
