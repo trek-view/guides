@@ -20,7 +20,7 @@ Photos are created when a sequence is imported. All photos that belong to create
 
 The sequence records contains all Mapillary photo keys needed for import. The Mapillary authentication in either MTP Web or the Desktop Uploader provides user Mapillary Tokens.
 
-![](../../../.gitbook/assets/explorer-v2-diagrams-1-.jpg)
+![MTP Sequence creation workflow](../../../.gitbook/assets/explorer-v2-diagrams-4-.jpg)
 
 When a Sequence is created either using the MTP Web UI to import a sequence OR using the MTP Desktop Uploader the following happens:
 
@@ -134,7 +134,7 @@ Object detections are grouped into the following layers by Mapillary:
 
 As you can only call one object layer at a time, 3 API calls are required for each layer.
 
-Example request \(trafficsigns\):
+Example request \(`trafficsigns`\):
 
 ```text
 curl "https://a.mapillary.com/v3/object_detections/trafficsigns?image_keys=QKCxMqlOmNrHUoRTSrKBlg,cCkQ6Fd9Nigw5EYV8qWEIw&per_page=2&client_id={mtp_client_id}
@@ -252,15 +252,15 @@ The app stores this data in the response for each photo.
 
 Each of these points is extracted from a composite of multiple images, and represents the predicted location of that object on the map.
 
-Map features are groupped into the following layers:
+Map features are grouped into the following layers:
 
-1. `trafficsigns`: [Traffic signs](https://www.mapillary.com/developer/api-documentation/#traffic-signs) that are recognized from [`trafficsigns`](https://www.mapillary.com/developer/api-documentation/#object-detection-layers) detections.
-2. `points`: [Point features](https://www.mapillary.com/developer/api-documentation/#points) that are recognized from [`instances`](https://www.mapillary.com/developer/api-documentation/#object-detection-layers) detections.
-3. `lines`: [Line features](https://www.mapillary.com/developer/api-documentation/#lines) that are recognized from [`segmentations`](https://www.mapillary.com/developer/api-documentation/#object-detection-layers) detections.
+1. `trafficsigns`: [Traffic signs](https://www.mapillary.com/developer/api-documentation/#traffic-signs) that are recognised from [`trafficsigns`](https://www.mapillary.com/developer/api-documentation/#object-detection-layers) detections.
+2. `points`: [Point features](https://www.mapillary.com/developer/api-documentation/#points) that are recognised from [`instances`](https://www.mapillary.com/developer/api-documentation/#object-detection-layers) detections.
+3. `lines`: [Line features](https://www.mapillary.com/developer/api-documentation/#lines) that are recognised from [`segmentations`](https://www.mapillary.com/developer/api-documentation/#object-detection-layers) detections.
 
 As you can only call one object layer at a time, 3 API calls are required for each layer.
 
-Example request \(trafficsigns\):
+Example request \(`trafficsigns`\):
 
 ```text
 curl "https://a.mapillary.com/v3/map_features?layers=trafficsignsimage_keys=QKCxMqlOmNrHUoRTSrKBlg&per_page=2&client_id={mtp_client_id}
@@ -334,6 +334,19 @@ Design decision: We chose not to use a digital elevation to get altitude as many
 In addition to the objects imported from Mapillary via their API, user can also tag object manually in the Map the Paths using Mapillary JS.
 
 [Create tags example](https://bl.ocks.org/oscarlorentzon/94539cefc33296ab6f28e3a83ecdccf1) // [View tags example](https://bl.ocks.org/oscarlorentzon/04f46dcc3c1c08b8887ed681db0127c4)
+
+Map the Paths Photo object tags have a Parent / Child relationship. For example:
+
+* Tree
+  * Oak
+  * Pine
+  * Fir
+  * ...
+* Surface
+  * Concrete
+  * Gravel
+  * Sand
+  * ...
 
 
 
