@@ -120,6 +120,10 @@ We should pass the computed\_coordinates
 
 #### Get Mapillary Photo object data
 
+The [object detections API](https://www.mapillary.com/developer/api-documentation/#object-detections) offers a way to query by the content of images. Each returned item is an object detection, and not an image. A search for sidewalks, for example, may yield several unique detections from different sections of the same image, and will have the same geographic coordinates, but unique pixel coordinates.
+
+The API returns a geojson response that includes the geographic location of the image that contains the detection, but not the specific location of the detected object.
+
 Object detections are grouped into the following layers by Mapillary:
 
 1. `trafficsigns`: [Traffic signs](https://www.mapillary.com/developer/api-documentation/#traffic-signs).
@@ -234,6 +238,65 @@ Object detections look like this:
           13.028564168169062,
           55.609431307916076
         ]
+      }
+    }
+  ]
+}
+```
+
+The app stores this data in the response for each photo.
+
+#### Get Mapillary features data
+
+ Unlike the images and object detections APIs, the [map features API](https://www.mapillary.com/developer/api-documentation/#map-features) returns locations of objects as point features on the map extracted from multiple images, rather than the location of the images.
+
+Each of these points is extracted from a composite of multiple images, and represents the predicted location of that object on the map.
+
+Map features are groupped into the following layers:
+
+1. `trafficsigns`: [Traffic signs](https://www.mapillary.com/developer/api-documentation/#traffic-signs) that are recognized from [`trafficsigns`](https://www.mapillary.com/developer/api-documentation/#object-detection-layers) detections.
+2. `points`: [Point features](https://www.mapillary.com/developer/api-documentation/#points) that are recognized from [`instances`](https://www.mapillary.com/developer/api-documentation/#object-detection-layers) detections.
+3. `lines`: [Line features](https://www.mapillary.com/developer/api-documentation/#lines) that are recognized from [`segmentations`](https://www.mapillary.com/developer/api-documentation/#object-detection-layers) detections.
+
+As you can only call one object layer at a time, 3 API calls are required for each layer.
+
+Example request \(trafficsigns\):
+
+```text
+curl "https://a.mapillary.com/v3/map_features?layers=trafficsignsimage_keys=QKCxMqlOmNrHUoRTSrKBlg&per_page=2&client_id={mtp_client_id}
+```
+
+Example response
+
+```text
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": 4.3415914,
+        "altitude": 2.1636841,
+        "detections": [
+          {
+            "detection_key": "o8kc5kth6o7m4f5eosebin7od5",
+            "image_key": "QKCxMqlOmNrHUoRTSrKBlg",
+            "user_key": "_uRM8qupUR4FRNv8sqKR-Q"
+          }
+        ],
+        "direction": 335.4141,
+        "first_seen_at": "2015-07-25T20:01:43.850Z",
+        "key": "8yfe7htuqtcd2vrjsxucidqkpl",
+        "last_seen_at": "2015-08-08T10:49:33.648Z",
+        "layer": "trafficsigns",
+        "value": "information--general-directions--g1"
+      },
+      "geometry": {
+        "coordinates": [
+          12.947682161708746,
+          55.5526863536443
+        ],
+        "type": "Point"
       }
     }
   ]
