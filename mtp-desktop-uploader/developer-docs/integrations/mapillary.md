@@ -12,21 +12,45 @@ The Mapillary API lets you interact with Mapillary on the behalf of a user. [Thi
 
 You need to create a Mapillary App. [Mapillary applications can be created here](https://www.mapillary.com/dashboard/developers).
 
-![Mapillary register app](../../../.gitbook/assets/mapillary-register-app.png)
+![Register Mapillary App](../../../.gitbook/assets/44fa3e4e-7e74-4401-8dda-33c1a6fcf0ad.png)
 
-Most options can be set as desired, but the callback user must match that specified in the `.env` file.
+You must set the following:
 
-Enable all scopes \("allow this application to"\).
+* Callback URL: `app.mtp.desktop//app`
+* Allow this application to: `user:email`, `user:read`, `user:write`, `public:write`, `public:upload`
 
-You can place your Mapillary application information in the `.env` file once created under the values:
+All other settings can be configured as you like.
+
+Once you click save, the app will be assigned a client id and client secret. Add these to the .env file, along with the callback URL you just set. Here is a sample:
 
 ```text
-MAPILLARY_APP_ID=
-MAPILLARY_SECRET=
-MAPILLARY_REDIRECT_URI=
+MAPILLARY_APP_ID=ABCDEFGHIJK123
+MAPILLARY_SECRET=ZYX987654321
+MAPILLARY_REDIRECT_URI=app.mtp.desktop//app
 ```
 
-### **Upload images**
+If any of these values are not present in `.env` file, user will not be able to view the Mapillary integration in UI.
+
+### **Workflow**
+
+[There are 8 steps to upload imagery to Mapillary](https://www.mapillary.com/developer/api-documentation/#uploading-imagery) using MTPDU:
+
+1. Prepare the imagery for uploading
+2. User authenticates to Mapillary
+3. Create an upload session on Mapillary
+4. Upload the imagery to the upload session on Mapillary
+5. Publish the upload session on Mapillary \(by closing the upload session\)
+6. Check for upload session for errors
+7. Get Mapillary sequence key
+8. MTPW Sync
+
+[For the purpose of testing, you can call the API with query parameter "dry run" to tell the service not publish the session for real \(note that you still won't reach the session after the call\). The session will fail after a few weeks](https://www.mapillary.com/developer/api-documentation/#publish-an-upload-session).
+
+### 1. Prepare the imagery for uploading
+
+This is already done by the app in `ImageDescription` of images\) on MTPDU \([see here](../functions.md#21-2-imagedescription-json-object)\).
+
+#### 1.1 Validate accepted images
 
 Mapillary is based on a very similar structure to Map the Paths with [Sequences](https://www.mapillary.com/developer/api-documentation/#sequences) and [Images](https://www.mapillary.com/developer/api-documentation/#images).
 
@@ -42,28 +66,53 @@ Mapillary DOES NOT accept the following transport types
 * Air
   * All child elements
 
-[There are 4 steps to upload imagery to Mapillary](https://www.mapillary.com/developer/api-documentation/#uploading-imagery):
+If Sequence is Air transport type, user will not see Mapillary integration.
 
-1. Prepare the imagery for uploading \(this is already done by the app in `ImageDescription` of images\) on MTPDU \([see here](../functions.md#21-2-imagedescription-json-object)\)
-2. User authenticates to Mapillary
-3. Create an upload session on Mapillary
-4. Upload the imagery to the upload session on Mapillary
-   1. The app checks the status of the open upload session using the [open upload session endpoint](https://www.mapillary.com/developer/api-documentation/#the-open-upload-session-object).
-5. Publish the upload session on Mapillary \(by closing the upload session\)
+### 2. User authenticates to Mapillary
 
-[For the purpose of testing, you can call the API with query parameter "dry run" to tell the service not publish the session for real \(note that you still won't reach the session after the call\). The session will fail after a few weeks](https://www.mapillary.com/developer/api-documentation/#publish-an-upload-session).
+When a user tries to upload images to Mapillary, they will grant the app access to act on their behalf \(see setup\).
 
-### **Get Mapillary Sequence ID**
+![Mapillary grant window](../../../.gitbook/assets/mapillary-grant.png)
+
+When they click integrate/authenticate to Mapillary at integrations step it will open a browser window for user to authorise your app. If user clicks authorise, the browser will redirect the user \(and token generated\) back to the MTP app \(using callback URL\).
+
+[Mapillary user tokens do not expire \(but user can revoke token\)](https://www.mapillary.com/developer/api-documentation/#oauth). As such, MTPDU stores the user token. If valid Mapillary token exists \(does not return unauthorised response\), user will not need to perform this step again. If no token or invalid token, user will need to perform this step again.
+
+### 3. Create an upload session on Mapillary
+
+[This process is described in the Mapillary API docs here.](https://www.mapillary.com/developer/api-documentation/#create-an-upload-session)
+
+### 4. Upload the imagery to the upload session on Mapillary
+
+[This process is described in the Mapillary API docs here.](https://www.mapillary.com/developer/api-documentation/#upload-imagery)
+
+### 5. Publish the upload session on Mapillary \(by closing the upload session\)
+
+[This process is described in the Mapillary API docs here.](https://www.mapillary.com/developer/api-documentation/#publish-an-upload-session)
+
+### 6. Check for upload session for errors
+
+Once an upload session gets published, you will not be able to find this session any more as it's moved for processing, unless it fails as a failed session.
+
+[The app checks for a failed upload session using the get an upload session endpoint.](https://www.mapillary.com/developer/api-documentation/#get-an-upload-session)
+
+This endpoint will only return failed sessions. If the sequence has not encountered any errors during the publishing workflow, you will not see it listed here.
+
+If a failed upload session occurs, user will see a failed message \(either during upload process, or in sequence list\), and Mapillary integration will be removed from Sequence record. The user will then be able to re-upload the Sequences to Mapillary at a later time if they choose too.
+
+### **7. Get Mapillary Sequence ID**
 
 Unfortunately Mapillary does not provide the Sequence\_Key for an upload session in a response.
 
 Therefore we need to do a bit of filtering with the Mapillary Sequences endpoint to get this info:
 
-#### 1. Get upload user
+#### 7.1. Get upload user
 
-After the user obtains the oAuth token, the app makes an API call to [`https://a.mapillary.com/v3/me`](https://a.mapillary.com/v3/me) with the users token to get the caller's user\_key.
+After the user obtains the oAuth token, the app makes an API call to [`https://a.mapillary.com/v3/me`](https://a.mapillary.com/v3/me) with the users token to get the caller's `user_key`.
 
-#### 2. Request user sequences
+The `user_key` is then stored in app.
+
+#### 7.2. Request user sequences
 
 It is not possible to query the Mapillary API Search Sequence endpoint to find the Sequence Key of the Sequence uploaded:
 
@@ -140,11 +189,13 @@ Where `features.key` is the value of the Sequence Key we need to store.
 Design decision: theoretically it is possible a user has two sequences in different places with start and end times in the specified range. However, it was decided because such a scenario is VERY unlikely, we accepted the risk of such collisions.
 {% endhint %}
 
-Mapillary provides ongoing status of an [upload session](https://www.mapillary.com/developer/api-documentation/#the-open-upload-session-object), [including failures](https://www.mapillary.com/developer/api-documentation/#the-failed-upload-session-object).
+It can take up to 72 hours for a Sequences to be published, and thus a response to appear from this request.
 
-When an image and sequence is created, the MTPDU stores the Mapillary Sequence Key.
+If the app makes a query to this endpoint and an empty response is returned, the app keeps the sequence in Mapillary unpublished state.
 
-### **MTPW sync**
+Each time the user opens the app and there is a Sequence with a Mapillary unpublished state, step 6 \(check for upload session errors\) is triggered again.
+
+### **8. MTPW sync**
 
 ![MTPDU, MTPW and Mapillary sycn](../../../.gitbook/assets/explorer-v2-diagrams-3-%20%281%29.jpg)
 
@@ -160,5 +211,5 @@ The process works in three parts:
 
 [View the full MTPW API Docs here.](../../../mtp-web/developer-docs/api.md)
 
-[You can see the way the Sequence is then created on Map the Paths web here.](../../../mtp-web/developer-docs/functions/sequences.md)
+[For reference, you can see the way the Sequence is then created on Map the Paths web here.](../../../mtp-web/developer-docs/functions/sequences.md)
 
