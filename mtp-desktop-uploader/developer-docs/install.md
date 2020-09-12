@@ -55,18 +55,6 @@ Add the Mapbox token in `.env` against this key:
 MAPBOX_TOKEN=
 ```
 
-**Font Awesome**
-
-You must enter a Font Awesome Kit in the new `.env` file for MTPDU to work.
-
-[Create a Font Awesome Kit here](https://fontawesome.com/kits). [Font Awesome has a free and paid tier](https://fontawesome.com/plans). If you select the free tier, [you will be limited to free icons only](https://fontawesome.com/icons?d=gallery&m=free).
-
-Add the Font Awesome Kit in `.env` against this key:
-
-```text
-FONT_AWESOME_KIT=
-```
-
 **Other key=values**
 
 The other key/values in the `.env` file \(e.g. `MTP_WEB_APP_ID=`\) perform non-essential functions described in the App Functions section of this wiki.

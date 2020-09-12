@@ -101,25 +101,35 @@ User first selects parent type.
 
 Transport types are modularised and can be modified in `ROOT/transports/transport-methods.json`.
 
-An excerpt of the parent \(Powered\) and child \(Car\) transport type is shown below....
+An excerpt of the parent \(`Powered`\) and children \(`Car` and **Electric Car**\) transport types are shown below.
+
+Icons assigned to methods and types are sourced from Font Awesome.
+
+We currently implement the free version of Font Awesome icons. [You must use a free Font Awesome icon](https://fontawesome.com/icons?m=free) for the type under `"icon"` value.
 
 ```text
-  {
-    "parent_type": "Powered",
-    "parent_icon": "LocalGasStation",
-    "parent_description": "",
-    "parent_children": [
+{
+  "Powered": {
+    "type": "Powered",
+    "icon": "fas fa-bus",
+    "description": "",
+    "children": [
       {
-        "child_type": "Car",
-        "child_icon": "LocalGasStation",
-        "child_description": "",
-        "child_secondary_parent": "Land"
+        "type": "Car",
+        "icon": "fas fa-car",
+        "description": "",
+        "secondary_parent": "Land"
+      },
+      {
+        "type": "Electric Car",
+        "icon": "fas fa-charging-station",
+        "description": "",
+        "secondary_parent": "Land"
       }
     ]
   }
+}
 ```
-
-Icons assigned to methods and types are sourced from [Material Icons](https://material-ui.com/components/material-icons/).
 
 ### 7. Add transport type \(child\)
 
