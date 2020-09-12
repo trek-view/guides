@@ -740,7 +740,7 @@ Integrations are modularised in `ROOT/integrations/`.
 
 Note, some integrations only support certain types of images. These are based on:
 
-* projection type: for example some integrations only suppor 360 images \(equirectangular images\)
+* projection type: for example some integrations only support 360 images \(equirectangular images\)
 * transport type: for example some integrations only support images taken on the ground \(i.e. not method=air\)
 
 This information is defined in integration module config. The UI of the app will not show user an integration if the image projection and/or transport type of images in their sequence is not supported by that integration.
@@ -748,6 +748,13 @@ This information is defined in integration module config. The UI of the app will
 The integrations step can be performed in the create sequence workflow, at this stage of the tour creation flow. If user does not upload to integration during the create sequence workflow \(it is optional\), they can select upload to integration on sequence list view at a later date. At which stage they are redirected to integration authenticate screen.
 
 User can select multiple integrations. For example, once Mapillary Oauth granted, goes back to integrations screen showing Mapillary selected but also shows option to add other destinations \(e.g Google Street View\). User can also unselect a destination on this screen if they change their mind.
+
+If  `final_nadir` directory:
+
+* exists, these images are uploaded to integrations
+* else, upload `final_original` images
+
+`final_blur` directory is never synced with integrations \(even if it exists\).
 
 App retries to upload image 3 times, then return error and move to next image.
 
