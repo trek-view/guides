@@ -726,13 +726,7 @@ At the final stage of the process, user can also choose to upload their imagery 
 
 Integrations are modularised in `ROOT/integrations/`.
 
-Each integration has its own directory using the naming convention `INTEGRATION_NAME`.
-
-Inside each directory is the logic for the module.
-
-The app currently supports the following integrations:
-
-* Mapillary
+[More information about building new integrations can be read in the in the integrations section of the docs here.](integrations/)
 
 Note, some integrations only support certain types of images. These are based on:
 
