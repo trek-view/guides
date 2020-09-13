@@ -48,8 +48,6 @@ If any of these values are not present in `.env` file, user will not be able to 
 
 ![MTPDU to Mapillary Sync](../../../.gitbook/assets/mapillary-sync-ui.jpg)
 
-![MTPDU to Mapillary to MTPW Sync](../../../.gitbook/assets/mapillary-sync-ui-1-.jpg)
-
 
 
 ### 1. Prepare the imagery for uploading
@@ -203,15 +201,19 @@ Each time the user opens the app and there is a Sequence with a Mapillary unpubl
 
 ### **8. MTPW sync**
 
-Mapillary sequence ID information gets synced to Map the Paths Web alongside MTPDU sequence information.
+![MTPDU to Mapillary to MTPW Sync](../../../.gitbook/assets/mapillary-sync-ui-5-.jpg)
+
+Mapillary sequence ID information gets synced to Map the Paths Web[ alongside MTPDU sequence information uploaded during MTPW integration.](map-the-paths-web.md)
 
 [This is an automated version of the manual import sequence function in the MTPW UI. I strongly recommend testing how the manual process works here](https://mtp.trekview.org/sequence/import-sequence-list).
+
+Note, this is an overwrite action. If Mapillary sequence key already exists in MTPW DB, this record will be overwritten with new data.
 
 The process works in three parts:
 
 1. Get MTPW token \(authentication must be enabled for this integration for MTPW sync to work. As such, app will already have MTPW token when user logged in when opening app\)
-2. Send Mapillary OAuth token to MTPW. In order for MTPW to communicate with Mapillary, it needs a copy of the Mapillary OAuth token. This can be sent using the `api/v1/mapillary/token/verify` endpoint using users `mapillary_token` value.
-3. Now the required MTPDU and Mapillary sequence data can be submitted to MTPW. This can be sent using the `/api/v1/sequence/import` endpoint by including: `sequence_key` \(Mapillary\), `name` \(MTPDU\), `description` \(MTPDU\), `transport_type` \(MTPDU\), `tags` \(MTPDU\)
+2. Send MTP sequences data as POST request to`/api/v1/sequence/import`
+3. Now the Mapillary sequence data can be submitted to MTPW. This can be sent using the PUT `/api/v1/sequence/import/MTP_SEQUENCE_ID` endpoint by including: `sequence_key` \(Mapillary\) and user token \(Mapillary\)
 
 [View the full MTPW API Docs here.](https://documenter.getpostman.com/view/10024679/TVK5e2fn)
 
