@@ -46,6 +46,12 @@ If any of these values are not present in `.env` file, user will not be able to 
 
 [For the purpose of testing, you can call the API with query parameter "dry run" to tell the service not publish the session for real \(note that you still won't reach the session after the call\). The session will fail after a few weeks](https://www.mapillary.com/developer/api-documentation/#publish-an-upload-session).
 
+![MTPDU to Mapillary Sync](../../../.gitbook/assets/mapillary-sync-ui.jpg)
+
+![MTPDU to Mapillary to MTPW Sync](../../../.gitbook/assets/mapillary-sync-ui-1-.jpg)
+
+
+
 ### 1. Prepare the imagery for uploading
 
 This is already done by the app in `ImageDescription` of images\) on MTPDU \([see here](../functions.md#21-2-imagedescription-json-object)\).
@@ -197,8 +203,6 @@ Each time the user opens the app and there is a Sequence with a Mapillary unpubl
 
 ### **8. MTPW sync**
 
-![MTPDU, MTPW and Mapillary sycn](../../../.gitbook/assets/explorer-v2-diagrams-3-%20%281%29.jpg)
-
 Mapillary sequence ID information gets synced to Map the Paths Web. 
 
 [This is an automated version of the manual import sequence function in the MTPW UI. I strongly recommend testing how the manual process works here](https://mtp.trekview.org/sequence/import-sequence-list).
@@ -209,7 +213,7 @@ The process works in three parts:
 2. Send Mapillary OAuth token to MTPW. In order for MTPW to communicate with Mapillary, it needs a copy of the Mapillary OAuth token. This can be sent using the `api/v1/mapillary/token/verify` endpoint using users `mapillary_token` value.
 3. Now the required MTPDU and Mapillary sequence data can be submitted to MTPW. This can be sent using the `/api/v1/sequence/import` endpoint by including: `sequence_key` \(Mapillary\), `name` \(MTPDU\), `description` \(MTPDU\), `transport_type` \(MTPDU\), `tags` \(MTPDU\)
 
-[View the full MTPW API Docs here.](../../../mtp-web/developer-docs/api.md)
+[View the full MTPW API Docs here.](https://documenter.getpostman.com/view/10024679/TVK5e2fn)
 
 [For reference, you can see the way the Sequence is then created on Map the Paths web here.](../../../mtp-web/developer-docs/functions/sequences.md)
 
