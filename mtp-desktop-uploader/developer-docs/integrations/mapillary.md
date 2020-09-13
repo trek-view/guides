@@ -211,11 +211,9 @@ Note, this is an overwrite action. If Mapillary sequence key already exists in M
 
 The process works in three parts:
 
-1. Get MTPW token \(authentication must be enabled for this integration for MTPW sync to work. As such, app will already have MTPW token when user logged in when opening app\)
-2. Send MTP sequences data as POST request to`/api/v1/sequence/import`
-3. Now the Mapillary sequence data can be submitted to MTPW. This can be sent using the PUT `/api/v1/sequence/import/MTP_SEQUENCE_ID` endpoint by including: `sequence_key` \(Mapillary\) and user token \(Mapillary\)
+1. [Get MTPW token \(authentication must be enabled for this integration for MTPW sync to work](../../../mtp-web/developer-docs/api.md#authorize). As such, app will already have MTPW token when user logged in when opening app\)
+2. [Send MTP sequences data as POST request to`/api/v1/sequence/import`](../../../mtp-web/developer-docs/api.md#create-sequence)
+3. [Now the Mapillary sequence data can be submitted to MTPW](../../../mtp-web/developer-docs/api.md#mapillary-sequence-data). This can be sent using the PUT `/api/v1/sequence/import/MTP_SEQUENCE_ID` endpoint by including: `sequence_key` \(Mapillary\) and user token \(Mapillary\)
 
-[View the full MTPW API Docs here.](https://documenter.getpostman.com/view/10024679/TVK5e2fn)
-
-[For reference, you can see the way the Sequence is then created on Map the Paths web here.](../../../mtp-web/developer-docs/functions/sequences.md)
+[View the full MTPW API Docs here.](../../../mtp-web/developer-docs/api.md)
 

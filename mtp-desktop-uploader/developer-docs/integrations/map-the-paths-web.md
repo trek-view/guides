@@ -18,9 +18,5 @@ If user selects MTPW integration, [Mapillary integration must also be selected b
 4. MTPW responds with sequence ID
 5. [Mapillary integration workflow starts](mapillary.md)
 
-[View the full MTPW API Docs here.](https://documenter.getpostman.com/view/10024679/TVK5e2fn)
-
-[For reference, you can see the way the Sequence is then created on Map the Paths web here.](../../../mtp-web/developer-docs/functions/sequences.md)
-
-
+[View the full MTPW API Docs here.](../../../mtp-web/developer-docs/api.md)
 
