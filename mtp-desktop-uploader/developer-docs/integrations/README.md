@@ -16,6 +16,13 @@ The following pages describe the logic and configuration setting required for ea
 
 {% page-ref page="mapillary.md" %}
 
+### Integrations precedent
+
+Integrations are processed in following order:
+
+1. MTPW
+2. Mapillary \(always exists if MTPW selected\)
+
 ### Building integrations
 
 Integrations are modularised in `ROOT/integrations/`.
