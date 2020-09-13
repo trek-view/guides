@@ -95,10 +95,6 @@ Creates a temporary sequence. Sequence is only published after PUT Mapillary seq
 {% api-method-parameter name="tag" type="object" required=true %}
 
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="" type="string" required=false %}
-
-{% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
@@ -119,7 +115,7 @@ Creates a temporary sequence. Sequence is only published after PUT Mapillary seq
 **Example request**
 
 ```text
-curl --location --request POST '{https://mtp.trekview.org/api/v1/sequence/create' \
+curl --location --request POST 'https://mtp.trekview.org/api/v1/sequence/create' \
 --form 'name=<name>' \
 --form 'description=<description>' \
 --form 'transport_type=<transport_type>' \
@@ -172,5 +168,13 @@ The unique MTP Sequence ID
 {% endapi-method-spec %}
 {% endapi-method %}
 
+**Example request**
 
+```text
+curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
+--data-raw '{
+    "seq_key": "jf98fhhs76gggehfjs8",
+    "token": "8877fhsjjsggdnns0"
+}'
+```
 
