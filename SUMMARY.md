@@ -48,6 +48,7 @@
   * [Install](mtp-desktop-uploader/developer-docs/install.md)
   * [Functions](mtp-desktop-uploader/developer-docs/functions.md)
   * [Integrations](mtp-desktop-uploader/developer-docs/integrations/README.md)
+    * [Map the Paths Web](mtp-desktop-uploader/developer-docs/integrations/map-the-paths-web.md)
     * [Mapillary](mtp-desktop-uploader/developer-docs/integrations/mapillary.md)
     * [\[PROPOSED\] Google Street View](mtp-desktop-uploader/developer-docs/integrations/google-street-view.md)
     * [\[PROPOSED\] Facebook](mtp-desktop-uploader/developer-docs/integrations/facebook.md)

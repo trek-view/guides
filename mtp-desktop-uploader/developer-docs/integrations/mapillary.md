@@ -203,7 +203,7 @@ Each time the user opens the app and there is a Sequence with a Mapillary unpubl
 
 ### **8. MTPW sync**
 
-Mapillary sequence ID information gets synced to Map the Paths Web. 
+Mapillary sequence ID information gets synced to Map the Paths Web alongside MTPDU sequence information.
 
 [This is an automated version of the manual import sequence function in the MTPW UI. I strongly recommend testing how the manual process works here](https://mtp.trekview.org/sequence/import-sequence-list).
 
