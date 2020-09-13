@@ -12,6 +12,8 @@ description: Sync MTPDU data to other services
 
 The following pages describe the logic and configuration setting required for each integration:
 
+{% page-ref page="map-the-paths-web.md" %}
+
 {% page-ref page="mapillary.md" %}
 
 ### Building integrations
