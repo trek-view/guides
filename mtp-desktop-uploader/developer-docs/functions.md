@@ -111,20 +111,22 @@ We currently implement the free version of Font Awesome icons. [You must use a f
 {
   "Powered": {
     "type": "Powered",
-    "icon": "fas fa-bus",
+    "icon": "fas fa-car-battery",
     "description": "",
     "children": [
       {
         "type": "Car",
         "icon": "fas fa-car",
         "description": "",
-        "secondary_parent": "Land"
+        "secondary_parent": "Land",
+        "mtp_api": "Powered-Car"
       },
       {
         "type": "Electric Car",
         "icon": "fas fa-charging-station",
         "description": "",
-        "secondary_parent": "Land"
+        "secondary_parent": "Land",
+        "mtp_api": "Powered-Electric Car"
       }
     ]
   }
