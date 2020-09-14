@@ -164,6 +164,18 @@ Here are currently available `transport_types`:
 | Swim | Water | Swim-Water |
 | Windsurf | Water | Windsurf-Water |
 
+#### **Tag**
+
+You can pass any tag to the API as long as it contains a-z, 1-9 or "-" characters.
+
+ We also maintain a default list of recommended `tag`\(s\) to use:
+
+\*\*\*\*
+
+
+
+
+
 {% api-method method="put" host="" path="/sequence/import/<MTP\_SEQUENCE\_UNIQUE\_ID>" %}
 {% api-method-summary %}
 Mapillary Sequence Data
@@ -206,6 +218,10 @@ The unique MTP Sequence ID
 {% endapi-method-spec %}
 {% endapi-method %}
 
+\*\*\*\*
+
+\*\*\*\*
+
 **Example request**
 
 ```text
@@ -215,4 +231,6 @@ curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/j
     "token": "8877fhsjjsggdnns0"
 }'
 ```
+
+
 
