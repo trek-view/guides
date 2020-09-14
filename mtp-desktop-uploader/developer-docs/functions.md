@@ -101,11 +101,13 @@ User first selects parent type.
 
 Transport types are modularised and can be modified in `ROOT/transports/transport-methods.json`.
 
-An excerpt of the parent \(`Powered`\) and children \(`Car` and **Electric Car**\) transport types are shown below.
+An excerpt of the parent \(`Powered`\) and children \(`Car` and ****`Electric Car`\) transport types are shown below.
 
 Icons assigned to methods and types are sourced from Font Awesome.
 
 We currently implement the free version of Font Awesome icons. [You must use a free Font Awesome icon](https://fontawesome.com/icons?m=free) for the type under `"icon"` value.
+
+["`mtp_api`" is the transport\_type value used to create a sequence in MTPW.](../../mtp-web/developer-docs/api.md#create-sequence)
 
 ```text
 {
