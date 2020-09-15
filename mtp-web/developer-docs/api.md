@@ -4,6 +4,8 @@ description: Integrate your own app with Map the Paths...
 
 # API
 
+
+
 {% hint style="info" %}
 v1 of the API has been designed to built for use with the MTP Desktop Uploader. If you have feature requests for v2, please submit them on the forum.
 {% endhint %}
@@ -132,37 +134,37 @@ Here are currently available `transport_types`:
 
 | PARENT | CHILD | API\_VALUE |
 | :--- | :--- | :--- |
-| BASE Jump | Air | BASE Jump-Air |
-| Glider | Air | Glider-Air |
-| Hang Glide | Air | Hang Glide-Air |
-| Parachute | Air | Parachute-Air |
-| Paraglide | Air | Paraglide-Air |
-| Wingsuit | Air | Wingsuit-Air |
-| Bicycle | Land | Bicycle-Land |
-| Rollerskate | Land | Rollerskate-Land |
-| Scooter | Land | Scooter-Land |
-| Skateboard | Land | Skateboard-Land |
-| Walk | Land | Walk-Land |
-| Boat | Powered | Boat-Powered |
-| Car | Powered | Car-Powered |
-| Drone | Powered | Drone-Powered |
-| Electric Bicycle | Powered | Electric Bicycle-Powered |
-| Electric Car | Powered | Electric Car-Powered |
-| Electric Scooter | Powered | Electric Scooter-Powered |
-| Helicopter | Powered | Helicopter-Powered |
-| Plane | Powered | Plane-Powered |
-| Snowmobile | Powered | Snowmobile-Powered |
-| Ski | Snow | Ski-Snow |
-| Snowboard | Snow | Snowboard-Snow |
-| Snowshoe | Snow | Snowshoe-Snow |
-| Canoe | Water | Canoe-Water |
-| Kayak | Water | Kayak-Water |
-| Kiteboard | Water | Kiteboard-Water |
-| Paddleboard | Water | Paddleboard-Water |
-| Scuba Dive | Water | Scuba Dive-Water |
-| Surf | Water | Surf-Water |
-| Swim | Water | Swim-Water |
-| Windsurf | Water | Windsurf-Water |
+| BASE Jump | Air | "BASE Jump" |
+| Glider | Air | Glider |
+| Hang Glide | Air | "Hang Glide" |
+| Parachute | Air | Parachute |
+| Paraglide | Air | Paraglide |
+| Wingsuit | Air | Wingsuit |
+| Bicycle | Land | Bicycle |
+| Rollerskate | Land | Rollerskate |
+| Scooter | Land | Scooter |
+| Skateboard | Land | Skateboard |
+| Walk | Land | Walk |
+| Boat | Powered | Boat |
+| Car | Powered | Car |
+| Drone | Powered | Drone |
+| Electric Bicycle | Powered | "Electric Bicycle" |
+| Electric Car | Powered | "Electric Car" |
+| Electric Scooter | Powered | "Electric Scooter" |
+| Helicopter | Powered | Helicopter |
+| Plane | Powered | Plane |
+| Snowmobile | Powered | Snowmobile |
+| Ski | Snow | Ski |
+| Snowboard | Snow | Snowboard |
+| Snowshoe | Snow | Snowshoe |
+| Canoe | Water | Canoe |
+| Kayak | Water | Kayak |
+| Kiteboard | Water | Kiteboard |
+| Paddleboard | Water | Paddleboard |
+| Scuba Dive | Water | Scuba Dive |
+| Surf | Water | Surf |
+| Swim | Water | Swim |
+| Windsurf | Water | Windsurf |
 
 #### **Tag**
 
