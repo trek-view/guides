@@ -24,17 +24,17 @@ https://mtp.trekview.org/api/v1
 
 ### Client ID <a id="client-id"></a>
 
-Map the Paths uses a client ID to allow access to API v1. You can register an application at your developer registration page. The MTP API expects that the `client_id` parameter is present in all requests.
+Map the Paths uses a client ID to allow access to API v1. Y[ou can register an application at your developer registration page](https://mtp.trekview.org/accounts/applications/). The MTP API expects that the `client_id` parameter is present in all requests.
 
 ### OAuth <a id="oauth"></a>
 
-The MT\|P API lets you interact with MTP on the behalf of a user. This is achieved by using OAuth 2.0. MTP supports the implicit and code flow of the OAuth [2.0 specification](http://tools.ietf.org/html/rfc6749).
+The MTP API lets you interact with MTP on the behalf of a user. This is achieved by using OAuth 2.0. MTP supports the implicit and code flow of the OAuth [2.0 specification](http://tools.ietf.org/html/rfc6749).
 
 MTP OAuth tokens do not have any expiration time. The user can at any time revoke the token directly from the settings page.
 
 #### Request Authorization <a id="request-authorization"></a>
 
-{% api-method method="get" host="" path="/authorize?client\_id=<client\_id>&response\_type=<response\_type>" %}
+{% api-method method="get" host="" path="/accounts/authorize?client\_id=<client\_id>&response\_type=<response\_type>" %}
 {% api-method-summary %}
 Authorize
 {% endapi-method-summary %}
