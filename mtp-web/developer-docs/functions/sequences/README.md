@@ -27,7 +27,7 @@ Users can add Sequences to Map the Path in one of two ways:
 
 #### 1. Using Map the Paths Desktop Uploader
 
-[You can read how the Map the Paths Desktop Uploader posts a Sequence to the MTP Web API here.](../../../mtp-desktop-uploader/developer-docs/integrations/mapillary.md)
+[You can read how the Map the Paths Desktop Uploader posts a Sequence to the MTP Web API here.](../../../../mtp-desktop-uploader/developer-docs/integrations/mapillary.md)
 
 ####  **2. By directly importing from Mapillary in MTP Web**
 
@@ -40,7 +40,7 @@ Users can choose
 
 ### Sequence creation publish workflow
 
-![MTP Sequence Create](../../../.gitbook/assets/explorer-v2-diagrams-2-.jpg)
+![MTP Sequence Create](../../../../.gitbook/assets/explorer-v2-diagrams-2-.jpg)
 
 [Map the Paths imports all Mapillary Sequence data for sequence\_key user has selected for import using the /v3/sequences endpoint.](https://www.mapillary.com/developer/api-documentation/#sequences)
 

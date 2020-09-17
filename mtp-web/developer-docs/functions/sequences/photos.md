@@ -20,7 +20,7 @@ Photos are created when a sequence is imported. All photos that belong to create
 
 The sequence records contains all Mapillary photo keys needed for import. The Mapillary authentication in either MTP Web or the Desktop Uploader provides user Mapillary Tokens.
 
-![MTP Sequence creation workflow](../../../.gitbook/assets/explorer-v2-diagrams-4-.jpg)
+![MTP Sequence creation workflow](../../../../.gitbook/assets/explorer-v2-diagrams-4-.jpg)
 
 When a Sequence is created either using the MTP Web UI to import a sequence OR using the MTP Desktop Uploader the following happens:
 
@@ -353,7 +353,7 @@ Map the Paths Photo object labels have a Parent / Child relationship. For exampl
 Object labels are either defined by
 
 * Admin: in Django admin panel
-* Users: when creating [Challenges](leaderboards/challenges.md)
+* Users: when creating [Challenges](../leaderboards/challenges.md)
 
 When labelling images, users can only select from defined Parent / Child labels.
 

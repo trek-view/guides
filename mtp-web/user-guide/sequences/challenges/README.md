@@ -12,8 +12,8 @@ For example, a Challenge might be set to map all London bike lanes by bike in 20
 
 There are two types of challenges
 
-* Image capture
-* Image tagging: Adding 
+* Image capture: creating and uploading sequences that meet Challenge criteria
+* Image tagging: tagging images that meet Challenge criteria
 
 ### Create
 
