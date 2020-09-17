@@ -331,13 +331,13 @@ Design decision: We use the `/v3/images endpoint` NOT `/v3/images_computeted` fo
 Design decision: We chose not to use a digital elevation to get altitude as many of these are paid services, and given Mapillary is free, we are happy to accept the trade-off for potentially reduced inaccuracy at this time.
 {% endhint %}
 
-### MTP object tags
+### MTP labels
 
-In addition to the objects imported from Mapillary via their API, user can also tag object manually in the Map the Paths using Mapillary JS.
+In addition to the objects imported from Mapillary via their API, user can also label an object manually in the Map the Paths using Mapillary JS.
 
-MTP object tags are most similar to Mapillary Photo object data. That is, they are a geojson object that includes the geographic location of the image that contains the detection, but not the specific location of the detected object.
+MTP object labels are most similar to Mapillary Photo object data. That is, they are a geojson object that includes the geographic location of the image that contains the detection, but not the specific location of the detected object.
 
-Map the Paths Photo object tags have a Parent / Child relationship. For example:
+Map the Paths Photo object labels have a Parent / Child relationship. For example:
 
 * Tree
   * Oak
@@ -350,16 +350,16 @@ Map the Paths Photo object tags have a Parent / Child relationship. For example:
   * Sand
   * ...
 
-Object tags are either defined by
+Object labels are either defined by
 
 * Admin: in Django admin panel
 * Users: when creating [Challenges](leaderboards/challenges.md)
 
-When tagging images, users can only select from defined Parent / Child tags.
+When labelling images, users can only select from defined Parent / Child labels.
 
-[Users can create tags using Mapillary JS](https://bl.ocks.org/oscarlorentzon/94539cefc33296ab6f28e3a83ecdccf1) as a polygon \(two or more co-ordinates in image\).
+[Users can create labels using Mapillary JS](https://bl.ocks.org/oscarlorentzon/94539cefc33296ab6f28e3a83ecdccf1) as a polygon \(three or more co-ordinates in image\).
 
-MTP object tags look like this:
+MTP object labels look like this:
 
 ```text
 {
@@ -413,10 +413,6 @@ MTP object tags look like this:
   ]
 }
 ```
-
-
-
-
 
 
 

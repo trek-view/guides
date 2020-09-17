@@ -1,35 +1,60 @@
+---
+description: 'Photos belong to Sequences and have labels, object detections and view points.'
+---
+
 # Photos
 
 ### About
 
+Every sequence consists of two or more images \(Photos\). Photos are either 2D or 360 imported from Mapillary.
+
+Photos can only belong to one sequence.
+
 It is useful to have a human searchable record of what is inside an image. For example; show me all photos that contain cars.
 
-This is where Photo Tags come in.
+Photos therefore have 4 types of associated metadata
 
-### Types of tags
+* Sequence data: the sequence information for the sequence they belong to
+* Image data: such as capture time, camera type, etc.
+* Image detections / features \(Mapillary\): object and feature detections discovered by Mapillary
+* Image labels: labels added to images by MTPW users
 
-There are two types of photo tags you will come across in Map the Paths Web:
+### Sequence data
 
-1. Mapillary Object tags: these are tags auto-extracted by Mapillary technology. [You can read more about these types of tags and where they come from in the developer docs](../../developer-docs/functions/photos.md#get-mapillary-photo-object-data).
-2. MTP Object tags: these are tags that have been added to images manually by Map the Paths users. These types of tags are covered in this article.
+Because each image belongs to a sequence, it inherits the sequence data.
 
-### Viewing MTP Object tags
+### Image data
 
-\[ADD image\]
+This data is essentially the metadata added to the image when it was taken and/or processed.
 
-When in Photo view, you will see all object tags \(both Mapillary and MTP tags\) in the sidebar. Clicking a tag will highlight that object\(s\) in the photo viewer.
+### Image detections / features \(Mapillary\)
 
-### Mark MTP Object
+You'll see Mapillary detections that have been reported by Mapillary for the image.
 
-\[ADD image\]
+You can read more about Mapillary:
 
-You might notice objects that have not been tagged in an image. In which case, you can add them youself.
+* [Object detections](https://help.mapillary.com/hc/en-us/articles/115000967191-Object-detections)
+* [Map features](https://help.mapillary.com/hc/en-us/articles/115002332165)
 
-To do this select Add Tag and draw the tag using the polygon creation tool.
+### Image labels
 
-Once the Polygon has been drawn, select the parent tag category and the associated child tag.
+When in Photo view, you will be able to see image labels other MTPW users have applied.
 
-If you don't see the type of tag you want to add, [you can create a Challenge](../challenges/). This will not only add the tag to our tag database, but also encourage others to use this tag across all Map the Paths imagery.
+You can also add your own labels by tracing around the object you wish to label in the image.
+
+Clicking an image label in the left hand menu will highlight that label in the Photo viewer.
+
+#### Label an object
+
+![MTPW add a label](../../../.gitbook/assets/b1e50ba1-4e83-4655-8d70-1bd7490aedc6.png)
+
+You might notice objects that have not been labelled in an image. In which case, you can add them yourself.
+
+To do this select Add Label and draw the outline of the object using the polygon creation tool.
+
+Once the Polygon has been drawn, select the parent label category and the associated child label.
+
+If you don't see the type of label you want to add, [you can create a Challenge](challenges/). This will not only add the label to our label database, but also encourage others to use this label across all Map the Paths imagery.
 
 
 
