@@ -1,4 +1,6 @@
 # User Guide
 
-U
+Trek View is built around 4 main features
+
+
 

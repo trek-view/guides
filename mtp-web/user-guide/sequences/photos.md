@@ -1,8 +1,4 @@
----
-description: Photo tags provide information about what was captured...
----
-
-# Tags
+# Photos
 
 ### About
 
@@ -34,4 +30,6 @@ To do this select Add Tag and draw the tag using the polygon creation tool.
 Once the Polygon has been drawn, select the parent tag category and the associated child tag.
 
 If you don't see the type of tag you want to add, [you can create a Challenge](../challenges/). This will not only add the tag to our tag database, but also encourage others to use this tag across all Map the Paths imagery.
+
+
 

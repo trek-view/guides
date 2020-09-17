@@ -137,7 +137,7 @@ As you can only call one object layer at a time, 3 API calls are required for ea
 Example request \(`trafficsigns`\):
 
 ```text
-curl "https://a.mapillary.com/v3/object_detections/trafficsigns?image_keys=QKCxMqlOmNrHUoRTSrKBlg,cCkQ6Fd9Nigw5EYV8qWEIw&per_page=2&client_id={mtp_client_id}
+curl "https://a.mapillary.com/v3/object_detections/trafficsigns?image_keys=QKCxMqlOmNrHUoRTSrKBlg,cCkQ6Fd9Nigw5EYV8qWEIw&per_page=1&client_id={mtp_client_id}
 ```
 
 Object detections look like this:
@@ -252,6 +252,8 @@ The app stores this data in the response for each photo.
 
 Each of these points is extracted from a composite of multiple images, and represents the predicted location of that object on the map.
 
+Because of the way features are calculated and recorded, it is not possible to use `image_keys` to call features. We therefore use `closeto=lat,lon` providing the latitude and longitude of the image.
+
 Map features are grouped into the following layers:
 
 1. `trafficsigns`: [Traffic signs](https://www.mapillary.com/developer/api-documentation/#traffic-signs) that are recognised from [`trafficsigns`](https://www.mapillary.com/developer/api-documentation/#object-detection-layers) detections.
@@ -263,7 +265,7 @@ As you can only call one object layer at a time, 3 API calls are required for ea
 Example request \(`trafficsigns`\):
 
 ```text
-curl "https://a.mapillary.com/v3/map_features?layers=trafficsignsimage_keys=QKCxMqlOmNrHUoRTSrKBlg&per_page=2&client_id={mtp_client_id}
+curl "https://a.mapillary.com/v3/map_features?layers=trafficsigns&closeto=[90,-90]&per_page=1&client_id={mtp_client_id}
 ```
 
 Example response
