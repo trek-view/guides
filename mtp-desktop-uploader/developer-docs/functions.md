@@ -320,10 +320,6 @@ In the case of:
 * photos, this holds the raw photos selected \(essentially a mirror copy of directory user selected\)
 * video, this holds the frames extracted from the video and the raw video
 
-
-
-
-
 #### 11.5 Image / video processing workflow
 
 ![MTPDU image / video processing workflow](../../.gitbook/assets/sequence-create-workflow.jpg)
@@ -466,7 +462,7 @@ Whenever user updates variable during modify steps:
 
 ### 14. Skip modifications
 
-![alt-text](https://raw.githubusercontent.com/wiki/trek-view/mtp-desktop-uploader/images/)
+![Skip advanced settings](../../.gitbook/assets/temp-seq.png)
 
 In many cases users do not need or want to make the following \(optional\) changes to their images \(steps 15 - 18\).
 
@@ -474,7 +470,7 @@ We do not want to force these users to have to manually skip through the followi
 
 If they are happy with the processing step, they can click skip modifications and will move straight to the upload to integrations step \(step 19\).
 
-### 15. Set image spacing
+### 15. Set image spacing \(advanced setting\)
 
 ![MTPDU set image spacing](../../.gitbook/assets/process-image-spacing.png)
 
@@ -562,7 +558,7 @@ Photos are 1 meter apart. User enters value in meters of 5.
    * Is 1 meter so photo 7 discarded
 7. ...
 
-### 16. Fix Photo Outliers
+### 16. Fix Photo Outliers \(advanced setting\)
 
 ![MTPDU modify photo outliers](../../.gitbook/assets/process-image-outliers.png)
 
@@ -646,7 +642,7 @@ In example 2;
 2. Distance from P2 to P3 calculated, and distance from P3 to P4 calculated
    * ...
 
-### 17. Modify heading
+### 17. Modify heading \(advanced setting\)
 
 ![MTPDU modify heading](../../.gitbook/assets/process-image-heading.png)
 
@@ -683,7 +679,7 @@ When any map point clicked during sequence creation, the corresponding photo is 
 
 This data is updated as changes are made, and will reflect any previous changes made to sequence edits.
 
-### 18. Add nadir
+### 18. Add nadir \(advanced setting\)
 
 ![MTPDU add nadir](../../.gitbook/assets/add-nadir-1.png)
 
@@ -722,7 +718,7 @@ This takes the first image in the sequence and renders it with nadir for user to
 
 16 versions are created with nadir sizes between 10% and 25% of image height. When user modifies % in UI using slider, it calls one of these temporary images. These temporary images are stored in the `ROOT/` directory. If user exits the add nadir step, or once nadir confirmed to be added the app deletes these temporary files.
 
-### 19. Image blur \(experimental\)
+### 19. Image blur \(experimental\) \(advanced setting\)
 
 ![MTPDU add image blur](../../.gitbook/assets/add-image-blur.png)
 
@@ -735,6 +731,8 @@ As noted to user:
 > BEWARE: It requires a lot of computing power.
 
 ### 20. Authenticate to integrations
+
+![MTPW add integration](../../.gitbook/assets/integrations.png)
 
 At the final stage of the process, user can also choose to upload their imagery to a range of destinations.
 
