@@ -235,11 +235,11 @@ The Mapillary user token and Mapillary sequence key
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="token" type="string" required=true %}
+{% api-method-parameter name="mapillary\_user\_token" type="string" required=true %}
 The users Mapillary token
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="seq\_key" type="string" required=true %}
+{% api-method-parameter name="mapillary\_sequence\_key" type="string" required=true %}
 The Mapillary Sequence Key for the Sequence
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -272,8 +272,8 @@ The unique MTP Sequence ID
 ```text
 curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
 --data-raw '{
-    "seq_key": "jf98fhhs76gggehfjs8",
-    "token": "8877fhsjjsggdnns0",
+    "mapillary_sequence_key": "jf98fhhs76gggehfjs8",
+    "mapillary_user_token": "8877fhsjjsggdnns0",
     "google_street_view"=TRUE
     "strava"="hkjfdsdkhfjs0894j23k"
 }'
