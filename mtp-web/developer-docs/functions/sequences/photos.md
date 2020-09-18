@@ -53,7 +53,7 @@ This bucket is not currently used by the app, but is implemented as a backup \(i
 Example request:
 
 ```text
-curl "https://a.mapillary.com/v3/images?image_key=QKCxMqlOmNrHUoRTSrKBlg,cCkQ6Fd9Nigw5EYV8qWEIw&client_id=<YOUR_CLIENT_ID>"
+curl "https://a.mapillary.com/v3/images?sequence_keys=QKCxMqlOmNrHUoRTSrKBlg&client_id=<YOUR_CLIENT_ID>"
 ```
 
 Photo objects look like this:
@@ -115,8 +115,6 @@ The app stores this data in the response for each photo.
 {% hint style="info" %}
 Design decision:[ it is also possible to pass a `computer_coordinates` parameter to the request, to use the Mapillary calculated data according to this post](https://forum.mapillary.com/t/sfm-lat-lon-not-in-api-lat-lon-question/2881/23?u=trekview). However, because this is not documented in the official docs, we decided not to use it for fear it is removed.
 {% endhint %}
-
-We should pass the computed\_coordinates
 
 #### Get Mapillary Photo object data
 
