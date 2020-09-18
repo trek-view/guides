@@ -267,15 +267,15 @@ The unique MTP Sequence ID
 
 \*\*\*\*
 
-\*\*\*\*
-
 **Example request**
 
 ```text
 curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
 --data-raw '{
     "seq_key": "jf98fhhs76gggehfjs8",
-    "token": "8877fhsjjsggdnns0"
+    "token": "8877fhsjjsggdnns0",
+    "google_street_view"=TRUE
+    "strava"="hkjfdsdkhfjs0894j23k"
 }'
 ```
 
