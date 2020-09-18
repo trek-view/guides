@@ -20,7 +20,7 @@ Photos are created when a sequence is imported. All photos that belong to create
 
 The sequence records contains all Mapillary photo keys needed for import. The Mapillary authentication in either MTP Web or the Desktop Uploader provides user Mapillary Tokens.
 
-![MTP Sequence creation workflow](../../../../.gitbook/assets/explorer-v2-diagrams-4-.jpg)
+![MTP Sequence creation workflow](../../../../.gitbook/assets/explorer-v2-diagrams.jpg)
 
 When a Sequence is created either using the MTP Web UI to import a sequence OR using the MTP Desktop Uploader the following happens:
 
@@ -48,12 +48,20 @@ This bucket is not currently used by the app, but is implemented as a backup \(i
 
 #### Get Mapillary Photo data
 
-[Mapillary photo data can be called using the Mapillary image endpoint.](https://www.mapillary.com/developer/api-documentation/#images)
+Mapillary photo data can be called using the [Mapillary image endpoint](https://www.mapillary.com/developer/api-documentation/#images). However...
+
+{% hint style="info" %}
+Design decision: We use the `/v3/images_computed` \(not the documented`/v3/images`\) for  image data because the `/v3/images_computed` endpoint contains elevation data.
+{% endhint %}
+
+{% hint style="info" %}
+Design decision: We chose not to use a digital elevation to get altitude as many of these are paid services, and given Mapillary is free, we are happy to accept the trade-off for potentially reduced inaccuracy at this time.
+{% endhint %}
 
 Example request:
 
 ```text
-curl "https://a.mapillary.com/v3/images?sequence_keys=QKCxMqlOmNrHUoRTSrKBlg&client_id=<YOUR_CLIENT_ID>"
+curl "https://a.mapillary.com/v3/images_computed?sequence_keys=QKCxMqlOmNrHUoRTSrKBlg&client_id=<YOUR_CLIENT_ID>"
 ```
 
 Photo objects look like this:
@@ -65,6 +73,7 @@ Photo objects look like this:
     {
       "type": "Feature",
       "properties": {
+        "altitude": 10,
         "ca": 0,
         "camera_make": "",
         "camera_model": "",
@@ -304,30 +313,6 @@ Example response
 ```
 
 The app stores this data in the response for each photo.
-
-#### Get Mapillary Elevation data
-
-Mapillary decided not to expose elevation under `/v3/images` . Because mentioned that altitude is not relative to sea level but relative to an arbitrary reference and therefore it can not be use altitude globally. So its values is not useful in general. 
-
-However, \(because we can't afford to query a global elevation model\), we use Mapillary altitude reported under the `/v3/images_computed.`
-
-The endpoint can be queried in the same way as the image endpoint, but will return elevation too.
-
-Example request:
-
-```text
-curl "https://a.mapillary.com/v3/images_computed?image_keys=QKCxMqlOmNrHUoRTSrKBlg,cCkQ6Fd9Nigw5EYV8qWEIw&client_id=<YOUR_CLIENT_
-```
-
-The app stores only the elevation/altitude data in the response for each photo.
-
-{% hint style="info" %}
-Design decision: We use the `/v3/images endpoint` NOT `/v3/images_computeted` for most image data because this the `/v3/images_computeted` endpoint is not documented in the official docs, and we decided not to use it for fear it is removed
-{% endhint %}
-
-{% hint style="info" %}
-Design decision: We chose not to use a digital elevation to get altitude as many of these are paid services, and given Mapillary is free, we are happy to accept the trade-off for potentially reduced inaccuracy at this time.
-{% endhint %}
 
 ### MTP labels
 
