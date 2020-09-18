@@ -318,7 +318,7 @@ The endpoint can be queried in the same way as the image endpoint, but will retu
 Example request:
 
 ```text
-curl "https://a.mapillary.com/v3/images_computed?image_key=QKCxMqlOmNrHUoRTSrKBlg,cCkQ6Fd9Nigw5EYV8qWEIw&client_id=<YOUR_CLIENT_
+curl "https://a.mapillary.com/v3/images_computed?image_keys=QKCxMqlOmNrHUoRTSrKBlg,cCkQ6Fd9Nigw5EYV8qWEIw&client_id=<YOUR_CLIENT_
 ```
 
 The app stores only the elevation/altitude data in the response for each photo.
