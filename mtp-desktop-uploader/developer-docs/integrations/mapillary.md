@@ -16,7 +16,7 @@ You need to create a Mapillary App. [Mapillary applications can be created here]
 
 You must set the following:
 
-* Callback URL: `app.mtp.desktop//app`
+* Callback URL: `app.mtp.desktop://app`
 * Allow this application to: `user:email`, `user:read`, `user:write`, `public:write`, `public:upload`
 
 All other settings can be configured as you like.

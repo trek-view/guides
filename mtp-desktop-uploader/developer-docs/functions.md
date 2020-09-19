@@ -46,7 +46,7 @@ To create an app in MTPW you must:
    3. **Client autorization grant type**
       1. For MTPDU set to `implicit`
    4. **Redirect URIs:**
-      1. For MTPDU use local path, e.g. `app.mtp.desktop://test`
+      1. For MTPDU use local path, e.g. `app.mtp.desktop://app`
 3. Copy your MTPW `CLIENT_ID` and `CLIENT_SECRET` into your MTPDU `.env` file.
 4. Set the `MTP_WEB_AUTH_URL` value to the MTPW server
    1. the default \(production server\) is `https://mtp.trekview.org/authorize`
