@@ -350,7 +350,9 @@ To deploy on your own Heroku environment.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_heroku')
 ```
 
-4. Make sure Heroku environemental vars are set to match those listed in `config/setting_local.py.` 5. Push code to Github
+4. Make sure Heroku environmental vars are set to match those listed in `config/setting_local.py`
+
+5. Push code to Github
 
 
 
