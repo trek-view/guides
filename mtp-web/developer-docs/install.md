@@ -199,7 +199,7 @@ MAILERLITE_TOKEN
 
 It is important when creating the app you set the following two values:
 
-1. Callback URL: [`https://mtp.trekview.org`](https://mtp.trekview.org)\`\`
+1. Callback URL: `DOMAIN`[`/accounts/check-mapillary-oauth`](https://map-the-paths-develop.herokuapp.com/accounts/check-mapillary-oauth) ``\(e.g. [https://map-the-paths-develop.herokuapp.com/accounts/check-mapillary-oauth](https://map-the-paths-develop.herokuapp.com/accounts/check-mapillary-oauth)\)
 2. Scopes: Mark all
 
 When the app is created, you will get a Client ID, Client secret and authentication URL.
