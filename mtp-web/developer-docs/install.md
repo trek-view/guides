@@ -257,6 +257,16 @@ Once created, the kit id should then be added as the app environment variable:
 FONT_AWESOME_KIT
 ```
 
+### Google Analytics setup
+
+We use Google Analytics to track usage. You need to create a new property on Google Analytics to generate a site id \(e.g. `UA-123456789-0`\)
+
+Once created, the id should then be added as the app environment variable:
+
+```text
+GOOGLE_ANALYTICS
+```
+
 ## Deploying locally
 
 ### Clone
@@ -282,6 +292,8 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_local')
 ```
 
 Fill following values in `config/setting_local.py`
+
+\`\`
 
 ```text
 DATABASES = {
@@ -351,6 +363,18 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_heroku')
 ```
 
 4. Make sure Heroku environmental vars are set to match those listed in `config/setting_local.py`
+
+* ACCESS\_TOKEN\_LIFETIME
+* BASE\_URL
+* BUILD\_WITH\_GEO\_LIBRARIES
+* DATABASE\_URL
+* DEBUG\_COLLECTSTATIC
+* DISABLE\_COLLECTSTATIC
+* LD\_LIBRARY\_PATH
+* REDIS\_URL
+* REFRESH\_TOKEN\_LIFETIME
+* SECRET\_KEY
+* SITE\_ID
 
 5. Push code to Github
 
