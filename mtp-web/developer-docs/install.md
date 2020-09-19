@@ -333,7 +333,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-### Deploying with git on Heroku
+## Deploying with git on Heroku
 
 We host Map the Paths on Heroku. We use an auto-deployment pipeline from the Github repo:
 
