@@ -105,7 +105,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_heroku')
 
 
 
-## Deploying to Heroku
+## Cloud Services
 
 ### AWS Setup
 
@@ -275,7 +275,35 @@ MAILERLITE_TOKEN
 
 ### Mapillary Setup
 
+#### MTPW Web app
+
 [The web app uses the Mapillary API for a variety of features.](https://www.mapillary.com/developer/api-documentation/)
 
-\#
+[You'll first need to create a Mapillary OAuth app here.](https://www.mapillary.com/dashboard/developers)
+
+It is important when creating the app you set the following two values:
+
+1. Callback URL: [`https://mtp.trekview.org`](https://mtp.trekview.org)\`\`
+2. Scopes: Mark all
+
+When the app is created, you will get a Client ID, Client secret and authentication URL.
+
+These values should then be added as the app environment variables:
+
+```text
+MAPILLARY_AUTHENTICATION_URL
+MAPILLARY_CLIENT_ID
+MAPILLARY_CLIENT_SECRET
+```
+
+#### MTP Desktop uploader
+
+If you want the app to be able to work with the MTPDU, you must also add the Mapillary Oauth app values used by the uploader. Without setting these, the API will not work.
+
+These values should then be added as the app environment variables:
+
+```text
+MTP_DESKTOP_UPLOADER_CLIENT_ID
+MTP_DESKTOP_UPLOADER_CLIENT_SECRET
+```
 
