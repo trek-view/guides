@@ -210,6 +210,40 @@ MTP_DESKTOP_UPLOADER_CLIENT_ID
 MTP_DESKTOP_UPLOADER_CLIENT_SECRET
 ```
 
+### Mapbox Setup
+
+For maps in the app we use Mapbox.
+
+Mapbox is a paid service but has a generous free tier.
+
+When you've created an account, [you need to create an access token here.](https://account.mapbox.com/access-tokens/c)
+
+You should allow the default scopes
+
+![Mapbox scopes](../../.gitbook/assets/edd26b1d-1a92-4564-b34f-80742adf656d.png)
+
+It's a good idea to restrict the token to request from the domain you will be using.
+
+Once created, the api key should then be added as the app environment variable:
+
+```text
+MAPBOX_TOKEN
+```
+
+### Font Awesome setup
+
+We use Font Awesome free icons in the app.
+
+You'll need to create a Font Awesome kit in order to use these icons.
+
+[Sign up to create an account and a kit here.](https://fontawesome.com/start)
+
+Once created, the kit id should then be added as the app environment variable:
+
+```text
+FONT_AWESOME_KIT
+```
+
 ## Deploying locally
 
 ### Clone
