@@ -46,6 +46,13 @@ Under bucket policy set the following, making sure to replace the `"Resource"` v
 }
 ```
 
+Make sure to now set them in the app environmental variables as:
+
+```text
+AWS_S3_BUCKET
+AWS_S3_MAPILLARY_BUCKET
+```
+
 #### Cloudfront
 
 We use Cloudfront to resolve the bucket domains.
@@ -67,6 +74,12 @@ Save the distribution.
 As we use Route53 \(DNS\) from AWS, we can get AWS to update the DNS with the CNAME data. If you use another DNS service, you'll need to add a CNAME record manually like so:
 
 `CNAME` [`staging-backpack.mtp.trekview.org`](http://staging-backpack.mtp.trekview.org/) `CLOUDFRONT_DOMAIN`
+
+The CNAME chosen  \(e.g.[http://staging-backpack.mtp.trekview.org](http://staging-backpack.mtp.trekview.org/)\) should then be added to the following app environment variable.
+
+```text
+AWS_S3_BUCKET_CNAME
+```
 
 #### IAM
 
