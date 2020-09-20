@@ -57,17 +57,36 @@ We have designed a series of Trek Pack's using GoPro MAX 360 Cameras designed fo
 
 #### Other Devices/Mounts
 
-For capturing while driving, it is best to use a windshield mount for mobile phones inside vehicles, whereas it is best to mount action cameras and 360° cameras on the outside of vehicles.
+**Cycling**
 
-* For multiple camera angles, you can mount several action cameras and 360° cameras at once.
-* For capturing with the mobile phone while walking, you just hold it steady horizontally in front of you. For action cameras, it is best to use a body mount \(chest or head\), and a selfie stick for 360° cameras.
+_2D action cams_
+
+If you're not using a 360 camera, consider mounting your camera to you handlebars facing straight ahead.
+
+If you are fortunate to own two camera, one place facing forwards and the other behind will provide a more complete capture in place of a 360 camera. We'd recommend buying a 360 camera if buying new, as these will generally be cheaper than purchasing two equivalent action cameras and give a better visual output for users.
+
+_Mobile phones_
+
+We recommend using an action camera when cycling. One reason is that your phone may quite easily pop out of the mount and get damaged. The other reason is that phones are usually not good at handling motion blur
+
+**Walking**
+
+Try to keep the camera in line with the horizon. It's a bit harder when walking compared to other modes of moving**.**
+
+_360 cameras_
+
+If you're using a 360 camera, try and mount it above your head using a selfie stick secured to a backpack. Another alternative is to mount it to a helmet you wear whilst walking. We recommend the selfie stick approach simply because it give the widest field of view.
+
+_2D cameras / mobile phones_
+
+You can try putting the phone in a pouch around your neck or taped on your chest. That should help keep the camera steady. Some action camera manufactures sell their own chest mounts for this purpose.
 
 ### Other Equipment
 
 * **Memory/SD cards** It is important to have enough memory on your device to store your photos after capturing. Mobile phones should have enough internal storage. One image takes roughly 2–8 MB, giving you about 1000–4000 images if you have 8 GB of free storage on your phone. For devices like action cameras and 360° cameras, we recommend inserting an SD card with around 128 GB, so you can capture as many images possible.
 * **Charging** It is important to fully charge all of your devices prior to capturing. When you have multiple devices to charge prior to capturing, we recommend a multi-port USB charging station, although this is optional.
 * **Power supply** It is equally important to keep your devices powered during your capture session. For shorter sessions, your device’s internal battery may be sufficient to last the duration of your session. For longer sessions, consider an external charging pack for each device, or a car charger if your situation allows for it.
-* **Protective cases** Most action cameras are built to withstand rough conditions. If you want to protect your device further, you may buy a protective case for it.
+* **Protective cases** Most action cameras are built to withstand rough conditions. If you want to protect your device further, you may buy a protective case for it. Try to ensure the case you choose does not impede on the photos taken by the camera \(e.g. glare from plastic casing\).
 * **Drones** Map the Paths supports drone imagery. Use a suitable camera that can handle vibration, for example, GoPro. Mounting phones on drones is not a good idea because of the rolling shutter effects from vibration. 
 
 ### How to capture great images
