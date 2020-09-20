@@ -24,25 +24,51 @@ Map the Paths supports both 2D and 360 imagery \(recommended\) captured using:
 * **Action cameras** Action cameras are a good option for capturing great images, especially more demanding conditions with rough terrain, extreme weather, and high speeds. Compared to smartphones, action cameras are better at handling motion blur and more resistant to damage, so they're suitable for mounting on your bicycle or outside your vehicle. 
 * **360° cameras \(recommended\)** 360° cameras are great for covering all directions simultaneously. You can capture 360° imagery while driving a vehicle or walking. 
 
-### Other equipment
+### Camera capture mode settings
 
-* **Mounts** For each device and use case, there are different suitable mounting methods.
-  * For capturing while driving, it is best to use a windshield mount for mobile phones inside vehicles, whereas it is best to mount action cameras and 360° cameras on the outside of vehicles.
-  * For multiple camera angles, you can mount several action cameras and 360° cameras at once.
-  * For capturing with the mobile phone while walking, you just hold it steady horizontally in front of you. For action cameras, it is best to use a body mount \(chest or head\), and a selfie stick for 360° cameras.
+For Map the Paths it’s best to capture images in timelapse mode \(e.g. 1 photo every 2 seconds\), not video, because you save a lot on data volume, battery life, reviewing and upload time.
+
+Most action and 360 cameras have these settings by default. Mobile phone cameras do not. Therefore it will require the use of an additional app. Here are two we recommend:
+
+* [Open Camera \(Android\)](https://play.google.com/store/apps/details?id=net.sourceforge.opencamera&hl=en)
+* [OhSnap! \(iPhone\)](https://apps.apple.com/us/app/osnap-stop-motion-time-lapse/id457404788)
+
+#### **A note on video files**
+
+Although the preferred way to contribute to Map the Paths is to upload geotagged images, it is also possible to upload videos to Map the Paths using the [Map the Paths Desktop Uploader](http://mtp.trekview.org/uploader). In that case, the video will be turned into images during the process. This is useful for situations when you are capturing for more than Map the Paths purposes—like when you are using a downhill run to share with friends, but also want to use it for mapping purposes.
+
+The Map the Paths Desktop Uploader supports both timelapse and video uploads.
+
+### Transport
+
+We strongly recommend using a clean form of transport to capture imagery to minimise the environmental impact.
+
+For each device and use case, there are different suitable mounting methods. Here are some ideas and setups you might find useful...
+
+#### Trek Pack
+
+![](https://lh3.googleusercontent.com/FL0yFujdlTMW-Tzy-i51RcvQeMyDP2BFyCinq9GPAwo_3ArIiJ2cJOgxs3PxV4ZsufL6ooKVnY9J2EPLkVY8b5Srk-hv8BfO4BYDrH05K40iNhubOQM2VCghiXWA4T_csme1dO71)
+
+![](https://lh4.googleusercontent.com/MiEajqIxt-8mjjB20iJMAKlM2yQSRZ3Jea9CrQ0x-QVwxE69rQIEjiR2UeT4KzsZvfsWoq2DUKGgqC_QW16U7A0wZCfNWV-7-HnSel_thnJhWiJW5zknUhcBbze3PmlkFCirNfBl)
+
+![](https://lh6.googleusercontent.com/PEbrdCrx-GQrFiK5u5Wixkhxuz-BSi3dV4mTuE-GUPEgzrYu5XLXfko5G5R2EeH16Hvbrzh1DgR3YJRfDylKGnFE8EQq9Oe2uC3nJ4X3xYGQmIGu2btwjinDczTVE2ZdQHgzBMXd)
+
+We have designed a series of Trek Pack's using GoPro MAX 360 Cameras designed for walking/hiking, biking, and swimming/scuba-diving. [The instructions to build and use them are here.](../../../trek-pack/v2/)
+
+#### Other Devices/Mounts
+
+For capturing while driving, it is best to use a windshield mount for mobile phones inside vehicles, whereas it is best to mount action cameras and 360° cameras on the outside of vehicles.
+
+* For multiple camera angles, you can mount several action cameras and 360° cameras at once.
+* For capturing with the mobile phone while walking, you just hold it steady horizontally in front of you. For action cameras, it is best to use a body mount \(chest or head\), and a selfie stick for 360° cameras.
+
+### Other Equipment
+
 * **Memory/SD cards** It is important to have enough memory on your device to store your photos after capturing. Mobile phones should have enough internal storage. One image takes roughly 2–8 MB, giving you about 1000–4000 images if you have 8 GB of free storage on your phone. For devices like action cameras and 360° cameras, we recommend inserting an SD card with around 128 GB, so you can capture as many images possible.
 * **Charging** It is important to fully charge all of your devices prior to capturing. When you have multiple devices to charge prior to capturing, we recommend a multi-port USB charging station, although this is optional.
 * **Power supply** It is equally important to keep your devices powered during your capture session. For shorter sessions, your device’s internal battery may be sufficient to last the duration of your session. For longer sessions, consider an external charging pack for each device, or a car charger if your situation allows for it.
 * **Protective cases** Most action cameras are built to withstand rough conditions. If you want to protect your device further, you may buy a protective case for it.
 * **Drones** Map the Paths supports drone imagery. Use a suitable camera that can handle vibration, for example, GoPro. Mounting phones on drones is not a good idea because of the rolling shutter effects from vibration. 
-
-### Camera capture mode settings
-
-For Map the purposes it’s best to capture images in timelapse mode \(e.g. 1 photo every 2 seconds\), not video, because you save a lot on data volume, battery life, reviewing and upload time.
-
-Although the preferred way to contribute to Map the Paths is to upload geotagged images, it is also possible to upload videos to Map the Paths using the [Map the Paths Desktop Uploader](http://mtp.trekview.org/uploader). In that case, the video will be turned into images during the process. This is useful for situations when you are capturing for more than Map the Paths purposes—like when you are using a downhill run to share with friends, but also want to use it for mapping purposes.
-
-The Map the Paths Desktop Uploader supports both timelapse and video uploads.
 
 ### How to capture great images
 
