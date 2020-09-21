@@ -206,7 +206,7 @@ It can take up to 72 hours for a Sequences to be published, and thus a response 
 
 If the app makes a query to this endpoint and an empty response is returned, the app keeps the sequence in Mapillary unpublished state.
 
-Each time the user opens the app and there is a Sequence with a Mapillary unpublished state, step 7 \(check for upload session errors\) is triggered again.
+When in this unpublished state, step 7 \(check for upload session errors\) is triggered every 5 minutes whilst app is open.
 
 ### **9. MTPW sync**
 
