@@ -9,8 +9,11 @@ The project name can be anything you want. It will only be visible to you in the
 This app requires the following Google API's to work:
 
 * [Street View Publish API](https://console.cloud.google.com/apis/library/streetviewpublish.googleapis.com) \(used to send photos to Street View\)
+* [Place Autocomplete API ](https://developers.google.com/places/web-service/autocomplete)\(used to lookup placeid\) \(optional\)
 
-![Enable API](../../../.gitbook/assets/gcp-enable-api.png)
+![Google Cloud Places API](../../../.gitbook/assets/68039645-d4e4-4e03-b97d-08d129bf6ed2.png)
+
+![Google Cloud Street View](../../../.gitbook/assets/0e023821-b3f3-4054-af6f-94c6cab02834.png)
 
 To enable these services, click each of the links above \(making sure the menu bar at the top shows the project you just created\) and select enable.
 
@@ -43,7 +46,17 @@ You can place your Google application information in the `.env` file once create
 ```text
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
+GOOGLE_MAPS_GEOCODING_ID=
+GOOGLE_MAPS_GEOCODING_SECRET=
 ```
+
+{% hint style="info" %}
+If you use different billing accounts or projects, it is possible to create two credentials in this way for `GOOGLE_CLIENT_ID` \(used for Street View Publish\) and `GOOGLE_MAPS_GEOCODING_ID` \(used for Autocomplete API\).
+{% endhint %}
+
+{% hint style="info" %}
+If no `GOOGLE_MAPS_GEOCODING_ID` and `GOOGLE_MAPS_GEOCODING_SECRET` present. Place assignment will not happen and will show as "Unknown" place in Street View UI. This feature is optional to avoid the costs involved in using this API.
+{% endhint %}
 
 ### Workflow
 
@@ -73,7 +86,17 @@ When they click integrate/authenticate to Google at integrations step it will op
 
 [Google tokens do expire automatically](https://developers.google.com/identity/protocols/oauth2). As such, MTPDU does not store the token. This authentication is required every single time a user attempts to sync a new Sequence with GSV.
 
-#### 3. Request upload URL
+#### 3. Assign place to sequence
+
+\[Place Search box image\]
+
+User will be able to select a single location \(Google PlaceID\) for the sequence. This value will be assigned to all the photos in the sequence.
+
+We use the [Places Autocomplete API](https://developers.google.com/places/web-service/autocomplete) which returns place information based on user input. As user enters location into a search box the API returns location information for selection.
+
+We are concerned with the `place_id` value but also store the entire place record selection information in the final `sequence.json`.
+
+#### 4. Request upload URL
 
 [We've written an introduction to the Street View Publish API here](https://www.trekview.org/blog/2020/street-view-publish-api-quick-start-guide/). It is a useful guide in quickly understanding the fields that can be utilised with the API.
 
@@ -86,7 +109,7 @@ $ curl --request POST \
         --header 'Content-Length: 0'
 ```
 
-####  4. Upload the photo bytes to the Upload URL
+####  5. Upload the photo bytes to the Upload URL
 
 ```text
 $ curl --request POST \
@@ -95,7 +118,7 @@ $ curl --request POST \
         --header 'Authorization: Bearer YOUR_ACCESS_TOKEN'
 ```
 
-#### 5. Upload the metadata of the photo
+#### 6. Upload the metadata of the photo
 
 [The photo.pose resource takes the following MTPDU values](https://developers.google.com/streetview/publish/reference/rest/v1/photo#pose).
 
@@ -105,6 +128,10 @@ $ curl --request POST \
 * "altitude" \(required\) &gt; GPSAltitude
 * "heading" \(optional\) &gt; heading \(for connection with positive connection.distance\_mtrs\)
 * "pitch" \(optional\) &gt; pitch \(for connection with positive connection.distance\_mtrs\)
+
+[The places resource takes the following values](https://developers.google.com/streetview/publish/reference/rest/v1/photo#place)
+
+* "placeId" &gt; Place ID collected in previous step
 
 ```text
 $ curl --request POST \
@@ -134,7 +161,14 @@ $ curl --request POST \
 
 #### 6. MTPW update
 
-[When the final update call happens to post Mapillary Sequence ID to MTPW](mapillary.md#9-mtpw-sync), if GSV integration enabled, will also pass: `"google_street_view"=TRUE` in JSON body.
+If MTPW integration selected, when the final photo uploaded to Street View app will also pass: `"google_street_view"=TRUE` in JSON body.
+
+```text
+curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
+--data-raw '{
+    "google_street_view": TRUE
+}'
+```
 
 [View the full MTPW API Docs here.](../../../mtp-web/developer-docs/api.md)
 

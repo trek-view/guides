@@ -22,6 +22,7 @@ Integrations are processed in following order:
 
 1. MTPW
 2. Mapillary \(always exists if MTPW selected\)
+3. Google Street View
 
 ### Building integrations
 

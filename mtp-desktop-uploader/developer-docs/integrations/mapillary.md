@@ -216,13 +216,27 @@ Mapillary sequence ID information gets synced to Map the Paths Web[ alongside MT
 
 [This is an automated version of the manual import sequence function in the MTPW UI. I strongly recommend testing how the manual process works here](https://mtp.trekview.org/sequence/import-sequence-list).
 
-Note, this is an overwrite action. If Mapillary sequence key already exists in MTPW DB, this record will be overwritten with new data.
+Note, this is an overwrite action. If Mapillary sequence key already exists in MTPW DB, this record will be overwritten with new data submission.
 
-The process works in three parts:
+The process works in two parts:
 
-1. [Get MTPW token \(authentication must be enabled for this integration for MTPW sync to work](../../../mtp-web/developer-docs/api.md#authorize). As such, app will already have MTPW token when user logged in when opening app\)
-2. [Send MTP sequences data as POST request to`/api/v1/sequence/import`](../../../mtp-web/developer-docs/api.md#create-sequence)
-3. [Now the Mapillary sequence data can be submitted to MTPW](../../../mtp-web/developer-docs/api.md#mapillary-sequence-data). This can be sent using the PUT `/api/v1/sequence/import/MTP_SEQUENCE_ID` endpoint by including: `sequence_key` \(Mapillary\) and user token \(Mapillary\)
+#### 9.1 MTPW
+
+[MTPW authentication must be enabled for this integration for MTPW sync to work](../../../mtp-web/developer-docs/api.md#authorize). As such, app will already have MTPW token when user logged in when opening app.
+
+#### 9.2 PUT Mapillary data
+
+[Send MTP sequences data as PUT request to`/api/v1/sequence/import`](../../../mtp-web/developer-docs/api.md#create-sequence)
+
+This can be sent using the PUT `/api/v1/sequence/import/MTP_SEQUENCE_ID` endpoint by including: `mapillary_equence_key` and `mapillary_user_token`.
+
+```text
+curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
+--data-raw '{
+    "mapillary_sequence_key": "<MAPILLARY_SEQ_KEY",
+    "mapillary_user_token": "MAPILLARY_USER_TOKEN"
+}'
+```
 
 [View the full MTPW API Docs here.](../../../mtp-web/developer-docs/api.md)
 

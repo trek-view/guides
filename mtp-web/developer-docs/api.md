@@ -278,15 +278,13 @@ The unique MTP Sequence ID
 {% endapi-method-spec %}
 {% endapi-method %}
 
-\*\*\*\*
-
 **Example request**
 
 ```text
 curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
 --data-raw '{
-    "mapillary_sequence_key": "jf98fhhs76gggehfjs8",
-    "mapillary_user_token": "8877fhsjjsggdnns0",
+    "mapillary_sequence_key": "<MAPILLARY_SEQ_KEY",
+    "mapillary_user_token": "MAPILLARY_USER_TOKEN",
 }'
 ```
 
