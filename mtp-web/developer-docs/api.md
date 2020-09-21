@@ -252,12 +252,12 @@ This endpoint is designed for use with MTP Desktop Uploader. If the sequence has
 If MTPDU uploaded to Google Street View.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="mapillary\_user\_token" type="string" required=true %}
-The users Mapillary token
+{% api-method-parameter name="mapillary\_user\_token" type="string" required=false %}
+The users Mapillary token. Must be passed with \`mapillary\_sequence\_key\` value
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="mapillary\_sequence\_key" type="string" required=true %}
-The Mapillary Sequence Key for the Sequence
+{% api-method-parameter name="mapillary\_sequence\_key" type="string" required=false %}
+The Mapillary Sequence Key for the Sequence. Must be passed with \`mapillary\_user\_token\` value
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
