@@ -238,16 +238,20 @@ You can pass any tag to the API as long as it contains a-z, 1-9 or "-" character
 
 {% api-method method="put" host="" path="/sequence/import/<MTP\_SEQUENCE\_UNIQUE\_ID>" %}
 {% api-method-summary %}
-Mapillary Sequence Data
+Sequence Integration Data
 {% endapi-method-summary %}
 
 {% api-method-description %}
-The Mapillary user token and Mapillary sequence key
+This endpoint is designed for use with MTP Desktop Uploader. If the sequence has been synced with a 3rd part integration by MTPDU, then it will be updated in MTPW using this endpoint.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
+{% api-method-parameter name="google\_street\_view" type="boolean" required=false %}
+If MTPDU uploaded to Google Street View.
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="mapillary\_user\_token" type="string" required=true %}
 The users Mapillary token
 {% endapi-method-parameter %}
@@ -283,10 +287,8 @@ The unique MTP Sequence ID
 ```text
 curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
 --data-raw '{
-    "mapillary_sequence_key": "<MAPILLARY_SEQ_KEY",
-    "mapillary_user_token": "MAPILLARY_USER_TOKEN",
+    "mapillary_sequence_key": "<MAPILLARY_SEQ_KEY>",
+    "mapillary_user_token": "<MAPILLARY_USER_TOKEN>",
 }'
 ```
-
-
 

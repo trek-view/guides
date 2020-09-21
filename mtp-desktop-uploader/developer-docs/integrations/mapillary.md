@@ -233,8 +233,8 @@ This can be sent using the PUT `/api/v1/sequence/import/MTP_SEQUENCE_ID` endpoin
 ```text
 curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
 --data-raw '{
-    "mapillary_sequence_key": "<MAPILLARY_SEQ_KEY",
-    "mapillary_user_token": "MAPILLARY_USER_TOKEN"
+    "mapillary_sequence_key": "<MAPILLARY_SEQ_KEY>",
+    "mapillary_user_token": "<MAPILLARY_USER_TOKEN>"
 }'
 ```
 
