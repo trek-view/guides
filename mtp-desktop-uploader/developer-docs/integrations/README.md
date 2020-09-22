@@ -16,13 +16,18 @@ The following pages describe the logic and configuration setting required for ea
 
 {% page-ref page="mapillary.md" %}
 
+### Map the Paths Web
+
+Map the Paths Web integration must always be enabled when adding an integration.
+
 ### Integrations precedent
 
 Integrations are processed in following order:
 
-1. MTPW
-2. Mapillary \(always exists if MTPW selected\)
+1. MTPW \(required\)
+2. Mapillary
 3. Google Street View
+4. Strava
 
 ### Building integrations
 

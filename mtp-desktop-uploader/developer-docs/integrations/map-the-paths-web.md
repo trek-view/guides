@@ -2,9 +2,7 @@
 
 ### **Setup**
 
-If MTPW variables stored in `.env` file, all sequence data can be synced to MTPW.
-
-If user selects MTPW integration, [Mapillary integration must also be selected by the user.](mapillary.md) When user selects either Mapillary or MTPW integration other option will be marked.
+If MTPW variables stored in `.env` file, all sequence data can be synced to MTPW. [See setup doc here for more information.](../)
 
 ### **Workflow**
 

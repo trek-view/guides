@@ -161,7 +161,21 @@ $ curl --request POST \
 
 #### 6. MTPW update
 
-If MTPW integration selected, when the final photo uploaded to Street View app will also pass: `"google_street_view"=TRUE` in JSON body.
+Google Street View information gets synced to Map the Paths web.
+
+The process works in two parts:
+
+**6.1 MTPW token / sequence id**
+
+\*\*\*\*[MTPW authentication must be enabled for this integration for MTPW sync to work](../../../mtp-web/developer-docs/api.md#authorize). As such, app will already have MTPW token when user logged in when opening app.
+
+[The app already has MTPW sequence information following create action of Sequence earlier in the process. ](map-the-paths-web.md)
+
+**6.2 PUT Google Street View data**
+
+\*\*\*\*[Send Google Street View info as PUT request to`/api/v1/sequence/import`](../../../mtp-web/developer-docs/api.md#create-sequence)
+
+This can be sent using the PUT `/api/v1/sequence/import/MTP_SEQUENCE_ID` endpoint by including: `google_street_view=true`.
 
 ```text
 curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \

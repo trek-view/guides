@@ -49,17 +49,7 @@ If any of these values are not present in `.env` file, user will not be able to 
 
 ![MTPDU to Mapillary Sync](../../../.gitbook/assets/mapillary-sync-ui.jpg)
 
-
-
-### **0.** MTP Web integration
-
-This integrations must also be enabled for Mapillary upload to work.
-
-If user selects Mapillary \(or MTP web\), both integration options will automatically both become true in UI for user. Put another way; the MTP web integration selection by user always equals the Mapillary selection state.
-
-This is required so that imagery can be properly imported to MTPW.
-
-### **1. Validate imagery**
+### **1. Validate imagery \(tod\)**
 
 Mapillary is based on a very similar structure to Map the Paths with [Sequences](https://www.mapillary.com/developer/api-documentation/#sequences) and [Images](https://www.mapillary.com/developer/api-documentation/#images).
 
@@ -212,7 +202,7 @@ When in this unpublished state, step 7 \(check for upload session errors\) is tr
 
 ![MTPDU to Mapillary to MTPW Sync](../../../.gitbook/assets/mapillary-sync-ui-5-.jpg)
 
-Mapillary sequence ID information gets synced to Map the Paths Web[ alongside MTPDU sequence information uploaded during MTPW integration.](map-the-paths-web.md)
+Mapillary sequence ID and user token information gets synced to Map the Paths Web[ alongside MTPDU sequence information uploaded during MTPW integration.](map-the-paths-web.md)
 
 [This is an automated version of the manual import sequence function in the MTPW UI. I strongly recommend testing how the manual process works here](https://mtp.trekview.org/sequence/import-sequence-list).
 
@@ -220,13 +210,15 @@ Note, this is an overwrite action. If Mapillary sequence key already exists in M
 
 The process works in two parts:
 
-#### 9.1 MTPW
+#### 9.1 MTPW token / sequence ID
 
 [MTPW authentication must be enabled for this integration for MTPW sync to work](../../../mtp-web/developer-docs/api.md#authorize). As such, app will already have MTPW token when user logged in when opening app.
 
+[The app already has MTPW sequence information following create action of Sequence earlier in the process. ](map-the-paths-web.md)
+
 #### 9.2 PUT Mapillary data
 
-[Send MTP sequences data as PUT request to`/api/v1/sequence/import`](../../../mtp-web/developer-docs/api.md#create-sequence)
+[Send Mapillary sequences data as PUT request to`/api/v1/sequence/import`](../../../mtp-web/developer-docs/api.md#create-sequence)
 
 This can be sent using the PUT `/api/v1/sequence/import/MTP_SEQUENCE_ID` endpoint by including: `mapillary_equence_key` and `mapillary_user_token`.
 
