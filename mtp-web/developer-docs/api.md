@@ -248,12 +248,16 @@ This endpoint is designed for use with MTP Desktop Uploader. If the sequence has
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
+{% api-method-parameter name="strava" type="boolean" required=false %}
+If MPTDU uploaded to Strava. Default is false
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="google\_street\_view" type="boolean" required=false %}
-If MTPDU uploaded to Google Street View.
+If MTPDU uploaded to Google Street View. Default is false.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="mapillary\_user\_token" type="string" required=false %}
-The users Mapillary token. Must be passed with \`mapillary\_sequence\_key\` value
+The users Mapillary token. Must be passed with \`mapillary\_sequence\_key\` value.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="mapillary\_sequence\_key" type="string" required=false %}
@@ -282,7 +286,7 @@ The unique MTP Sequence ID
 {% endapi-method-spec %}
 {% endapi-method %}
 
-**Example request**
+#### **Example request**
 
 ```text
 curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
@@ -291,4 +295,36 @@ curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/j
     "mapillary_user_token": "<MAPILLARY_USER_TOKEN>",
 }'
 ```
+
+**Endpoint behaviour**
+
+Request to this endpoint `PUT`'ing existing values will overwrite existing data and append any new data.
+
+_For example \(request 1\)_
+
+```text
+curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
+--data-raw '{
+    "mapillary_sequence_key": "123",
+    "mapillary_user_token": "456",
+    "google_street_view": " FALSE,
+    "strava": " TRUE
+}'
+```
+
+_Then \(request 2\)_
+
+```text
+curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
+--data-raw '{
+    "google_street_view": " TRUE
+}'
+```
+
+Will leave the following integration records against sequence.
+
+* `mapillary_sequence_key`=`123`
+* `mapillary_user_token`=`346`
+* `google_street_view`=`true`
+* `strava`=`true`
 
