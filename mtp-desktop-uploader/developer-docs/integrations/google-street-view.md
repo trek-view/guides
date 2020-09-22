@@ -60,12 +60,6 @@ If no `GOOGLE_MAPS_GEOCODING_ID` and `GOOGLE_MAPS_GEOCODING_SECRET` present. Pla
 
 ### Workflow
 
-#### 0. Mapillary/MTP Web integration
-
-These two integrations must also be enabled for GSV upload to work. If user selects Google Street View, these will automatically become true in UI for user and they will not be able to remove without selecting Street View.
-
-Mapillary/MTP Web integrations are performed before the GSV upload.
-
 #### 1. Validate imagery
 
 Google Street View is based on the concept of Photos. It has no similar function to Sequences.

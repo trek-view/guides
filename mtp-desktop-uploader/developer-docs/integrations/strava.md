@@ -31,15 +31,48 @@ STRAVA_CLIENT_SECRET=
 * `read_all`:read private routes, private segments, and private events for the user
 * `profile:read_all`: read all profile information even if the user has set their profile visibility to Followers or Only You
 * `profile:write`: update the user's weight and Functional Threshold Power \(FTP\), and access to star or unstar segments on their behalf
-* `activity:read`: read the user's activity data for activities that are visible to Everyone and Followers, excluding privacy zone data
-* `activity:read_all`: the same access as `activity:read`, plus privacy zone data and access to read the user's activities with visibility set to Only You
-* `activity:write`: access to create manual activities and uploads, and access to edit any activities that are visible to the app, based on activity read access level
 
 
 
+### Workflow
 
+#### 1. GPX file
 
-#### 6. MTPW update
+Unlike other integrations, Strava uses GPX files to track users activity
+
+#### 2. Authenticate
+
+[Strava uses a standard Oauth flow to authenticate users described here.](https://developers.strava.com/docs/authentication/#oauthoverview)
+
+#### 3. Upload activity
+
+[You can create an activity using the createUpload Strava endpoint](http://developers.strava.com/docs/reference/#api-Uploads-createUpload).
+
+Requires `activity:write` scope.
+
+Sample request
+
+```text
+http POST "https://www.strava.com/api/v3/uploads" \
+    file@/path/to/file \
+    name='value' \
+    description='value' \
+    data_type='value' \
+    external_id='value' \
+    "Authorization: Bearer [[token]]"
+```
+
+These map to MTP Uploader values like so:
+
+* `file`=GPX file path \(in sequence directory\)
+* `name`=sequence name
+* `description`=sequence description
+* `data_type`=gpx
+* `external_id`=map the paths web uuid
+
+If successful a 201 response is returned. If error \(4xx/5xx\) attempt to reupload 3 times, then warn user of error and ask them to attempt to try again later.
+
+#### 4. MTPW update
 
 Strava information gets synced to Map the Paths web.
 
@@ -51,7 +84,7 @@ The process works in two parts:
 
 [The app already has MTPW sequence information following create action of Sequence earlier in the process. ](map-the-paths-web.md)
 
-**6.2 PUT Strave data**
+**6.2 PUT Strava data**
 
 \*\*\*\*[Send Strava info as PUT request to`/api/v1/sequence/import`](../../../mtp-web/developer-docs/api.md#create-sequence)
 
