@@ -29,12 +29,20 @@ STRAVA_CLIENT_SECRET=
 
 Unlike other integrations, Strava uses GPX files to track users activity.
 
-Strava DOES NOT accept the following transport types
+Strava DOES NOT accept certain transport types. These can be viewed in `transport-methods.json` marked with `"strava_activity": "FALSE"`
 
-* Powered
-  * All child elements
+```text
+  {
+    "type": "Car",
+    "icon": "fas fa-car",
+    "description": "",
+    "secondary_parent": "Land",
+    "mtp_api": "Car",
+    "strava_activity": "FALSE"
+  },
+```
 
-That is, if Sequence is Powered transport type, user will not see Strava integration.
+That is, if Sequence is transport type where `"strava_activity": "FALSE"`, user will not see Strava integration.
 
 #### 2. Authenticate
 
