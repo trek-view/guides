@@ -10,7 +10,7 @@ description: >-
 
 To authenticate users to Strava API \(get token for user by granting access\), [you must create a Strava Oauth app here](https://www.strava.com/settings/api).
 
-
+[The app requires the `activity:write` scope.](http://developers.strava.com/docs/authentication/#requestingaccess)
 
 ![Strava API app](../../../.gitbook/assets/a56df6a7-491d-48bd-88de-ad8f828dc5a5.png)
 
@@ -22,17 +22,6 @@ You should set these values in the `.env` file as:
 STRAVA_CLIENT_ID=
 STRAVA_CLIENT_SECRET=
 ```
-
-
-
-[http://developers.strava.com/docs/authentication/\#requestingaccess](http://developers.strava.com/docs/authentication/#requestingaccess)
-
-* `read`: read public segments, public routes, public profile data, public posts, public events, club feeds, and leaderboards
-* `read_all`:read private routes, private segments, and private events for the user
-* `profile:read_all`: read all profile information even if the user has set their profile visibility to Followers or Only You
-* `profile:write`: update the user's weight and Functional Threshold Power \(FTP\), and access to star or unstar segments on their behalf
-
-
 
 ### Workflow
 

@@ -16,6 +16,10 @@ The following pages describe the logic and configuration setting required for ea
 
 {% page-ref page="mapillary.md" %}
 
+{% page-ref page="google-street-view.md" %}
+
+{% page-ref page="strava.md" %}
+
 ### Map the Paths Web
 
 Map the Paths Web integration must always be enabled when adding an integration.
