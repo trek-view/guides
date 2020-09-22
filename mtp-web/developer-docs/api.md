@@ -156,6 +156,7 @@ Here are currently available `transport_types`:
 | Scooter | Land | Scooter |
 | Skateboard | Land | Skateboard |
 | Walk | Land | Walk |
+| Rock Climbing | Land | "Rock Climbing" |
 | Boat | Powered | Boat |
 | Car | Powered | Car |
 | Drone | Powered | Drone |
@@ -168,6 +169,7 @@ Here are currently available `transport_types`:
 | Ski | Snow | Ski |
 | Snowboard | Snow | Snowboard |
 | Snowshoe | Snow | Snowshoe |
+| Ice Skating | Snow | "Ice Skating" |
 | Canoe | Water | Canoe |
 | Kayak | Water | Kayak |
 | Kiteboard | Water | Kiteboard |

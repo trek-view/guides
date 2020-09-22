@@ -21,8 +21,12 @@ Here is an overview of the kinds of devices and equipment you can work with.
 Map the Paths supports both 2D and 360 imagery \(recommended\) captured using:
 
 * **Mobile phones** A smartphone is the simplest device you can use for capturing and uploading images. Mobile phones are best for scenarios where you intend to mount a device inside your vehicle’s windshield or walk with the phone. 
-* **Action cameras** Action cameras are a good option for capturing great images, especially more demanding conditions with rough terrain, extreme weather, and high speeds. Compared to smartphones, action cameras are better at handling motion blur and more resistant to damage, so they're suitable for mounting on your bicycle or outside your vehicle. 
-* **360° cameras \(recommended\)** 360° cameras are great for covering all directions simultaneously. You can capture 360° imagery while driving a vehicle or walking. 
+* **Action cameras** Action cameras are a good option for capturing great images, especially more demanding conditions with rough terrain, extreme weather, and high speeds. Compared to smartphones, action cameras are better at handling motion blur and more resistant to damage, so they're suitable for mounting on your bicycle or outside your vehicle.  Recommended cameras:
+  * [GoPro HERO 9 Black](https://gopro.com/en/gb/shop/cameras/hero9-black/CHDHX-901-master.html)
+  * [GoPro HERO 8 Black](https://gopro.com/en/gb/shop/cameras/hero8-black/CHDHX-801-master.html)
+* **360° cameras \(recommended\)** 360° cameras are great for covering all directions simultaneously. You can capture 360° imagery while driving a vehicle or walking. Recommended cameras:
+  * GoPro Fusion \(discontinued -- check eBay\)
+  * [GoPro MAX](https://gopro.com/en/gb/shop/cameras/gopro-max/CHDHZ-201-master.html)
 
 ### Camera capture mode settings
 
