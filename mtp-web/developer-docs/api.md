@@ -174,7 +174,9 @@ Here are currently available `transport_types`:
 | Kayak | Water | Kayak |
 | Kiteboard | Water | Kiteboard |
 | Paddleboard | Water | Paddleboard |
+| Row | Water | Water |
 | Scuba Dive | Water | Scuba Dive |
+| Sail | Water | Sail |
 | Surf | Water | Surf |
 | Swim | Water | Swim |
 | Windsurf | Water | Windsurf |
