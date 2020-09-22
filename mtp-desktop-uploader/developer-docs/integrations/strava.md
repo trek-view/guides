@@ -59,17 +59,26 @@ These map to MTP Uploader values like so:
 * `data_type`=gpx
 * `external_id`=map the paths web uuid
 
-If successful a 201 response is returned. If error \(4xx/5xx\) attempt to reupload 3 times, then warn user of error and ask them to attempt to try again later.
+If successful a 201 response is returned with `id` of activity. If error \(4xx/5xx\) attempt to reupload 3 times, then warn user of error and ask them to attempt to try again later.
 
 #### 4. Update activity
 
 [Now the app needs to update activity on Strava with activity details \(the transport method used\)](http://developers.strava.com/docs/reference/#api-Activities-updateActivityById) using the Update Activity \(updateActivityById\) endpoint.
 
+This requires 2 values:
+
+* `id` : the activity id obtained during previous step
+* `type` : taken from transport type
+
 Requires activity:write. Also requires activity:read\_all in order to update Only Me activities.
 
+Sample request
 
-
-#### 
+```text
+http PUT "https://www.strava.com/api/v3/activities/{id}" \
+    "type" : "value",
+    "Authorization: Bearer [[token]]"
+```
 
 #### 5. MTPW update
 
