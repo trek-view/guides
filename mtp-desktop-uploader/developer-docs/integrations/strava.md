@@ -25,9 +25,16 @@ STRAVA_CLIENT_SECRET=
 
 ### Workflow
 
-#### 1. GPX file
+#### 1. Validate transport type type
 
-Unlike other integrations, Strava uses GPX files to track users activity
+Unlike other integrations, Strava uses GPX files to track users activity.
+
+Strava DOES NOT accept the following transport types
+
+* Powered
+  * All child elements
+
+That is, if Sequence is Powered transport type, user will not see Strava integration.
 
 #### 2. Authenticate
 
