@@ -10,7 +10,7 @@ description: >-
 
 To authenticate users to Strava API \(get token for user by granting access\), [you must create a Strava Oauth app here](https://www.strava.com/settings/api).
 
-[The app requires the `activity:write` scope.](http://developers.strava.com/docs/authentication/#requestingaccess)
+[The app requires the `activity:write` and `activity:write` scop](http://developers.strava.com/docs/authentication/#requestingaccess)es.
 
 ![Strava API app](../../../.gitbook/assets/a56df6a7-491d-48bd-88de-ad8f828dc5a5.png)
 
@@ -61,13 +61,23 @@ These map to MTP Uploader values like so:
 
 If successful a 201 response is returned. If error \(4xx/5xx\) attempt to reupload 3 times, then warn user of error and ask them to attempt to try again later.
 
-#### 4. MTPW update
+#### 4. Update activity
+
+[Now the app needs to update activity on Strava with activity details \(the transport method used\)](http://developers.strava.com/docs/reference/#api-Activities-updateActivityById) using the Update Activity \(updateActivityById\) endpoint.
+
+Requires activity:write. Also requires activity:read\_all in order to update Only Me activities.
+
+
+
+#### 
+
+#### 5. MTPW update
 
 Strava information gets synced to Map the Paths web.
 
 The process works in two parts:
 
-**6.1 MTPW token / sequence id**
+**5.1 MTPW token / sequence id**
 
 \*\*\*\*[MTPW authentication must be enabled for this integration for MTPW sync to work](../../../mtp-web/developer-docs/api.md#authorize). As such, app will already have MTPW token when user logged in when opening app.
 
