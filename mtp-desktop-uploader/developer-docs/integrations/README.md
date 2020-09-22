@@ -26,9 +26,13 @@ Map the Paths Web integration must always be enabled when adding an integration.
 
 ### Integrations precedent
 
+It is possible for user to select 0 or all integrations.
+
+When multiple integrations selected, the authentication happens for all before any upload is done. For example, if user selects all integrations, they will have to successfully complete login flow to the integration before being able to continue to upload.
+
 Integrations are processed in following order:
 
-1. MTPW \(required\)
+1. MTPW \(always required\)
 2. Mapillary
 3. Google Street View
 4. Strava
