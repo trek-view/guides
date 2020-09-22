@@ -83,7 +83,7 @@ If successful a 201 response is returned with `id` of activity. If error \(4xx/5
 This requires 2 values:
 
 * `id` : the activity id obtained during previous step
-* `type` : taken from transport type
+* `type` : taken from the `strava_activity` value in `transport-methods.json` for sequence transport type.
 
 Requires activity:write. Also requires activity:read\_all in order to update Only Me activities.
 
