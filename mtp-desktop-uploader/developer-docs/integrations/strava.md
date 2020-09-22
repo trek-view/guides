@@ -92,7 +92,7 @@ The process works in two parts:
 
 [The app already has MTPW sequence information following create action of Sequence earlier in the process. ](map-the-paths-web.md)
 
-**6.2 PUT Strava data**
+**5.2 PUT Strava data**
 
 \*\*\*\*[Send Strava info as PUT request to`/api/v1/sequence/import`](../../../mtp-web/developer-docs/api.md#create-sequence)
 
