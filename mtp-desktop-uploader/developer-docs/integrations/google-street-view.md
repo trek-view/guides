@@ -31,9 +31,13 @@ Once you have set the required consent information, select "API & Services" &gt;
 
 Now select "Create credentials" &gt; "OAuth client ID"
 
-![GCP create OAuth client ID](../../../.gitbook/assets/gcp-create-oauth-client-id.png)
+![](../../../.gitbook/assets/7c056b80-aa59-4724-b6d1-39c736db95a1.png)
 
-Select Application type as "XXXXX".
+Select Application type as "Web Application".
+
+The call back URL \(redirect URI's\) should be set to `MTPW_DOMAIN/accounts/check-mtpu-gsv-oauth`
+
+[See Map the Paths Web docs for more.](../../../mtp-web/developer-docs/api.md#mtpu-greater-than-google-street-view-greater-than-mtpw-greater-than-mtpu)
 
 Enter a name for the credentials. This is helpful for tracking who these credentials are for.
 
@@ -72,7 +76,7 @@ That is, if Sequence contains any flat \(2D\) images, user will not see Google S
 
 #### 2. User authenticates to Google
 
-![](../../../.gitbook/assets/explorer-map-the-paths-v2-ui.jpg)
+![](../../../.gitbook/assets/explorer-map-the-paths-v2-ui%20%281%29.jpg)
 
 When a user tries to upload images to Google, they will grant the Google Oauth app access to act on their behalf \(see setup\).
 

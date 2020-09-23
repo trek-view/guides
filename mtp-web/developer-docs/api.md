@@ -332,3 +332,37 @@ Will leave the following integration records against sequence.
 * `google_street_view`=`true`
 * `strava`=`true`
 
+### Token exchange endpoints
+
+[To support Map the Paths Uploader Oauth flow, the following endpoints exists so the MTP Uploader can act as a middle man for the token exchange workflow.](../../mtp-desktop-uploader/developer-docs/integrations/)
+
+These endpoints are listening for tokens for logged in MTPW users. If user not logged in, will be prompted to login before token exchange happens.
+
+They do not user the root endpoint. For example; `/accounts/check-mapillary-oauth` resolves to `DOMAIN//accounts/check-mapillary-oauth`
+
+#### MTPW -&gt; Mapillary
+
+Used for users authenticating to Mapillary directly from web app
+
+`/accounts/check-mapillary-oauth`
+
+When token received is stored in app, and user continues intended workflow in the app.
+
+#### MTPU -&gt; Mapillary -&gt; MTPW -&gt; MTPU
+
+`/accounts/check-mtpu-mapillary-oauth`
+
+When token received is stored in app, token is then passed to Map the Paths web and user redirected to app \(redirect url = `app.mtp.desktop://app`\)
+
+#### MTPU -&gt; Google Street View -&gt; MTPW -&gt; MTPU
+
+`/accounts/check-mtpu-gsv-oauth`
+
+When token received is stored in app, token is then passed to Map the Paths web and user redirected to app \(redirect url = `app.mtp.desktop://app`\)
+
+#### MTPU -&gt; Strava -&gt; MTPW -&gt; MTPU
+
+`/accounts/check-mtpu-strava-oauth`
+
+When token received is stored in app, token is then passed to Map the Paths web and user redirected to app \(redirect url = `app.mtp.desktop://app`\)
+

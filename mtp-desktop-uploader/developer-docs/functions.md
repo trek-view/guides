@@ -53,6 +53,24 @@ To create an app in MTPW you must:
    2. the staging server you can user for testing is `https://map-the-paths-develop.herokuapp.com/authorize`
    3. If you are running a development instance of MTPW, this will be your local server address
 
+**Map the Paths OAuth Flow**
+
+![](../../.gitbook/assets/explorer-map-the-paths-v2-ui-3-.jpg)
+
+When a user tries to login, they will grant the MTPW Oauth app access to act on their behalf \(see setup\).
+
+![](../../.gitbook/assets/28ce5c9f-3b17-40e9-9ed6-7dcb84d25e1b.png)
+
+When they click integrate/authenticate to MTPW at login it will open a browser window for user to authorise your app.
+
+If user clicks allow, the browser will redirect the user \(and token generated\) back to the MTP web \(using callback URL\).
+
+![](../../.gitbook/assets/untitled%20%281%29.png)
+
+Token is then automatically passed to MTP Uploader with user automatically redirected to MTP Uploader \(after clicking "open app"\) in browser.
+
+This flow is performed every time app is opened to ensure user token is valid.
+
 ### 2. Sequence List
 
 ![MTPDU Sequence List](../../.gitbook/assets/sequence-list.png)
