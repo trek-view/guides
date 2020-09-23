@@ -76,7 +76,7 @@ That is, if Sequence contains any flat \(2D\) images, user will not see Google S
 
 #### 2. User authenticates to Google
 
-![](../../../.gitbook/assets/explorer-map-the-paths-v2-ui%20%281%29.jpg)
+![](../../../.gitbook/assets/explorer-map-the-paths-v2-ui%20%282%29.jpg)
 
 When a user tries to upload images to Google, they will grant the Google Oauth app access to act on their behalf \(see setup\).
 

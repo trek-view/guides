@@ -12,24 +12,30 @@ The Mapillary API lets you interact with Mapillary on the behalf of a user. [Thi
 
 You need to create a Mapillary App. [Mapillary applications can be created here](https://www.mapillary.com/dashboard/developers).
 
-![Register Mapillary App](../../../.gitbook/assets/44fa3e4e-7e74-4401-8dda-33c1a6fcf0ad.png)
+![](../../../.gitbook/assets/63fdf2b9-185b-43ed-a6f2-599fc6e20ecb.png)
 
 You must set the following:
 
-* Callback URL: `app.mtp.desktop://app`
+* Callback URL: `MTPW_DOMAIN/accounts/check-mtpu-mapillary-oauth`
 * Allow this application to: `user:email`, `user:read`, `user:write`, `public:write`, `public:upload`
 
 All other settings can be configured as you like.
 
-Once you click save, the app will be assigned a client id and client secret. Add these to the .env file, along with the callback URL you just set. Here is a sample:
+Once you click save, the app will be assigned a client id and client secret. Add these to the .`env` file, along with the callback URL you just set. Here is a sample:
 
 ```text
 MAPILLARY_APP_ID=ABCDEFGHIJK123
 MAPILLARY_SECRET=ZYX987654321
-MAPILLARY_REDIRECT_URI=app.mtp.desktop//app
+MAPILLARY_REDIRECT_URI=https://map-the-paths-develop.herokuapp.com/accounts/check-mtpu-gsv-oauth
 ```
 
 If any of these values are not present in `.env` file, user will not be able to view the Mapillary integration in UI.
+
+{% hint style="info" %}
+I[f you are running your own Map the Paths web install, this Mapillary app needs to be different from the app created for the web app. This is because the redirect URL is different.](../../../mtp-web/developer-docs/install.md#mapillary-setup)
+{% endhint %}
+
+### \*\*\*\*
 
 ### **Workflow**
 
@@ -49,7 +55,7 @@ If any of these values are not present in `.env` file, user will not be able to 
 
 ![MTPDU to Mapillary Sync](../../../.gitbook/assets/mapillary-sync-ui.jpg)
 
-### **1. Validate imagery \(tod\)**
+### **1. Validate imagery \(todo\)**
 
 Mapillary is based on a very similar structure to Map the Paths with [Sequences](https://www.mapillary.com/developer/api-documentation/#sequences) and [Images](https://www.mapillary.com/developer/api-documentation/#images).
 
@@ -73,11 +79,19 @@ This is already done by the app in `ImageDescription` of images\) on MTPDU \([se
 
 ### 3. User authenticates to Mapillary
 
+![](../../../.gitbook/assets/explorer-map-the-paths-v2-ui.jpg)
+
 When a user tries to upload images to Mapillary, they will grant the app access to act on their behalf \(see setup\).
 
 ![Mapillary grant window](../../../.gitbook/assets/mapillary-grant.png)
 
-When they click integrate/authenticate to Mapillary at integrations step it will open a browser window for user to authorise your app. If user clicks authorise, the browser will redirect the user \(and token generated\) back to the MTP app \(using callback URL\).
+When they click integrate/authenticate to Mapillary at integrations step it will open a browser window for user to authorise your app.
+
+If user clicks allow, the browser will redirect the user \(and token generated\) back to the MTP web \(using callback URL -- a dedicated MTPW endpoint for such tokens\).
+
+![](../../../.gitbook/assets/untitled%20%281%29.png)
+
+Token is then automatically passed to MTP Uploader with user automatically redirected to MTP Uploader \(after clicking "open app"\) in browser.
 
 [Mapillary user tokens do not expire \(but user can revoke token\)](https://www.mapillary.com/developer/api-documentation/#oauth). As such, MTPDU stores the user token. If valid Mapillary token exists \(does not return unauthorised response\), user will not need to perform this step again. If no token or invalid token, user will need to perform this step again.
 

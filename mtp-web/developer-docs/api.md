@@ -246,7 +246,7 @@ Sequence Integration Data
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint is designed for use with MTP Desktop Uploader. If the sequence has been synced with a 3rd part integration by MTPDU, then it will be updated in MTPW using this endpoint.
+This endpoint is designed for use with MTP Desktop Uploader. If the sequence has been synced with a 3rd party integration by MTPDU, then it will be updated in MTPW using this endpoint.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -258,10 +258,6 @@ If MPTDU uploaded to Strava. Default is false
 
 {% api-method-parameter name="google\_street\_view" type="boolean" required=false %}
 If MTPDU uploaded to Google Street View. Default is false.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="mapillary\_user\_token" type="string" required=false %}
-The users Mapillary token. Must be passed with \`mapillary\_sequence\_key\` value.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="mapillary\_sequence\_key" type="string" required=false %}
@@ -352,17 +348,23 @@ When token received is stored in app, and user continues intended workflow in th
 
 `/accounts/check-mtpu-mapillary-oauth`
 
-When token received is stored in app, token is then passed to Map the Paths web and user redirected to app \(redirect url = `app.mtp.desktop://app`\)
+When token received is stored in app, token is then passed to Map the Paths web and user redirected to desktop app \(redirect url = `app.mtp.desktop://app`\)
+
+[See more about the MTPU Mapillary integration here.](../../mtp-desktop-uploader/developer-docs/integrations/mapillary.md)
 
 #### MTPU -&gt; Google Street View -&gt; MTPW -&gt; MTPU
 
 `/accounts/check-mtpu-gsv-oauth`
 
-When token received is stored in app, token is then passed to Map the Paths web and user redirected to app \(redirect url = `app.mtp.desktop://app`\)
+When token received is stored in app, token is then passed to Map the Paths web and user redirected to desktop app \(redirect url = `app.mtp.desktop://app`\)
+
+[See more about the MTPU GSV integration here.](../../mtp-desktop-uploader/developer-docs/integrations/google-street-view.md)
 
 #### MTPU -&gt; Strava -&gt; MTPW -&gt; MTPU
 
 `/accounts/check-mtpu-strava-oauth`
 
-When token received is stored in app, token is then passed to Map the Paths web and user redirected to app \(redirect url = `app.mtp.desktop://app`\)
+When token received is stored in app, token is then passed to Map the Paths web and user redirected to desktop app \(redirect url = `app.mtp.desktop://app`\)
+
+[See more about the MTPU Strava integration here.](../../mtp-desktop-uploader/developer-docs/integrations/strava.md)
 

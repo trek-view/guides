@@ -16,6 +16,8 @@ To authenticate users to Strava API \(get token for user by granting access\), [
 
 The call back URL \(redirect URI's\) should be set to `MTPW_DOMAIN`
 
+[See Map the Paths Web docs for more.](../../../mtp-web/developer-docs/api.md#mtpu-greater-than-strava-greater-than-mtpw-greater-than-mtpu)
+
 ![Strava API app](../../../.gitbook/assets/a56df6a7-491d-48bd-88de-ad8f828dc5a5.png)
 
 This will give Client ID and secret.
