@@ -58,13 +58,9 @@ GOOGLE_CLIENT_SECRET=
 
 Now go back to "API & Services" &gt; "Credentials" and select API key.
 
-Create a new key..
+![](../../../.gitbook/assets/5bab2e22-29ba-4c27-9542-13a023967239.png)
 
-![](../../../.gitbook/assets/download%20%281%29.png)
-
-![](../../../.gitbook/assets/download-1-%20%281%29.png)
-
-It's good practise to restrict where the key can be used \(the origin URL\) and the API's it can be used with \(required, Street View Publish and Places API\).
+It's good practise to restrict the API's the key can be used with \(required, Street View Publish and Places API\). 
 
 You can place the generated API key in the `.env` file once created.
 
