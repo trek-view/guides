@@ -17,6 +17,8 @@ This app requires the following Google API's to work:
 
 To enable these services, click each of the links above \(making sure the menu bar at the top shows the project you just created\) and select enable.
 
+#### Create Oauth credentials
+
 If this is your first time creating a project you might see the message:
 
 > "To create an OAuth client ID, you must first set a product name on the consent screen."
@@ -50,6 +52,22 @@ You can place your Google application information in the `.env` file once create
 ```text
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
+```
+
+#### Create API key
+
+Now go back to "API & Services" &gt; "Credentials" and select API key.
+
+Create a new key..
+
+![](../../../.gitbook/assets/download%20%281%29.png)
+
+![](../../../.gitbook/assets/download-1-%20%281%29.png)
+
+It's good practise to restrict where the key can be used \(the origin URL\) and the API's it can be used with \(required, Street View Publish and Places API\).
+
+```text
+GOOGLE_API_KEY=
 ```
 
 ### Workflow
