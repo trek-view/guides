@@ -47,7 +47,7 @@ Enter a name for the credentials. This is helpful for tracking who these credent
 
 If everything is successful, Google will generate a client ID and client secret. Make a note of these.
 
-You can place your Google application information in the `.env` file once created.
+You can place your Google Oauth application information in the `.env` file once created.
 
 ```text
 GOOGLE_CLIENT_ID=
@@ -65,6 +65,8 @@ Create a new key..
 ![](../../../.gitbook/assets/download-1-%20%281%29.png)
 
 It's good practise to restrict where the key can be used \(the origin URL\) and the API's it can be used with \(required, Street View Publish and Places API\).
+
+You can place the generated API key in the `.env` file once created.
 
 ```text
 GOOGLE_API_KEY=
