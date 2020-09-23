@@ -50,17 +50,7 @@ You can place your Google application information in the `.env` file once create
 ```text
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
-GOOGLE_MAPS_GEOCODING_ID=
-GOOGLE_MAPS_GEOCODING_SECRET=
 ```
-
-{% hint style="info" %}
-If you use different billing accounts or projects, it is possible to create two credentials in this way for `GOOGLE_CLIENT_ID` \(used for Street View Publish\) and `GOOGLE_MAPS_GEOCODING_ID` \(used for Autocomplete API\).
-{% endhint %}
-
-{% hint style="info" %}
-If no `GOOGLE_MAPS_GEOCODING_ID` and `GOOGLE_MAPS_GEOCODING_SECRET` present. Place assignment will not happen and will show as "Unknown" place in Street View UI. This feature is optional to avoid the costs involved in using this API.
-{% endhint %}
 
 ### Workflow
 
