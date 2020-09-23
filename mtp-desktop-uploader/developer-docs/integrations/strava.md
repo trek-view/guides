@@ -10,11 +10,11 @@ description: >-
 
 To authenticate users to Strava API \(get token for user by granting access\), [you must create a Strava Oauth app here](https://www.strava.com/settings/api).
 
-![](../../../.gitbook/assets/3350354e-10c5-4c1e-9f1a-7085d9eafffe.png)
+![](../../../.gitbook/assets/563741c2-e0df-4791-b402-784851a6f21e.png)
 
 [The app requires the `activity:write` and `activity:write` scop](http://developers.strava.com/docs/authentication/#requestingaccess)es.
 
-The call back URL \(redirect URI's\) should be set to `MTPW_DOMAIN/accounts/check-mtpu-strava-oauth`
+The call back URL \(redirect URI's\) should be set to `MTPW_DOMAIN`
 
 ![Strava API app](../../../.gitbook/assets/a56df6a7-491d-48bd-88de-ad8f828dc5a5.png)
 
