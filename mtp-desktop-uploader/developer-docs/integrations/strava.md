@@ -48,6 +48,22 @@ That is, if Sequence is transport type where `"strava_activity": "FALSE"`, user 
 
 [Strava uses a standard Oauth flow to authenticate users described here.](https://developers.strava.com/docs/authentication/#oauthoverview)
 
+![](../../../.gitbook/assets/explorer-map-the-paths-v2-ui-2-.jpg)
+
+When a user tries to upload gpx to Strava, they will grant the Strava Oauth app access to act on their behalf \(see setup\).
+
+![](../../../.gitbook/assets/5893f5c8-7679-4f4f-af89-dda5c2ad1c40.png)
+
+When they click integrate/authenticate to Strava at integrations step it will open a browser window for user to authorise your app.
+
+If user clicks allow, the browser will redirect the user \(and token generated\) back to the MTP web \(using callback URL -- a dedicated MTPW endpoint for such tokens\).
+
+![](../../../.gitbook/assets/untitled%20%281%29.png)
+
+Token is then automatically passed to MTP Uploader with user automatically redirected to MTP Uploader \(after clicking "open app"\) in browser.
+
+[Strava tokens do expire automatically](https://developers.strava.com/docs/authentication/). As such, MTPDU does not store the token. This authentication is required every single time a user attempts to sync a new Sequence with Strava.
+
 #### 3. Upload activity
 
 [You can create an activity using the createUpload Strava endpoint](http://developers.strava.com/docs/reference/#api-Uploads-createUpload).

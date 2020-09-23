@@ -72,11 +72,19 @@ That is, if Sequence contains any flat \(2D\) images, user will not see Google S
 
 #### 2. User authenticates to Google
 
+![](../../../.gitbook/assets/explorer-map-the-paths-v2-ui.jpg)
+
 When a user tries to upload images to Google, they will grant the Google Oauth app access to act on their behalf \(see setup\).
 
 ![MTPW x Google Authentication flow](../../../.gitbook/assets/authenticate-google-account.png)
 
-When they click integrate/authenticate to Google at integrations step it will open a browser window for user to authorise your app. If user clicks allow, the browser will redirect the user \(and token generated\) back to the MTP app \(using callback URL\).
+When they click integrate/authenticate to Google at integrations step it will open a browser window for user to authorise your app.
+
+If user clicks allow, the browser will redirect the user \(and token generated\) back to the MTP web \(using callback URL -- a dedicated MTPW endpoint for such tokens\).
+
+![](../../../.gitbook/assets/untitled%20%281%29.png)
+
+Token is then automatically passed to MTP Uploader with user automatically redirected to MTP Uploader \(after clicking "open app"\) in browser.
 
 [Google tokens do expire automatically](https://developers.google.com/identity/protocols/oauth2). As such, MTPDU does not store the token. This authentication is required every single time a user attempts to sync a new Sequence with GSV.
 

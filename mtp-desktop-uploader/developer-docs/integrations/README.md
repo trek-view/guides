@@ -24,6 +24,8 @@ The following pages describe the logic and configuration setting required for ea
 
 Map the Paths Web integration must always be enabled when adding an integration.
 
+The reason for this is because Map the Paths Web app handles Oauth token exchange in many cases. 
+
 ### Integrations precedent
 
 It is possible for user to select 0 or all integrations.
