@@ -9,7 +9,10 @@ The project name can be anything you want. It will only be visible to you in the
 This app requires the following Google API's to work:
 
 * [Street View Publish API](https://console.cloud.google.com/apis/library/streetviewpublish.googleapis.com) \(used to send photos to Street View\)
-* [Place Autocomplete API ](https://developers.google.com/places/web-service/autocomplete)\(used to lookup placeid\) \(optional\)
+* [Place Autocomplete API ](https://developers.google.com/places/web-service/autocomplete)\(used to lookup placeid\)
+* [Map Javascript API](https://developers.google.com/maps/documentation/javascript/overview) \(used for placeid\)
+
+![](../../../.gitbook/assets/ed9be50b-ea89-4cbf-81fe-e4ac1dfaa8c8.png)
 
 ![Google Cloud Places API](../../../.gitbook/assets/68039645-d4e4-4e03-b97d-08d129bf6ed2.png)
 
@@ -60,7 +63,11 @@ Now go back to "API & Services" &gt; "Credentials" and select API key.
 
 ![](../../../.gitbook/assets/5bab2e22-29ba-4c27-9542-13a023967239.png)
 
-It's good practise to restrict the API's the key can be used with \(required, Street View Publish and Places API\). 
+It's good practise to restrict the API's the key can be used with. At a minimum the following are required;
+
+* Street View Publish API
+* Places API
+* Map Javascript API
 
 You can place the generated API key in the `.env` file once created.
 
