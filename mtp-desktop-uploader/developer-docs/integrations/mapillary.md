@@ -66,13 +66,6 @@ Mapillary accepts the following image projections:
 * flat
 * equirectangular
 
-Mapillary DOES NOT accept the following transport types
-
-* Air
-  * All child elements
-
-That is, if Sequence is Air transport type, user will not see Mapillary integration.
-
 ### 2. Prepare the imagery for uploading
 
 This is already done by the app in `ImageDescription` of images\) on MTPDU \([see here](../functions.md#21-2-imagedescription-json-object)\).

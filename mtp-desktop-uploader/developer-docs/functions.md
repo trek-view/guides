@@ -736,7 +736,7 @@ This takes the first image in the sequence and renders it with nadir for user to
 
 16 versions are created with nadir sizes between 10% and 25% of image height. When user modifies % in UI using slider, it calls one of these temporary images. These temporary images are stored in the `ROOT/` directory. If user exits the add nadir step, or once nadir confirmed to be added the app deletes these temporary files.
 
-### 19. Image blur \(experimental\) \(advanced setting\)
+### 19. Image blur \(advanced setting\) \[DEPRECATED\]
 
 ![MTPDU add image blur](../../.gitbook/assets/add-image-blur.png)
 
@@ -772,9 +772,7 @@ User can select multiple integrations. For example, once Mapillary Oauth granted
 If  `final_nadir` directory:
 
 * exists, these images are uploaded to integrations
-* else, upload `final_original` images
-
-`final_blur` directory is never synced with integrations \(even if it exists\).
+* else, upload `final_raw` images
 
 App retries to upload image 3 times, then return error and move to next image.
 
@@ -791,12 +789,11 @@ Once user confirms the final step;
 * a permanent sequence file is generated \(`.json`\)
 * a gpx track file is created \(`.gpx`\)
 * copies of images with `ImageDescription` containing a MTP JSON object are written to sequence directory, in subdirectories as follows;
-  * `final_original`: final sequence imagery without nadir or blur
+  * `final_raw`: final sequence imagery without nadir or blur
   * `final_nadir`: final sequence imagery with nadir but without blur \(optional, if selected by user\)
-  * `final_blur` : final sequence imagery with blur and nadir \(optional, if selected by user\)
 * if selected, photos synced with MTPW.
 
-Note `final_original` and `original` subdirectories are different. `original` subdirectory holds all images including those discarded during sequence creation \(due to filtering\). `final_original` contains only the images that remain in the final sequence.
+Note `final_raw` and `original` subdirectories are different. `original` subdirectory holds all images including those discarded during sequence creation \(due to filtering\). `final_raw` contains only the images that remain in the final sequence.
 
 All original metadata in raw images is retained unless changes are made to such value during sequence creation workflow \(e.g. heading updated\).
 
@@ -804,13 +801,10 @@ All original metadata in raw images is retained unless changes are made to such 
 
 Photos are processed one-by-one in the following order;
 
-1. `final_original`: exiftool writes new metadata to image
+1. `final_raw`: exiftool writes new metadata to image
 2. `final_nadir`: `final_original` images copied to directory, nadir patch overlaid
-3. `final_blur`: `final_original` OR `final_nadir` \(optional, if selected by user\) images copied to directory, blur applied
 
 For example, all images in sequence will be written to `final_original`. When complete, if user has selected to add a nadir, a copy of these photos will be placed in `final_nadir` after nadir patch applied.
-
-Note, blur can have nadir or not have nadir depending on if user chooses to add it. In which case, the source of blurred images will depend on option selected. Is `final_original` if no nadir added OR `final_nadir` in nadir added.
 
 #### **21.2 `ImageDescription` JSON object**
 
@@ -828,7 +822,7 @@ The JSON object inside each image has the following values;
 * `MTPSequenceDescription` \(string\): Description of sequence
 * `MTPSequenceTransport` \(string\): Transport used to capture sequence in main-sub format. e.g. `land-hike`.
 * `MTPSequenceTags` \(list\): List `[]` of sequence tags.
-* `MTPImageCopy` \(string\): Both final unmodified images, and nadir copy of images can be uploaded \(if exists\). Either `final_raw`, `final_nadir` or `final_blur`.
+* `MTPImageCopy` \(string\): Both final unmodified images, and nadir copy of images can be uploaded \(if exists\). Either `final_raw` or `final_nadir`
 * `MTPImageProjection` \(string\): either `flat` or `equirectangular` depending on type of image.
 
 An example of a final object in the ImageDescription field will look like this:

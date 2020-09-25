@@ -252,8 +252,8 @@ This endpoint is designed for use with MTP Desktop Uploader. If the sequence has
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="strava" type="boolean" required=false %}
-If MPTDU uploaded to Strava. Default is false
+{% api-method-parameter name="strava" type="string" required=false %}
+If MPTDU uploaded to Strava the activity id of the uploaded activity.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="google\_street\_view" type="boolean" required=false %}
@@ -308,7 +308,7 @@ curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/j
     "mapillary_sequence_key": "123",
     "mapillary_user_token": "456",
     "google_street_view": " FALSE,
-    "strava": " TRUE
+    "strava": "18273749957"
 }'
 ```
 
@@ -326,7 +326,7 @@ Will leave the following integration records against sequence.
 * `mapillary_sequence_key`=`123`
 * `mapillary_user_token`=`346`
 * `google_street_view`=`true`
-* `strava`=`true`
+* `strava`=`18273749957`
 
 ### Token exchange endpoints
 
