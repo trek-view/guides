@@ -40,7 +40,7 @@ Now select "Create credentials" &gt; "OAuth client ID"
 
 Select Application type as "Web Application".
 
-The call back URL \(redirect URI's\) should be set to `MTPW_DOMAIN/accounts/check-mtpu-gsv-oauth`
+The call back URL \(redirect URI's\) should be set to `MTPW_DOMAIN/accounts/check-mtpu-google-oauth`
 
 [See Map the Paths Web docs for more.](../../../mtp-web/developer-docs/api.md#mtpu-greater-than-google-street-view-greater-than-mtpw-greater-than-mtpu)
 
