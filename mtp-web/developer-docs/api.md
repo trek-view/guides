@@ -362,7 +362,7 @@ When token received is stored in app, token is then passed to Map the Paths web 
 
 #### MTPU -&gt; Strava -&gt; MTPW -&gt; MTPU
 
-`/accounts/exchange-token`
+`/exchange_token`
 
 When token received is stored in app, token is then passed to Map the Paths web and user redirected to desktop app \(redirect url = `app.mtp.desktop://app`\)
 
