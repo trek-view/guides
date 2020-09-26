@@ -354,7 +354,7 @@ When token received is stored in app, token is then passed to Map the Paths web 
 
 #### MTPU -&gt; Google Street View -&gt; MTPW -&gt; MTPU
 
-`/accounts/check-mtpu-gsv-oauth`
+`/accounts/check-mtpu-google-oauth`
 
 When token received is stored in app, token is then passed to Map the Paths web and user redirected to desktop app \(redirect url = `app.mtp.desktop://app`\)
 
