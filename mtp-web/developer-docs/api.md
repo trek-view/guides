@@ -291,8 +291,7 @@ The unique MTP Sequence ID
 ```text
 curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
 --data-raw '{
-    "mapillary_sequence_key": "<MAPILLARY_SEQ_KEY>",
-    "mapillary_user_token": "<MAPILLARY_USER_TOKEN>",
+    "mapillary_sequence_key": "<MAPILLARY_SEQ_KEY>"
 }'
 ```
 
@@ -306,7 +305,6 @@ _For example \(request 1\)_
 curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
 --data-raw '{
     "mapillary_sequence_key": "123",
-    "mapillary_user_token": "456",
     "google_street_view": " FALSE,
     "strava": "18273749957"
 }'
@@ -348,7 +346,7 @@ When token received is stored in app, and user continues intended workflow in th
 
 `/accounts/check-mtpu-mapillary-oauth`
 
-When token received is stored in app, token is then passed to Map the Paths web and user redirected to desktop app \(redirect url = `app.mtp.desktop://app`\)
+When token received is stored in app, token is then passed to Map the Paths web \(and stored in MTPW\) and user redirected to desktop app \(redirect url = `app.mtp.desktop://app`\)
 
 [See more about the MTPU Mapillary integration here.](../../mtp-desktop-uploader/developer-docs/integrations/mapillary.md)
 
@@ -356,7 +354,7 @@ When token received is stored in app, token is then passed to Map the Paths web 
 
 `/accounts/check-mtpu-google-oauth`
 
-When token received is stored in app, token is then passed to Map the Paths web and user redirected to desktop app \(redirect url = `app.mtp.desktop://app`\)
+When token received is stored in app, token is then passed to Map the Paths web \(and stored in MTPW\) and user redirected to desktop app \(redirect url = `app.mtp.desktop://app`\)
 
 [See more about the MTPU GSV integration here.](../../mtp-desktop-uploader/developer-docs/integrations/google-street-view.md)
 
@@ -364,7 +362,7 @@ When token received is stored in app, token is then passed to Map the Paths web 
 
 `/exchange_token`
 
-When token received is stored in app, token is then passed to Map the Paths web and user redirected to desktop app \(redirect url = `app.mtp.desktop://app`\)
+When token received is stored in app, token is then passed to Map the Paths web \(and stored in MTPW\) and user redirected to desktop app \(redirect url = `app.mtp.desktop://app`\)
 
 [See more about the MTPU Strava integration here.](../../mtp-desktop-uploader/developer-docs/integrations/strava.md)
 
