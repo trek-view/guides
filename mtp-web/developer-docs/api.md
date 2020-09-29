@@ -252,6 +252,10 @@ This endpoint is designed for use with MTP Desktop Uploader. If the sequence has
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
+{% api-method-parameter name="mapillary\_user\_token" type="string" required=false %}
+The Mapillary user token, required to import tour into MTPW.
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="strava" type="string" required=false %}
 If MPTDU uploaded to Strava the activity id of the uploaded activity.
 {% endapi-method-parameter %}
@@ -286,12 +290,15 @@ The unique MTP Sequence ID
 {% endapi-method-spec %}
 {% endapi-method %}
 
+"": ""
+
 #### **Example request**
 
 ```text
 curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
 --data-raw '{
-    "mapillary_sequence_key": "<MAPILLARY_SEQ_KEY>"
+    "mapillary_sequence_key": "<MAPILLARY_SEQ_KEY>",
+    "mapillary_user_token": "<MAPILLARY_USER_TOKEN>"
 }'
 ```
 
@@ -305,6 +312,7 @@ _For example \(request 1\)_
 curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
 --data-raw '{
     "mapillary_sequence_key": "123",
+    "mapillary_user_token": "456",
     "google_street_view": " FALSE,
     "strava": "18273749957"
 }'
