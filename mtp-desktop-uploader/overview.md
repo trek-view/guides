@@ -10,22 +10,30 @@ description: >-
 
 ![MTPDU sequence list](../.gitbook/assets/sequence-list.png)
 
+
+
+* Works with 360 and standard \(flat\) photos
 * Add metadata to sequence for easy management and discovery \(name, description, tags\)
 * Convert video to photo frames
-* Geotag images using gpx track
+* Geotag images using `.gpx` track file
 * Define photo spacing
 * Modify photo GPS information \(position and heading\)
 * Add a nadir
-* Blur people and license plates
+* Add copyright information
 * Upload to web platforms
   * Map the Paths Web
   * Mapillary
-  * Google Street View
+  * Google Street View \(360 images only\)
+  * Strava \(`.gpx`, must be on supported transport method\)
   * Developer? Add your own...
 
 ### Download Now
 
 [Download the latest version of Desktop Uploader on Map the Paths here](https://mtp.trekview.org/upload).
+
+### Getting Started
+
+Installed and ready to go? [Check out the user guide.](user-guide.md)
 
 ### Support
 
