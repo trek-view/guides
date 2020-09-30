@@ -293,8 +293,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_local')
 
 Fill following values in `config/setting_local.py`
 
-\`\`
-
 ```text
 DATABASES = {
     'default': {
