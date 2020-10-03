@@ -14,6 +14,8 @@ You can modify your profile page by including:
 * Website
 * Profile photo
 
+![](../../.gitbook/assets/3242942d-fde5-45f4-9ded-9af3faa53fda.png)
+
 To modify your profile, click the edit/change picture button on your profile page.
 
 {% hint style="info" %}
@@ -26,9 +28,13 @@ We never share your email with other Map the Paths users in the application inte
 
 ### Hiring
 
+![](../../.gitbook/assets/8f5df341-ec62-449a-9c4c-55021171beb4.png)
+
 If you offer professional virtual tour creation services it is possible to mark your profile as available "For Hire".
 
 To do this, simply navigate to your profile page, and click "Create hiring profile".
+
+![](../../.gitbook/assets/0fcaff47-b5f1-434e-939c-20acdbe02390.png)
 
 You can add the following values to your profile, and update them at anytime:
 
@@ -57,6 +63,8 @@ You can add the following values to your profile, and update them at anytime:
 Once published, other users will be able to find your hiring listing via your profile or [through the photographer search feature.](https://mtp.trekview.org/hire/list/)
 
 ### Badges
+
+![](../../.gitbook/assets/9854b8c9-d7ee-468c-926b-3526bb62dd26.png)
 
 You can earn badges on Map the Paths based on your activity.
 

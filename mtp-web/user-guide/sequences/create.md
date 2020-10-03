@@ -66,5 +66,32 @@ Once imported your Sequence\(s\) will be immediately searchable and visible to o
 
 ### Manage sequences
 
+![](../../../.gitbook/assets/6502f87c-ab72-400e-b508-664a3a91ee00.png)
+
+You can edit or delete a sequence once it has been imported by navigating to the sequence and selecting the desired option.
+
+### Leaderboards
+
+![](../../../.gitbook/assets/4c3d6cce-86dd-4be9-ad3a-03c2ae65494a%20%281%29.png)
+
+Leaderboards give users points based on their imagery synced to Map the Paths.
+
+Leaderboards can be:
+
+* Global: considers all photos and has filters any user can modify
+* [Challenges](../challenges.md): are fixed and related to settings defined when challenge was created
+
+The global leaderboards have three types:
+
+* Photos uploaded \(by user\): counts number of photos uploaded by user
+* Viewpoints received \(by user\): counts number of viewpoints users photos have received
+* Distance mapped \(by users\): counts the sum of kilometres covered by users Sequences
+
+Leaderboards have filters:
+
+* By transport type \(parent/child\)
+* By camera make \(make/model\)
+* By date
+
 
 

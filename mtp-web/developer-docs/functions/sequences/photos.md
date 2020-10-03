@@ -336,7 +336,7 @@ Map the Paths Photo object labels have a Parent / Child relationship. For exampl
 Object labels are either defined by
 
 * Admin: in Django admin panel
-* Users: when creating [Challenges](../leaderboards/challenges.md)
+* Users: when creating [Challenges]()
 
 When labelling images, users can only select from defined Parent / Child labels.
 

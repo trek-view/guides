@@ -16,18 +16,25 @@ Photos therefore have 4 types of associated metadata
 
 * Sequence data: the sequence information for the sequence they belong to
 * Image data: such as capture time, camera type, etc.
-* Image detections / features \(Mapillary\): object and feature detections discovered by Mapillary
-* Image labels: labels added to images by MTPW users
+* Image labels
+  * Manual: labels added to images by MTPW users
+  * Auto detected: object and feature detections discovered by computer vision
 
 ### Sequence data
 
-Because each image belongs to a sequence, it inherits the sequence data.
+[Because each image belongs to a sequence, it inherits the sequence data.](create.md)
 
 ### Image data
 
-This data is essentially the metadata added to the image when it was taken and/or processed.
+This data is essentially the metadata added to the image when it was taken and/or processed \(things like location, elevation, camera type, etc.\).
 
-### Image detections / features \(Mapillary\)
+### Image labels
+
+When in Photo view, you will be able to see image labels in an image. When viewing a photo you can toggle the original/detection tab to enter detection mode.
+
+#### Auto detected
+
+![](../../../.gitbook/assets/89c7003b-ac28-4791-ab88-5b20923b2222.png)
 
 You'll see Mapillary detections that have been reported by Mapillary for the image.
 
@@ -36,25 +43,24 @@ You can read more about Mapillary:
 * [Object detections](https://help.mapillary.com/hc/en-us/articles/115000967191-Object-detections)
 * [Map features](https://help.mapillary.com/hc/en-us/articles/115002332165)
 
-### Image labels
+#### Manual
 
-When in Photo view, you will be able to see image labels other MTPW users have applied.
-
-You can also add your own labels by tracing around the object you wish to label in the image.
-
-Clicking an image label in the left hand menu will highlight that label in the Photo viewer.
-
-#### Label an object
-
-![MTPW add a label](../../../.gitbook/assets/b1e50ba1-4e83-4655-8d70-1bd7490aedc6.png)
+![](../../../.gitbook/assets/download-2-%20%281%29.png)
 
 You might notice objects that have not been labelled in an image. In which case, you can add them yourself.
 
-To do this select Add Label and draw the outline of the object using the polygon creation tool.
+You can also add your own labels by tracing around the object you wish to label in the image.
 
-Once the Polygon has been drawn, select the parent label category and the associated child label.
+#### How to manually label an object
 
-If you don't see the type of label you want to add, [you can create a Challenge](challenges/). This will not only add the label to our label database, but also encourage others to use this label across all Map the Paths imagery.
+To do this:
+
+1. In detection mode select "Add label"
+2. Select the label you want to add
+   1. If you don't see the type of label you want to add, [you can create a Challenge](../challenges.md). This will not only add the label to our label database, but also encourage others to use this label across all Map the Paths imagery
+3. Draw the outline of the object using the polygon creation tool. Once the Polygon has been drawn, your label will be added
+
+
 
 
 

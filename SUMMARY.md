@@ -16,17 +16,15 @@
 
 ## MTP Web
 
-* [Overview](mtp-web/untitled.md)
+* [Overview](mtp-web/overview.md)
 * [User Guide](mtp-web/user-guide/README.md)
   * [Sequences](mtp-web/user-guide/sequences/README.md)
     * [Capture](mtp-web/user-guide/sequences/capture.md)
     * [Create](mtp-web/user-guide/sequences/create.md)
     * [Photos](mtp-web/user-guide/sequences/photos.md)
     * [Tours](mtp-web/user-guide/sequences/tours.md)
-    * [Challenges](mtp-web/user-guide/sequences/challenges/README.md)
-      * [Leaderboards](mtp-web/user-guide/sequences/challenges/leaderboards.md)
-  * [Guidebooks](mtp-web/user-guide/guidebooks/README.md)
-    * [Curate](mtp-web/user-guide/guidebooks/curate.md)
+  * [Guidebooks](mtp-web/user-guide/guidebooks.md)
+  * [Challenges](mtp-web/user-guide/challenges.md)
   * [Profile](mtp-web/user-guide/profile.md)
 * [Developer Docs](mtp-web/developer-docs/README.md)
   * [Install](mtp-web/developer-docs/install.md)
@@ -34,8 +32,6 @@
     * [Sequences](mtp-web/developer-docs/functions/sequences/README.md)
       * [Photos](mtp-web/developer-docs/functions/sequences/photos.md)
     * [Guidebooks](mtp-web/developer-docs/functions/guidebooks.md)
-    * [Leaderboards](mtp-web/developer-docs/functions/leaderboards/README.md)
-      * [Challenges](mtp-web/developer-docs/functions/leaderboards/challenges.md)
   * [API](mtp-web/developer-docs/api.md)
 
 ## MTP Desktop Uploader
