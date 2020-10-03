@@ -331,6 +331,12 @@ EMAIL_PORT = 587
 SMTP_REPLY_TO = DEFAULT_FROM_EMAIL
 ```
 
+If you want to enable two auth for admin users, please add this in local.py
+
+```text
+admin.site.__class__ = AdminSiteOTPRequiredMixinRedirSetup
+```
+
 #### Build
 
 The following command will build Map the Paths.
