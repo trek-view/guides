@@ -331,7 +331,7 @@ EMAIL_PORT = 587
 SMTP_REPLY_TO = DEFAULT_FROM_EMAIL
 ```
 
-If you want to enable two auth for admin users, please add this in local.py
+If you want to enable two auth for admin users, please add this in config/urls.py
 
 ```text
 admin.site.__class__ = AdminSiteOTPRequiredMixinRedirSetup
@@ -381,6 +381,22 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_heroku')
 * SITE\_ID
 
 5. Push code to Github
+
+Quick install and run server using cli on heroku:
+
+```text
+heroku git:remote -a your_heroku_app
+git push heroku [git_branch:]master
+heroku run python manage.py migrate [-a your_heroku_app]
+heroku run python manage.py collectstatic --noinput [-a your_heroku_app]
+heroku run python manage.py createsuperuser [-a your_heroku_app]
+```
+
+Run following command to check logs.
+
+```text
+heroku logs --tail [-a your_heroku_app]
+```
 
 
 
