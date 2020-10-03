@@ -91,8 +91,6 @@ Using the returned `features.geometry.coordinates` we plot locations on the map.
 
 When a point is clicked, we can is the `features.property.key` to load the photo in [Mapillary JS](https://github.com/mapillary/mapillary-js).
 
-#### Adding point of interest \(POI\)
-
 
 
 
