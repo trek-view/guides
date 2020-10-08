@@ -259,24 +259,30 @@ By default, if user marks checkbox each frame is analysed and if a value of betw
 
 #### 11.1 Input Projection
 
-The app accepts both 2D and 360 images and videos \(`projection=equirectangular`\). In the case of 2D images, user will not be able to add nadir step \(see XX\).
+The app accepts both 2D and 360 images and videos \(`projection=equirectangular`\). In the case of 2D images, user will not be able to add nadir step \([see add a nadir](functions.md#18-add-nadir-advanced-setting)\).
 
 It is recommended to user images are geotagged and videos have geo telemetry \(e.g CAMM track\).
 
 For photos, app uses exiftool to read following values of image to determine geo info;
 
-* \[EXIF\] `GPSDateTime`
-* \[EXIF\] `GPSLatitude`
-* \[EXIF\] `GPSLongitude`
-* \[EXIF\] `GPSAltitude`
+* \[GPS\] `GPSDateTime` OR \(\[EXIF\]`GPSTimeStamp` AND \[EXIF\] `GPSDateStamp`\)
+* \[GPS\] `GPSLatitude`
+* \[GPS\] `GPSLongitude`
+* \[GPS\] `GPSAltitude`
 
 If ANY value shown above is missing in photo EXIF, app assumes image is not geotagged.
 
 For video, app reads;
 
-* \[EXIF\] `GPSDateTime`
+* \[GPS\] `GPSDateTime` OR \(\[EXIF\] `GPSTimeStamp` AND \[EXIF\] `GPSDateStamp`\)
 
 If the value shown above is missing in video EXIF, app assumes video is not geotagged.
+
+{% hint style="info" %}
+In case of `GPSDateTime` and `GPSTimeStamp/GPSDateStamp` values, `GPSDateTime` is used.
+{% endhint %}
+
+
 
 #### 11.2 Video frame extraction
 
@@ -300,7 +306,7 @@ Design decision: we struggled with using ffmpeg and exiftool to extract telemetr
 
 When frames are extracted, the app then uses exiftool to inject the extracted metadata into the frames.
 
-At this point the following GPS data is written to the image:
+At this point the following GPS data is written into each image:
 
 * `DateTimeOriginal`=`GPSDateTime`
 * `GPSDateTime`=`GPSDateTime`
