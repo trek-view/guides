@@ -793,7 +793,11 @@ Once user confirms the final step;
   * `final_nadir`: final sequence imagery with nadir but without blur \(optional, if selected by user\)
 * if selected, photos synced with MTPW.
 
-Note `final_raw` and `original` subdirectories are different. `original` subdirectory holds all images including those discarded during sequence creation \(due to filtering\). `final_raw` contains only the images that remain in the final sequence.
+{% hint style="info" %}
+Note, more than one sequence \(and thus directories with above files\) might be created during this process. [See sequence limitations.](functions.md#20-0-sequence-limitations)
+{% endhint %}
+
+Note `final_raw` and `original` subdirectories are different. `original` subdirectory holds all images including those discarded during sequence creation \(due to filtering\). `final_raw` contains only the images that remain in the final sequence and have MTP metadata.
 
 All original metadata in raw images is retained unless changes are made to such value during sequence creation workflow \(e.g. heading updated\).
 
