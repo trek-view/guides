@@ -8,16 +8,16 @@ description: >-
 
 ### Features
 
-\[IMG\]
+![](../.gitbook/assets/mtp-sequences-meta.jpg)
 
-* Photos: Photos are street-level images that belong to a Sequence
-* Sequences: Sequences are collections of images continuously captured by a user at a give time. Browse those created by others, or import your own from Mapillary.
-* Tours: Tours are collections of sequences that have been curated by their owner. Browse others' tours or create one using your own sequences.
-* Guidebooks: Create a guidebook of street-level photos to show people around a location. View others people have created to help plan your next adventure.
-* Challenges: Help make better maps by contributing to challenges with specific requests for imagery.
-* Leaderboards: See who is topping the leaderboards for Sequences imported and Viewpoints -- both all time and challenge specific -- to see where you place in the rankings.
-* Hire: Find paid help for image collection projects to create fresh street level map data in locations where it's needed for Google Street View, Mapillary, and more...
-* API: Integrate your own app with Map the Paths...
+* [Photos](user-guide/sequences/photos.md): Photos are street-level images that belong to a Sequence
+* [Sequences](user-guide/sequences/): Sequences are collections of images continuously captured by a user at a give time. Browse those created by others, or import your own from Mapillary.
+* [Tours](user-guide/sequences/tours.md): Tours are collections of sequences that have been curated by their owner. Browse others' tours or create one using your own sequences.
+* [Guidebooks](user-guide/guidebooks.md): Create a guidebook of street-level photos to show people around a location. View others people have created to help plan your next adventure.
+* [Challenges](user-guide/challenges.md): Help make better maps by contributing to challenges with specific requests for imagery.
+* [Leaderboards](user-guide/profile.md): See who is topping the leaderboards for Sequences imported and Viewpoints -- both all time and challenge specific -- to see where you place in the rankings.
+* [Hire](user-guide/profile.md): Find paid help for image collection projects to create fresh street level map data in locations where it's needed for Google Street View, Mapillary, and more...
+* [API](developer-docs/): Integrate your own app with Map the Paths...
 
 ### Browse / Sign Up
 
