@@ -271,22 +271,22 @@ It is recommended to user images are geotagged and videos have geo telemetry \(e
 
 For photos, app uses exiftool to read following values of image to determine geo info;
 
-* \[EXIF\] `GPSDateTime` OR \(\[GPS\]`GPSTimeStamp` AND \[GPS\] `GPSDateStamp`\)
-* \[GPS\] `GPSLatitude`
-* \[GPS\] `GPSLongitude`
-* \[GPS\] `GPSAltitude`
+* \[GPS\]`GPSTimeStamp` \(required\)
+* \[GPS\] `GPSDateStamp` \(required\)
+* \[GPS\] `GPSLatitude`\(required\)
+* \[GPS\] `GPSLatitudeRef`
+* \[GPS\] `GPSLongitude`\(required\)
+* \[GPS\] `GPSLongitudeRef`
+* \[GPS\] `GPSAltitude`\(required\)
+* \[GPS\] `GPSAltitudeRef`
 
-If ANY value shown above is missing in photo EXIF, app assumes image is not geotagged.
+If a required value shown above is missing in photo EXIF, app assumes image is not geotagged.
 
 For video, app reads;
 
-* \[EXIF\] `GPSDateTime` OR \(\[GPS\] `GPSTimeStamp` AND \[GPS\] `GPSDateStamp`\)
+* \[EXIF\] `GPSDateTime`
 
 If the value shown above is missing in video EXIF, app assumes video is not geotagged.
-
-{% hint style="info" %}
-In case of `GPSDateTime` and `GPSTimeStamp/GPSDateStamp` values both being present, `GPSDateTime` is used.
-{% endhint %}
 
 This check is performed to understand what workflow to proceed with \([see Image / video processing workflow](functions.md#11-5-image-video-processing-workflow)\)
 
@@ -316,11 +316,16 @@ When frames are extracted, the app then uses exiftool to inject the extracted me
 
 At this point the following GPS data is written into each image:
 
-* `DateTimeOriginal`=`GPSDateTime`
-* `GPSDateTime`=`GPSDateTime`
-* `GPSLatitude`=`GPSLatitude`
-* `GPSLongitude`=`GPSLongitude`
-* `GPSAltitude`=`GPSAltitude`
+* \[EXIF\] `DateTimeOriginal`=`GPSDateStamp + GPSTimeStamp`
+* \[EXIF\] `GPSDateTime`=`GPSDateStamp + GPSTimeStamp`
+* \[GPS\]`GPSTimeStamp` 
+* \[GPS\] `GPSDateStamp`
+* \[GPS\] `GPSLatitude`
+* \[GPS\] `GPSLatitudeRef`
+* \[GPS\] `GPSLongitude`
+* \[GPS\] `GPSLongitudeRef`
+* \[GPS\] `GPSAltitude`
+* \[GPS\] `GPSAltitudeRef`
 
 Note, it is possible that GPS signal is lost during a section of video meaning some frames will result in no geotags, and thus `DateTimeOriginal`.
 
@@ -389,7 +394,7 @@ A GPX file with trackpoints `<trkpt>` that contain latitude `lat`, longitude `lo
 
 Each image file should contain a `DateTimeOriginal` value \(e.g. 2020-08-02T11:05:06\).
 
-The GPS-image process first identified the images `DateTimeOriginal` value to find corresponding time record in `.gpx` file at second resolution. `GPSDateTime` is not used for track assignment, because it is assumed value does not exist or is corrupt.
+The GPS-image process first identified the images `DateTimeOriginal` value to find corresponding time record in `.gpx` file at second resolution. `GPSDateStamp + GPSTimeStamp` are not used for track assignment, because it is assumed value does not exist or is corrupt.
 
 Matches are to tenth-of-a-second resolution when `DateTimeOriginal` reports to this level of granularity. For example, `DateTimeOriginal=10:02:01:00023` and `<time>10:02:01:00288</time>` are considered a match. Whereas, `DateTimeOriginal=10:02:01:10023` and `<time>10:02:02:20023</time>` are not a match.
 
@@ -399,8 +404,16 @@ If multiple times in gpx trackpoints match `DateTimeOriginal` value, the first r
 
 If
 
-* a match is found between`DateTimeOriginal` of image and `<time>` in GPX track , the image is geotagged with these value \(`GPSDateTime`, `GPSLongitude`...\)
-* a match is not match is found between`DateTimeOriginal` of image and `<time>` in GPX track, the image is discarded.
+* a match is found between`DateTimeOriginal` of image and `<time>` in GPX track , the image is geotagged with these values:
+*  * \[GPS\]`GPSTimeStamp` 
+  * \[GPS\] `GPSDateStamp`
+  * \[GPS\] `GPSLatitude`
+  * \[GPS\] `GPSLatitudeRef`
+  * \[GPS\] `GPSLongitude`
+  * \[GPS\] `GPSLongitudeRef`
+  * \[GPS\] `GPSAltitude`
+  * \[GPS\] `GPSAltitudeRef`
+* a match is not found between`DateTimeOriginal` of image and `<time>` in GPX track, the image is discarded.
 
 This process will overwrite any existing geotags.
 
@@ -446,7 +459,7 @@ This step is invisible to the user.
 
 Once a processing complete \(that is GPS track added, if required\) a temporary sequence \(path\) is calculated using location values.
 
-The sequence connects photos based on ascending `GPSDateTime` time. Essentially the earliest photo time is first photo in sequence. the latest photo time is last photo in sequence.
+The sequence connects photos based on ascending `GPSDateStamp + GPSTimeStamp` time. Essentially the earliest photo time is first photo in sequence. the latest photo time is last photo in sequence.
 
 First and last photos in sequence always have 1 connection \(either forward \(first\) or back \(last\)\). All other photo connections will have 2 connections \(both forward and back\).
 
@@ -497,7 +510,7 @@ User can select either to space frames by time OR distance. When value entered i
 
 User can decide how far photos should be spaced using time.
 
-Time uses `GPSDateTime` of image.
+Time uses `GPSDateStamp + GPSTimeStamp` of image.
 
 This option is useful when user has lots of images close together on map because they are moving slowly. For example, traveling a 1 meter/second and taking a photo every second gives a photo every meter. Maybe they want photos every 5 seconds.
 
@@ -855,8 +868,8 @@ The sequence JSON file takes the following format:
 	"sequence" : {
 		"id": # UUID of sequence,
 		"distance_km": # total distance using all positive distance_mtrs connection values
-		"earliest_time": # earliest time GPSDateTime (if connection method gps / filename) or originalDateTime (if connection originalDateTime) value for photo in sequence,
-		"latest_time": # latest time GPSDateTime (if connection method gps / filename) or originalDateTime (if connection originalDateTime) value for photo in sequence,
+		"earliest_time": # earliest time GPSDateStamp + GPSTimeStamp (if connection method gps / filename) or originalDateTime (if connection originalDateTime) value for photo in sequence,
+		"latest_time": # latest time GPSDateStamp + GPSTimeStamp (if connection method gps / filename) or originalDateTime (if connection originalDateTime) value for photo in sequence,
 		"duration_sec: # sequence_latest_time - sequence_earliest_time,
 		"average_speed_kmh": # sequence_distance_km / sequence_duration_sec
 		"sequence_name": # sequence name used to make sequence,
