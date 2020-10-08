@@ -257,15 +257,21 @@ By default, if user marks checkbox each frame is analysed and if a value of betw
 
 ![MTPDU process image](../../.gitbook/assets/process-raw-image-video.png)
 
-#### 11.1 Input Projection
+#### 11.1 Photos input
+
+User must upload at least 2 images in timelapse. Must be accepted format.
+
+#### 11.2 Input Projection
 
 The app accepts both 2D and 360 images and videos \(`projection=equirectangular`\). In the case of 2D images, user will not be able to add nadir step \([see add a nadir](functions.md#18-add-nadir-advanced-setting)\).
 
-It is recommended to user images are geotagged and videos have geo telemetry \(e.g CAMM track\).
+#### 11.3 GPS
+
+It is recommended to user images are geotagged and videos have geo telemetry \(e.g CAMM track\) -- but this is not essential \(keep reading\).
 
 For photos, app uses exiftool to read following values of image to determine geo info;
 
-* \[GPS\] `GPSDateTime` OR \(\[EXIF\]`GPSTimeStamp` AND \[EXIF\] `GPSDateStamp`\)
+* \[EXIF\] `GPSDateTime` OR \(\[GPS\]`GPSTimeStamp` AND \[GPS\] `GPSDateStamp`\)
 * \[GPS\] `GPSLatitude`
 * \[GPS\] `GPSLongitude`
 * \[GPS\] `GPSAltitude`
@@ -274,17 +280,19 @@ If ANY value shown above is missing in photo EXIF, app assumes image is not geot
 
 For video, app reads;
 
-* \[GPS\] `GPSDateTime` OR \(\[EXIF\] `GPSTimeStamp` AND \[EXIF\] `GPSDateStamp`\)
+* \[EXIF\] `GPSDateTime` OR \(\[GPS\] `GPSTimeStamp` AND \[GPS\] `GPSDateStamp`\)
 
 If the value shown above is missing in video EXIF, app assumes video is not geotagged.
 
 {% hint style="info" %}
-In case of `GPSDateTime` and `GPSTimeStamp/GPSDateStamp` values, `GPSDateTime` is used.
+In case of `GPSDateTime` and `GPSTimeStamp/GPSDateStamp` values both being present, `GPSDateTime` is used.
 {% endhint %}
 
+This check is performed to understand what workflow to proceed with \([see Image / video processing workflow](functions.md#11-5-image-video-processing-workflow)\)
 
+If no geo data is found in image, image is considered to have no geotag. App therefore defaults to `DateTimeOriginal` of the image.
 
-#### 11.2 Video frame extraction
+#### 11.2 Video frame extraction \(VIDEO ONLY\)
 
 [The app uses ffmpeg to break video into frames \(.jpg image files\)](https://github.com/trek-view/mtp-desktop-uploader/blob/develop/app/scripts/video.ts).
 
@@ -318,21 +326,6 @@ Note, it is possible that GPS signal is lost during a section of video meaning s
 
 In addition to extracted GPS data, app will attempt to copy all original EXIF data from video to each image \(e.g. `[XMP] ProjectionType`\).
 
-#### 11.3 Photos input
-
-User must upload at least 2 images in timelapse.
-
-[The app uses exiftool to analyse the GPS tags indside each image under the fields](https://github.com/trek-view/mtp-desktop-uploader/blob/develop/app/scripts/image.ts);
-
-* `GPSDateTime`
-* `GPSLatitude`
-* `GPSLongitude`
-* `GPSAltitude`
-
-It is essentially just checking they exist, to understand what workflow to proceed with \(see: 5c. Behaviour of GPS recognition on workflow\).
-
-If no `GPSDateTime` is found in image, image is considered to have no geotag. App therefore defaults to `DateTimeOriginal` of the image.
-
 #### 11.4 Write out image files
 
 At this point, a new directory is created under `/mapthepaths/SEQUENCE_NAME`.
@@ -346,9 +339,9 @@ In the case of:
 
 #### 11.5 Image / video processing workflow
 
-![MTPDU image / video processing workflow](../../.gitbook/assets/sequence-create-workflow.jpg)
+![](../../.gitbook/assets/explorer-v2-diagrams%20%281%29.jpg)
 
-Step 1 in the diagram above shows the start of the image / video processing workflow that starts at step 10 upload images, and finishes and step 19, blur images.
+Step 1 in the diagram above shows the start of the image / video processing workflow that starts at step 10 upload images.
 
 ### 12. Add GPX track
 
