@@ -797,6 +797,14 @@ Note `final_raw` and `original` subdirectories are different. `original` subdire
 
 All original metadata in raw images is retained unless changes are made to such value during sequence creation workflow \(e.g. heading updated\).
 
+#### 20.0 Sequence limitations
+
+Sequences can have a maximum of 500 photos. If sequence uploaded by user has more than 500 photos, it will be split into parts with a maximum of 500 photos.
+
+The user does not see this on creation, they simply create one sequence. However, the output will append Part 1 onto the title. All other meta-data \(description, tags, transport type\) will all remain the same.
+
+For example, a sequence with 1900 photos will be split into 4 parts. In this case, if a user names the sequence "My sequence" on creation this will be split into 4 sequences on processing named; My sequence Part 1, My sequence Part 2, My sequence Part 3, and My sequence Part 4. 4 output directories and associate files will be generated for each of the 4 sequences.
+
 #### **21.1 Image processing precedence**
 
 Photos are processed one-by-one in the following order;
