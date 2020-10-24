@@ -8,7 +8,7 @@ description: >-
 
 {% page-ref page="photos.md" %}
 
-{% page-ref page="capture.md" %}
+{% page-ref page="../../../capture/how-to.md" %}
 
 {% page-ref page="create.md" %}
 

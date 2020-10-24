@@ -18,5 +18,7 @@ A backpack mounted 360-degree camera system designed to capture stunning 360-deg
 
 {% page-ref page="shooting.md" %}
 
-
+{% hint style="info" %}
+[Individuals, groups, or organisations looking to capture 360-degree tours of our natural world for non-commercial purposes are encouraged to apply to our Trek Pack loan program.](https://www.trekview.org/loan/)
+{% endhint %}
 

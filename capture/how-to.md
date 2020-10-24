@@ -2,7 +2,7 @@
 description: Some tips and tricks for creating the perfect sequence...
 ---
 
-# Capture
+# How-To
 
 ### About
 
@@ -57,7 +57,7 @@ For each device and use case, there are different suitable mounting methods. Her
 
 ![](https://lh6.googleusercontent.com/PEbrdCrx-GQrFiK5u5Wixkhxuz-BSi3dV4mTuE-GUPEgzrYu5XLXfko5G5R2EeH16Hvbrzh1DgR3YJRfDylKGnFE8EQq9Oe2uC3nJ4X3xYGQmIGu2btwjinDczTVE2ZdQHgzBMXd)
 
-We have designed a series of Trek Pack's using GoPro MAX 360 Cameras designed for walking/hiking, biking, and swimming/scuba-diving. [The instructions to build and use them are here.](../../../trek-pack/v2/)
+We have designed a series of Trek Pack's using GoPro MAX 360 Cameras designed for walking/hiking, biking, and swimming/scuba-diving. [The instructions to build and use them are here.](../trek-pack/v2/)
 
 #### Other Devices/Mounts
 

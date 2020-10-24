@@ -75,21 +75,27 @@ Now you have a folder of front and back images on your computer, you can add the
 
 ![](../../.gitbook/assets/screenshot-2020-10-24-at-21.22.35.png)
 
-#### 3. Adjusting videos before 
+#### 3. Exporting to `.mp4`
 
+If you want to upload videos to virtual tour platforms, you need to export videos in .mp4 format \(to retain telemetry\).
 
+To do this, select: file &gt; export &gt; 4k
+
+4k is the maximum resolution that will retain telemetry.
 
 ![](../../.gitbook/assets/screenshot-2020-10-24-at-21.24.16.png)
 
+Select advance options dropdown.
+
 ![](../../.gitbook/assets/screenshot-2020-10-24-at-21.24.41.png)
 
+Ensure that "World Lock", "Horizon Level", and "Retain GPMF Data" are ticked.
 
-
-
+If you want to process more than one video, select "Send to Queue" where you can follow this process again to add multiple videos for batch processing.
 
 ![](../../.gitbook/assets/screenshot-2020-10-24-at-21.25.44.png)
 
-\*\*\*\*
+Once you've added all the videos you want to process to the queue, select "Start" \(top right of window\).
 
-
+When complete, you'll have an `.mp4` file in the output directory specified.
 

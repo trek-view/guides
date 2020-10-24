@@ -16,12 +16,15 @@
   * [Shooting](trek-pack/v2/shooting.md)
   * [Processing](trek-pack/v2/processing.md)
 
+## Capture
+
+* [How-To](capture/how-to.md)
+
 ## MTP Web
 
 * [Overview](mtp-web/overview.md)
 * [User Guide](mtp-web/user-guide/README.md)
   * [Sequences](mtp-web/user-guide/sequences/README.md)
-    * [Capture](mtp-web/user-guide/sequences/capture.md)
     * [Create](mtp-web/user-guide/sequences/create.md)
     * [Photos](mtp-web/user-guide/sequences/photos.md)
     * [Tours](mtp-web/user-guide/sequences/tours.md)
