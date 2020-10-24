@@ -8,11 +8,13 @@
   * [About](trek-pack/v1/about.md)
   * [Kit Setup](trek-pack/v1/kit-setup.md)
   * [Shooting](trek-pack/v1/shooting.md)
+  * [Processing](trek-pack/v1/processing.md)
 * [Version 2 \(GoPro MAX\)](trek-pack/v2/README.md)
   * [About](trek-pack/v2/about.md)
   * [The Kit](trek-pack/v2/the-kit.md)
   * [Kit Setup](trek-pack/v2/kit-setup.md)
   * [Shooting](trek-pack/v2/shooting.md)
+  * [Processing](trek-pack/v2/processing.md)
 
 ## MTP Web
 

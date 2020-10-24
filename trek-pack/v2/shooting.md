@@ -20,6 +20,8 @@ Now remove the lens caps.
 
 Either use the app, voice control, or if possible reach up and press the start button \(red circle outline\) and walk around your house / garden / neighbourhood. If using the dive pack, follow the start/stop instructions detailed in “[setting up the scuba dive pack](kit-setup.md#setting-up-the-scuba-dive-pack)”.
 
+![](../../.gitbook/assets/img-20191027-wa0001.jpg)
+
 After a few minutes, stop the filming by pressing the start button again. The camera should show a number \(the number of photos taken on your test tour. Note, this number is cumulative and will show the number of photos taken in total\).
 
 Turn off the camera, and remove the micro SD cards. Place the microSD card in the microSD card USB reader and insert into your computer.
