@@ -17,8 +17,9 @@ Photos therefore have 4 types of associated metadata
 * Sequence data: the sequence information for the sequence they belong to
 * Image data: such as capture time, camera type, etc.
 * Image labels
-  * Manual: labels added to images by MTPW users
-  * Auto detected: object and feature detections discovered by computer vision
+  * **Manual**: labels added to images by MTPW users \(image specific\)
+  * **Auto detected**: computer vision technology automatically detects objects depicted in images, such as buildings, cars, pedestrians, bicycle racks, and much more. This is based on a method called semantic segmentation—an algorithm is trained to detect and assign a category label to every pixel in the image. \(image specific\)
+  * **Map features**: Map features represent objects that are detected in images and placed in a 3D space. Using computer vision, we recognise objects captured in images \(available as auto detections\). Next, by reconstructing the 3D scene structure, we can position these objects on the map as map features \(location specific\)
 
 ### Sequence data
 
@@ -36,12 +37,13 @@ When in Photo view, you will be able to see image labels in an image. When viewi
 
 ![](../../../.gitbook/assets/89c7003b-ac28-4791-ab88-5b20923b2222.png)
 
-You'll see Mapillary detections that have been reported by Mapillary for the image.
+You'll see all detections that have been found in the image.
 
-You can read more about Mapillary:
+**Map features**
 
-* [Object detections](https://help.mapillary.com/hc/en-us/articles/115000967191-Object-detections)
-* [Map features](https://help.mapillary.com/hc/en-us/articles/115002332165)
+![](../../../.gitbook/assets/b3198e7f-e0e7-40d4-b0ac-e35d7850cdb2.png)
+
+Will show the location of the objects detected in physical space on the map \(latitude and longitude\).
 
 #### Manual
 
@@ -50,6 +52,8 @@ You can read more about Mapillary:
 You might notice objects that have not been labelled in an image. In which case, you can add them yourself.
 
 You can also add your own labels by tracing around the object you wish to label in the image.
+
+Manual labels are the equivalent of autodetected labels as they only have a location in the image not in physical space \(like map features\).
 
 #### How to manually label an object
 
