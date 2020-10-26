@@ -39,11 +39,15 @@ When in Photo view, you will be able to see image labels in an image. When viewi
 
 You'll see all detections that have been found in the image.
 
+[Read more about how this works.](https://help.mapillary.com/hc/en-us/articles/115000967191)
+
 **Map features**
 
 ![](../../../.gitbook/assets/b3198e7f-e0e7-40d4-b0ac-e35d7850cdb2.png)
 
 Will show the location of the objects detected in physical space on the map \(latitude and longitude\).
+
+[Read more about how this works.](https://help.mapillary.com/hc/en-us/articles/115002332165)
 
 #### Manual
 
@@ -63,8 +67,4 @@ To do this:
 2. Select the label you want to add
    1. If you don't see the type of label you want to add, [you can create a Challenge](../challenges.md). This will not only add the label to our label database, but also encourage others to use this label across all Map the Paths imagery
 3. Draw the outline of the object using the polygon creation tool. Once the Polygon has been drawn, your label will be added
-
-
-
-
 
