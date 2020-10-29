@@ -43,6 +43,22 @@ Make a copy of the `.env-sample` file in `/ROOT/` with the name `.env` to add yo
 cp .env-sample .env
 ```
 
+**Versioning**
+
+You can version the app release by following both these steps:
+
+1. open `PROJECT ROOT FOLDER/package.json` and change version to `x.x.x`
+
+```text
+  "version": "0.0.0",
+```
+
+2. open `PROJECT ROOT FOLDER/app/package.json` and change version to `0.0.0`
+
+```text
+  "version": "0.0.0",
+```
+
 **Mapbox**
 
 You must enter a Mapbox Access Token in the new `.env` file for MTPDU to work.
