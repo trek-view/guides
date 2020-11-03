@@ -40,11 +40,11 @@ chmod -R 755 "node_modules/ffmpeg/binary/darwin/ffmpeg"
 All systems continue here:
 
 ```text
-rm binary
+rm -R binary
 ```
 
 ```text
-cp node_modules/ffmpeg/binary /binary
+cp -R node_modules/ffmpeg/binary /binary
 ```
 
 ```text
