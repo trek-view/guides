@@ -31,15 +31,13 @@ cd mtp-desktop-uploader
 yarn
 ```
 
-_For MacOS ONLY do this_ 
+_For MacOS / Linux ONLY do this_ 
 
 ```text
 chmod -R 755 "node_modules/ffmpeg/binary/darwin/ffmpeg"
 ```
 
-All systems continue here:
-
-```text
+```
 rm -R binary
 ```
 
@@ -49,10 +47,6 @@ cp -R node_modules/ffmpeg/binary /binary
 
 ```text
 chmod -R 755 binary
-```
-
-```text
-cd app && yarn
 ```
 
 #### **Environment**
