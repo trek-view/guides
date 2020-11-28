@@ -349,12 +349,97 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-## Deploying with git on Heroku
+## Deploying to Digital Ocean
 
-We host Map the Paths on Heroku. We use an auto-deployment pipeline from the Github repo:
+We host Map the Paths on Digital Ocean droplets. The following steps should work on any cloud Iaas.
 
-* Production branch \(`production`\): deploys to production `https://mtp.trekview.org`
-* Staging branch \(`staging`\): deploys to staging `https://map-the-paths-develop.herokuapp.com/`
+**1. Create ssh key and add to DO**
+
+`$ ssh-keygen -f KEYNAME -C noname`
+
+**2. Choose droplet deploy with SSH key**
+
+Setup a droplet, using Ubuntu 20.04 \(LTS\) x64.
+
+**3. Connect to your droplet**
+
+`$ ssh -i "YOURPRIVATEKEYNAME" ROOT@SERVERIP`
+
+**4. Update packages**
+
+`$ sudo apt-get update`
+
+**5. Add more users**
+
+`$ sudo adduser USERNAME`
+
+**6. Make user sudo if needed**
+
+`usermod -aG sudo USERNAME`
+
+**7. Add users public key**
+
+`su USERNAME`
+
+`mkdir ~/.ssh/`
+
+`nano .ssh/authorized_keys`
+
+Now paste in their public key.
+
+Disable password / root login
+
+**8. Harden security**
+
+`nano /etc/ssh/sshd_config`
+
+Then set the following
+
+```text
+PermitRootLogin no
+PasswordAuthentication no
+UsePAM no
+```
+
+**9. Now restart SSH**
+
+`sudo service ssh restart`
+
+_10. Set up Firewall rules_
+
+All non-essential ports should be blocked using ufw.
+
+First switch off ufw \(to ensure we don't kick ourselves off server when blocking all ports\): `sudo ufw disable`
+
+Then block all ports: `sudo ufw default deny`
+
+The open required ports:
+
+* SSH `sudo ufw allow 22`
+* HTTP `sudo ufw allow 80`
+* HTTPS `sudo ufw allow 443`
+
+To ensure config is saved when changed install iptables-persistent: `sudo apt-get install iptables-persistent`
+
+Once installed, to make sure new rules are always saved run: `sudo invoke-rc.d iptables-persistent save`
+
+Then turn on ufw to enable rules: `sudo ufw enable`
+
+**11. Deploy app to server**
+
+{% embed url="https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps" %}
+
+**12. Configure app**
+
+Described in setup environment above.
+
+13. Setup SSL
+
+[https://ramonmelo.me/en/blog/regarding-ssl/](https://ramonmelo.me/en/blog/regarding-ssl/)
+
+
+
+## Deploying to Heroku \(no longer supported\)
 
 To deploy on your own Heroku environment.
 
@@ -397,8 +482,6 @@ Run following command to check logs.
 ```text
 heroku logs --tail [-a your_heroku_app]
 ```
-
-
 
 ## 
 

@@ -748,19 +748,7 @@ This takes the first image in the sequence and renders it with nadir for user to
 
 16 versions are created with nadir sizes between 10% and 25% of image height. When user modifies % in UI using slider, it calls one of these temporary images. These temporary images are stored in the `ROOT/` directory. If user exits the add nadir step, or once nadir confirmed to be added the app deletes these temporary files.
 
-### 19. Image blur \(advanced setting\) \[DEPRECATED\]
-
-![MTPDU add image blur](../../.gitbook/assets/add-image-blur.png)
-
-Generally photos do not need blurring \(Google, Mapillary, et al. will blur server side\), however this optional step is included for those with a very specific use-case where they need blurring but it is not offered by other services.
-
-[This standalone script demonstrates how blurring is applied](https://github.com/trek-view/pii-blur/).
-
-As noted to user:
-
-> BEWARE: It requires a lot of computing power.
-
-### 20. Authenticate to integrations
+### 19. Authenticate to integrations
 
 ![MTPW add integration](../../.gitbook/assets/integrations.png)
 
@@ -794,7 +782,7 @@ The app logs all responses \(and oftentimes more\) from each service to keep a l
 
 In sequence list, if user has uploaded to integration should show link \(with logo\) to first photo in sequence uploaded to the destination. For example, will link to Mapillary photo view for 1st photo in sequence, assuming Mapillary integration exists.
 
-### 21. Creation and upload
+### 20. Creation and upload
 
 Once user confirms the final step;
 
