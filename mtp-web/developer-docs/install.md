@@ -387,8 +387,6 @@ Setup a droplet, using Ubuntu 20.04 \(LTS\) x64.
 
 Now paste in their public key.
 
-Disable password / root login
-
 **8. Harden security**
 
 `nano /etc/ssh/sshd_config`
@@ -397,8 +395,9 @@ Then set the following
 
 ```text
 PermitRootLogin no
+StrictModes yes
+PubkeyAuthentication yes
 PasswordAuthentication no
-UsePAM no
 ```
 
 **9. Now restart SSH**
