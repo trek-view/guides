@@ -418,9 +418,13 @@ The open required ports:
 * HTTP `sudo ufw allow 80`
 * HTTPS `sudo ufw allow 443`
 
-To ensure config is saved when changed install iptables-persistent: `sudo apt-get install iptables-persistent`
+To ensure config is saved when changed install iptables-persistent: 
 
-Once installed, to make sure new rules are always saved run: `sudo invoke-rc.d iptables-persistent save`
+`sudo apt-get install iptables-persistent`
+
+And save iptables set above
+
+`sudo service netfilter-persistent save`
 
 Then turn on ufw to enable rules: `sudo ufw enable`
 
