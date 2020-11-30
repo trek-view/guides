@@ -375,13 +375,15 @@ Setup a droplet, using Ubuntu 20.04 \(LTS\) x64.
 
 **6. Make user sudo if needed**
 
-`usermod -aG sudo USERNAME`
+`sudo usermod -aG sudo USERNAME`
 
 **7. Add users public key**
 
 `su USERNAME`
 
 `mkdir ~/.ssh/`
+
+`cd`
 
 `nano .ssh/authorized_keys`
 
