@@ -419,6 +419,7 @@ The open required ports:
 * SSH `sudo ufw allow 22`
 * HTTP `sudo ufw allow 80`
 * HTTPS `sudo ufw allow 443`
+* \`\`
 
 To ensure config is saved when changed install iptables-persistent: 
 
@@ -438,9 +439,42 @@ Then turn on ufw to enable rules: `sudo ufw enable`
 
 Described in setup environment above.
 
-13. Setup SSL
+**13. Setup SSL**
 
-[https://ramonmelo.me/en/blog/regarding-ssl/](https://ramonmelo.me/en/blog/regarding-ssl/)
+**For security, all request should be served using SSL \(using Let's Encrypt\).**
+
+`sudo apt-get install letsencrypt`
+
+Before you do anything else, find your Django `settings.py` file and add these lines:
+
+`sudo nano settings.py`
+
+```text
+# URL that handles encryption files
+ENCRYPT_URL = '/.well-known/'
+ENCRYPT_ROOT = os.path.join(STATIC_ROOT, '.well-known')
+```
+
+Now, find your `urls.py` file and add this:
+
+`sudo nano urls.py`
+
+```text
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    # ... the rest of your URLconf goes here ...
+] + static(settings.ENCRYPT_URL, document_root=settings.ENCRYPT_ROOT)
+```
+
+TODO for webserver
+
+\`\`
+
+**I won't detail all steps her**
+
+\*\*\*\*[https://ramonmelo.me/en/blog/regarding-ssl/](https://ramonmelo.me/en/blog/regarding-ssl/)
 
 
 
