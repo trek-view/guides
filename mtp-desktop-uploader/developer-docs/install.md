@@ -37,16 +37,12 @@ _For MacOS / Linux ONLY do this_
 chmod -R 755 "node_modules/ffmpeg/binary/darwin/ffmpeg"
 ```
 
-```
-rm -R binary
+```text
+cp -R node_modules/ffmpeg/binary binary/
 ```
 
 ```text
-cp -R node_modules/ffmpeg/binary /binary
-```
-
-```text
-chmod -R 755 binary
+chmod -R 755 binary/
 ```
 
 #### **Environment**
