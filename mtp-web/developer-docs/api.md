@@ -71,7 +71,7 @@ The client ID generated when creating the application on Map the Paths Web. Crea
 **Example Request**
 
 ```text
-curl --location --request GET 'https://mtp.trekview.org/api/v1/authorize?client_id=98fgjsjduf89388&response_type=token'
+curl --location --request GET 'https://MTPDOMAIN/api/v1/authorize?client_id=98fgjsjduf89388&response_type=token'
 ```
 
 ### Sequences <a id="oauth"></a>
@@ -127,7 +127,7 @@ List of tags \[tag1,tag2\]
 **Example request**
 
 ```text
-curl --location --request POST 'https://mtp.trekview.org/api/v1/sequence/create' \
+curl --location --request POST 'https://MTPDOMAIN/api/v1/sequence/create' \
 --form 'name=<name>' \
 --form 'description=<description>' \
 --form 'transport_type=<transport_type>' \
@@ -295,7 +295,7 @@ The unique MTP Sequence ID
 #### **Example request**
 
 ```text
-curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
+curl --location --request PUT 'https://MTPDOMAIN/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
 --data-raw '{
     "mapillary_sequence_key": "<MAPILLARY_SEQ_KEY>",
     "mapillary_user_token": "<MAPILLARY_USER_TOKEN>"
@@ -309,7 +309,7 @@ Request to this endpoint `PUT`'ing existing values will overwrite existing data 
 _For example \(request 1\)_
 
 ```text
-curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
+curl --location --request PUT 'https://MTPDOMAIN/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
 --data-raw '{
     "mapillary_sequence_key": "123",
     "mapillary_user_token": "456",
@@ -321,7 +321,7 @@ curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/j
 _Then \(request 2\)_
 
 ```text
-curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
+curl --location --request PUT 'https://MTPDOMAIN/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
 --data-raw '{
     "google_street_view": " TRUE
 }'
