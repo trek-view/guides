@@ -75,7 +75,7 @@ As we use Route53 \(DNS\) from AWS, we can get AWS to update the DNS with the CN
 
 `CNAME` `https://s3.eu-west-2.amazonaws.com/mybucket.com` `CLOUDFRONT_DOMAIN`
 
-The CNAME chosen  \(e.g. `https://s3.eu-west-2.amazonaws.com/mybucket.com` \) should then be added to the following app environment variable.
+The CNAME chosen \(e.g. `https://s3.eu-west-2.amazonaws.com/mybucket.com` \) should then be added to the following app environment variable.
 
 ```text
 AWS_S3_BUCKET_CNAME
@@ -199,7 +199,7 @@ MAILERLITE_TOKEN
 
 It is important when creating the app you set the following two values:
 
-1. Callback URL: `DOMAIN/accounts/check-mapillary-oauth` \(e.g. https://myserver.com/accounts/check-mapillary-oauth\)
+1. Callback URL: `DOMAIN/accounts/check-mapillary-oauth` \(e.g. [https://myserver.com/accounts/check-mapillary-oauth\](https://myserver.com/accounts/check-mapillary-oauth\)\)
 2. Scopes: Mark all
 
 When the app is created, you will get a Client ID, Client secret and authentication URL.
@@ -421,7 +421,7 @@ The open required ports:
 * HTTPS `sudo ufw allow 443`
 * \`\`
 
-To ensure config is saved when changed install iptables-persistent: 
+To ensure config is saved when changed install iptables-persistent:
 
 `sudo apt-get install iptables-persistent`
 
@@ -433,7 +433,7 @@ Then turn on ufw to enable rules: `sudo ufw enable`
 
 **11. Deploy app to server**
 
-{% embed url="https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps" %}
+{% embed url="https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps" caption="" %}
 
 **12. Configure app**
 
@@ -476,8 +476,6 @@ TODO for webserver
 
 \*\*\*\*[https://ramonmelo.me/en/blog/regarding-ssl/](https://ramonmelo.me/en/blog/regarding-ssl/)
 
-
-
 ## Deploying to Heroku \(no longer supported\)
 
 To deploy on your own Heroku environment.
@@ -490,21 +488,19 @@ To deploy on your own Heroku environment.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_heroku')
 ```
 
-4. Make sure Heroku environmental vars are set to match those listed in `config/setting_local.py`
-
-* ACCESS\_TOKEN\_LIFETIME
-* BASE\_URL
-* BUILD\_WITH\_GEO\_LIBRARIES
-* DATABASE\_URL
-* DEBUG\_COLLECTSTATIC
-* DISABLE\_COLLECTSTATIC
-* LD\_LIBRARY\_PATH
-* REDIS\_URL
-* REFRESH\_TOKEN\_LIFETIME
-* SECRET\_KEY
-* SITE\_ID
-
-5. Push code to Github
+1. Make sure Heroku environmental vars are set to match those listed in `config/setting_local.py`
+2. ACCESS\_TOKEN\_LIFETIME
+3. BASE\_URL
+4. BUILD\_WITH\_GEO\_LIBRARIES
+5. DATABASE\_URL
+6. DEBUG\_COLLECTSTATIC
+7. DISABLE\_COLLECTSTATIC
+8. LD\_LIBRARY\_PATH
+9. REDIS\_URL
+10. REFRESH\_TOKEN\_LIFETIME
+11. SECRET\_KEY
+12. SITE\_ID
+13. Push code to Github
 
 Quick install and run server using cli on heroku:
 
@@ -521,6 +517,4 @@ Run following command to check logs.
 ```text
 heroku logs --tail [-a your_heroku_app]
 ```
-
-## 
 

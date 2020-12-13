@@ -6,7 +6,7 @@ description: >-
 
 # Overview
 
-### Features
+## Features
 
 ![](../.gitbook/assets/mtp-sequences-meta.jpg)
 
@@ -19,11 +19,11 @@ description: >-
 * [Hire](user-guide/profile.md): Find paid help for image collection projects to create fresh street level map data in locations where it's needed for Google Street View, Mapillary, and more...
 * [API](developer-docs/): Integrate your own app with Map the Paths...
 
-### Browse / Sign Up
+## Browse / Sign Up
 
 [Browse Map the Paths and create your free account here.](https://www.mapthepaths.com/)
 
-### Support
+## Support
 
 Having problems? [Ask a question around the Campfire \(our community forum\)](https://campfire.trekview.org/c/support/8).
 

@@ -4,7 +4,7 @@ description: Some tips and tricks for creating the perfect sequence...
 
 # How-To
 
-### About
+## About
 
 Map the Path lets anyone capture their own street-level imagery, using simple cameras such as smartphones, action cameras, and 360° cameras.
 
@@ -16,7 +16,7 @@ Here is an overview of the kinds of devices and equipment you can work with.
 [We have built a Trek Pack with everything you'll need to capture stunning 360 imagery using human-powered methods of transports. You can buy it \(or use our documentation to build it yourself\) here.](https://www.trekview.org/trek-pack/)
 {% endhint %}
 
-### Devices
+## Devices
 
 Map the Paths supports both 2D and 360 imagery \(recommended\) captured using:
 
@@ -28,7 +28,7 @@ Map the Paths supports both 2D and 360 imagery \(recommended\) captured using:
   * GoPro Fusion \(discontinued -- check eBay\)
   * [GoPro MAX](https://gopro.com/en/gb/shop/cameras/gopro-max/CHDHZ-201-master.html)
 
-### Camera capture mode settings
+## Camera capture mode settings
 
 For Map the Paths it’s best to capture images in timelapse mode \(e.g. 1 photo every 2 seconds\), not video, because you save a lot on data volume, battery life, reviewing and upload time.
 
@@ -37,19 +37,19 @@ Most action and 360 cameras have these settings by default. Mobile phone cameras
 * [Open Camera \(Android\)](https://play.google.com/store/apps/details?id=net.sourceforge.opencamera&hl=en)
 * [OhSnap! \(iPhone\)](https://apps.apple.com/us/app/osnap-stop-motion-time-lapse/id457404788)
 
-#### **A note on video files**
+### **A note on video files**
 
 Although the preferred way to contribute to Map the Paths is to upload geotagged images, it is also possible to upload videos to Map the Paths using the [Map the Paths Desktop Uploader](http://www.mapthepaths.com/uploader). In that case, the video will be turned into images during the process. This is useful for situations when you are capturing for more than Map the Paths purposes—like when you are using a downhill run to share with friends, but also want to use it for mapping purposes.
 
 The Map the Paths Desktop Uploader supports both timelapse and video uploads.
 
-### Transport
+## Transport
 
 We strongly recommend using a clean form of transport to capture imagery to minimise the environmental impact.
 
 For each device and use case, there are different suitable mounting methods. Here are some ideas and setups you might find useful...
 
-#### Trek Pack
+### Trek Pack
 
 ![](https://lh3.googleusercontent.com/FL0yFujdlTMW-Tzy-i51RcvQeMyDP2BFyCinq9GPAwo_3ArIiJ2cJOgxs3PxV4ZsufL6ooKVnY9J2EPLkVY8b5Srk-hv8BfO4BYDrH05K40iNhubOQM2VCghiXWA4T_csme1dO71)
 
@@ -59,7 +59,7 @@ For each device and use case, there are different suitable mounting methods. Her
 
 We have designed a series of Trek Pack's using GoPro MAX 360 Cameras designed for walking/hiking, biking, and swimming/scuba-diving. [The instructions to build and use them are here.](../trek-pack/v2/)
 
-#### Other Devices/Mounts
+### Other Devices/Mounts
 
 **Cycling**
 
@@ -85,7 +85,7 @@ _2D cameras / mobile phones_
 
 You can try putting the phone in a pouch around your neck or taped on your chest. That should help keep the camera steady. Some action camera manufactures sell their own chest mounts for this purpose.
 
-### Other Equipment
+## Other Equipment
 
 * **Memory/SD cards** It is important to have enough memory on your device to store your photos after capturing. Mobile phones should have enough internal storage. One image takes roughly 2–8 MB, giving you about 1000–4000 images if you have 8 GB of free storage on your phone. For devices like action cameras and 360° cameras, we recommend inserting an SD card with around 128 GB, so you can capture as many images possible.
 * **Charging** It is important to fully charge all of your devices prior to capturing. When you have multiple devices to charge prior to capturing, we recommend a multi-port USB charging station, although this is optional.
@@ -93,11 +93,11 @@ You can try putting the phone in a pouch around your neck or taped on your chest
 * **Protective cases** Most action cameras are built to withstand rough conditions. If you want to protect your device further, you may buy a protective case for it. Try to ensure the case you choose does not impede on the photos taken by the camera \(e.g. glare from plastic casing\).
 * **Drones** Map the Paths supports drone imagery. Use a suitable camera that can handle vibration, for example, GoPro. Mounting phones on drones is not a good idea because of the rolling shutter effects from vibration. 
 
-### How to capture great images
+## How to capture great images
 
-Regardless of whether capturing with your mobile phone or some other camera, there are a few basic rules for capturing for Map the Paths. 
+Regardless of whether capturing with your mobile phone or some other camera, there are a few basic rules for capturing for Map the Paths.
 
-#### 5 basic rules for capturing
+### 5 basic rules for capturing
 
 * The main point when capturing is to **keep on moving** and to try to **hold the camera still, pointing in one direction**.
 * Map the Paths supports **images in landscape orientation**. Adjust the **camera to be level with the horizon**.
@@ -105,7 +105,7 @@ Regardless of whether capturing with your mobile phone or some other camera, the
 * The ideal environment for a Map the Paths sequence is to have the **sun behind you**, **minimal traffic** and **fewer people about**.
 * Take **many images in one sequence** \(at least 10, but more is better\) and in **close proximity to each other** \(5 m is good\).
 
-#### General tips
+### General tips
 
 * Avoid capturing in the rain and in low-light situations. The images will turn out much worse than what you see with the human eye. \(This particularly applies when you're in a car.\)
 * Keep a consistent angle of the camera. Most times you would keep it pointing straight ahead, although sometimes you may want to capture e.g. at a 90- or 45-degree angle with respect to your direction of moving. If you change the camera angle mid-capture, the sequences will end up looking jumpy and "dizzy".
@@ -114,7 +114,7 @@ Regardless of whether capturing with your mobile phone or some other camera, the
 * For longer capture sessions, consider extra micro-SD cards to expand the memory available for capture \(if your device supports it\).
 * Keep in mind that if you capture images that are several hundreds of meters apart from each other, they will be split into separate sequences after upload on our system. This may make it inconvenient for you to get an overview of your imagery later \(both in the list on your profile and visualised on the map, where they'll only be represented by single dots\).
 
-#### Walking tips
+### Walking tips
 
 * Try to keep the camera in line with the horizon. It's a bit harder when walking compared to other modes of moving, but the tilt lines on the camera screen will help you.
 * You can try putting the phone in a pouch around your neck or taped on your chest. That should help keep the camera steady.
@@ -122,14 +122,14 @@ Regardless of whether capturing with your mobile phone or some other camera, the
 * Normally you would use an automatic capture mode. However, you can also use the manual mode if you for some reason want custom control over when an image is captured.
 * For example, the manual mode might be a good idea if your images turn out blurry—try stopping for each image you take.
 
-#### Cycling tips
+### Cycling tips
 
 * Ride slow and preferably on smooth surfaces. This has two reasons: to reduce blur that results from shocks absorbed by the bike and to make sure your phone doesn’t pop out of the holder.
 * To be on the safe side, we strongly suggest that you use rubber bands or lanyards to secure your phone to the mount.
 
 Note. Mobile phones are not the best choice when you want to capture while cycling. One reason is that your phone may quite easily pop out of the mount and get damaged. The other reason is that phones are usually not good at handling motion blur. We recommend that you use an action camera instead.
 
-#### Driving tips
+### Driving tips
 
 * The position of the mount also affects potential glare from the dashboard \(that will be visible in your images\). You can also try a few other tricks for reducing glare:
   * Remove any lighter objects from your dashboard.

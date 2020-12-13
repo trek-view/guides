@@ -5,10 +5,10 @@ description: Installation instructions from source code...
 # Install
 
 {% hint style="info" %}
-[If you are trying to download and install the latest version of the Map the Paths Desktop Uploader, go here.](www.mapthepaths.com/uploader)
+[If you are trying to download and install the latest version of the Map the Paths Desktop Uploader, go here.](https://github.com/trek-view/guides/tree/e7a4c9b46bc467e3d81c25183212e90b0d5db4c0/mtp-desktop-uploader/developer-docs/www.mapthepaths.com/uploader/README.md)
 {% endhint %}
 
-### Environment / build setup
+## Environment / build setup
 
 **Pre-requisites**
 
@@ -17,7 +17,7 @@ Requires:
 * [Yarn](https://classic.yarnpkg.com/en/)
 * [NodeJS](https://nodejs.org/)
 
-#### **Install**
+### **Install**
 
 ```text
 git clone https://github.com/trek-view/mtp-desktop-uploader/
@@ -31,7 +31,7 @@ cd mtp-desktop-uploader
 yarn
 ```
 
-_For MacOS / Linux ONLY do this_ 
+_For MacOS / Linux ONLY do this_
 
 ```text
 chmod -R 755 "node_modules/ffmpeg/binary/darwin/ffmpeg"
@@ -45,7 +45,7 @@ cp -R node_modules/ffmpeg/binary binary/
 chmod -R 755 binary/
 ```
 
-#### **Environment**
+### **Environment**
 
 Make a copy of the `.env-sample` file in `/ROOT/` with the name `.env` to add your own environmental variables
 
@@ -63,7 +63,7 @@ You can version the app release by following both these steps:
   "version": "0.0.0",
 ```
 
-2. open `PROJECT ROOT FOLDER/app/package.json` and change version to `0.0.0`
+1. open `PROJECT ROOT FOLDER/app/package.json` and change version to `0.0.0`
 
 ```text
   "version": "0.0.0",
@@ -87,7 +87,7 @@ The other key/values in the `.env` file \(e.g. `MTP_WEB_APP_ID=`\) perform non-e
 
 They can be left blank without causing any breaking issues, though associated functionality will be limited.
 
-### **Starting Development**
+## **Starting Development**
 
 Start the app in the `dev` environment. This starts the renderer process in [**hot-module-replacement**](https://webpack.js.org/guides/hmr-react/) mode and starts a webpack dev server that sends hot updates to the renderer process:
 
@@ -95,7 +95,7 @@ Start the app in the `dev` environment. This starts the renderer process in [**h
 yarn dev
 ```
 
-### **Packaging for Production**
+## **Packaging for Production**
 
 To package apps for the local platform \(the OS your machine is running\):
 

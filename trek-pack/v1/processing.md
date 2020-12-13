@@ -4,19 +4,19 @@ description: What to do once your photos have been captured
 
 # Processing
 
-### Processing Your Photos
+## Processing Your Photos
 
-#### 0. Download GoPro Fusion Studio
+### 0. Download GoPro Fusion Studio
 
 To process photos, you’ll need to download a piece of software called GoPro Fusion Studio, available here:
 
 [https://gopro.com/en/gb/shop/softwareandapp/gopro-fusion-studio-app/fusion-studio.html](https://gopro.com/en/gb/shop/softwareandapp/gopro-fusion-studio-app/fusion-studio.html)
 
-#### 1. Import and prepare your raw photos
+### 1. Import and prepare your raw photos
 
 After shooting, copy the front and back files for each segment of the tour onto your computer using the MicroSD USB card reader.
 
-Have a look at the photos captured. 
+Have a look at the photos captured.
 
 In my case, often the first and last 20 photos will be me setting up the camera or stopping. Occasionally I am also disturbed mid-tour \(usually by animals\).
 
@@ -32,7 +32,7 @@ Before adding to GoPro Fusion I will delete any unwanted photos on my machine. B
 
 This can be useful information to know when organising tours. For example, you might shoot different timelapses in different locations. In this case, the series number will help you easily identify the break-points \(GoPro Fusion will also break photos like this\).
 
-#### 2. Add raw files to GoPro Fusion
+### 2. Add raw files to GoPro Fusion
 
 Now you have a folder of front and back images on your computer, you can add them to GoPro Fusion.
 
@@ -40,7 +40,7 @@ Now you have a folder of front and back images on your computer, you can add the
 
 Open GoPro Fusion and select “Add Media”, and then select the location of your files.
 
-#### 3. Adjusting photos before stitching
+### 3. Adjusting photos before stitching
 
 **3.1. Filename Settings**
 
@@ -94,7 +94,7 @@ Once you’re happy, select all the tours you want to render and add them to the
 
 Don’t mess around with the colour settings too much, if at all. If you plan to upload to Google Street View, images where colouration has been significantly modified \(think Instagram filters\) will be rejected by Google.
 
-#### 3.3 Rendering Settings
+### 3.3 Rendering Settings
 
 Before stitching, you can also edit how GoPro Fusion Studio will output the photos.
 
@@ -118,7 +118,7 @@ You can stitch time-lapse photos to video files using GoPro Fusion Studio, howev
 
 Rendering in GoPro Fusion Studio is memory intensive. I use a MacBook Pro with a good CPU \(i7 processor\) and 16GB of RAM. Whilst fairly powerful, the rendering process will make my computer unusable until the process completes. As a rough estimate, on my computer it takes 10 minutes for every 1GB of photo output.
 
-### Publishing
+## Publishing
 
 You can use the [Map the Paths Desktop Uploader](http://www.mapthepaths.com/uploader) to process and publish the images to various online services.
 

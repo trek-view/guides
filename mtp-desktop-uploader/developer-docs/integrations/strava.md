@@ -6,7 +6,7 @@ description: >-
 
 # Strava
 
-### **Setup**
+## **Setup**
 
 To authenticate users to Strava API \(get token for user by granting access\), [you must create a Strava Oauth app here](https://www.strava.com/settings/api).
 
@@ -29,9 +29,9 @@ STRAVA_CLIENT_ID=
 STRAVA_CLIENT_SECRET=
 ```
 
-### Workflow
+## Workflow
 
-#### 1. Validate transport type type
+### 1. Validate transport type type
 
 Unlike other integrations, Strava uses GPX files to track users activity.
 
@@ -50,7 +50,7 @@ Strava DOES NOT accept certain transport types. These can be viewed in `transpor
 
 That is, if Sequence is transport type where `"strava_activity": "FALSE"`, user will not see Strava integration.
 
-#### 2. Authenticate
+### 2. Authenticate
 
 [Strava uses a standard Oauth flow to authenticate users described here.](https://developers.strava.com/docs/authentication/#oauthoverview)
 
@@ -70,7 +70,7 @@ Token is then automatically passed to MTP Uploader with user automatically redir
 
 [Strava tokens do expire automatically](https://developers.strava.com/docs/authentication/). As such, MTPDU does not store the token. This authentication is required every single time a user attempts to sync a new Sequence with Strava.
 
-#### 3. Upload activity
+### 3. Upload activity
 
 [You can create an activity using the createUpload Strava endpoint](http://developers.strava.com/docs/reference/#api-Uploads-createUpload).
 
@@ -98,7 +98,7 @@ These map to MTP Uploader values like so:
 
 If successful a 201 response is returned with `id` of activity. If error \(4xx/5xx\) attempt to reupload 3 times, then warn user of error and ask them to attempt to try again later.
 
-#### 4. Update activity
+### 4. Update activity
 
 [Now the app needs to update activity on Strava with activity details \(the transport method used\)](http://developers.strava.com/docs/reference/#api-Activities-updateActivityById) using the Update Activity \(updateActivityById\) endpoint.
 
@@ -117,7 +117,7 @@ http PUT "https://www.strava.com/api/v3/activities/{id}" \
     "Authorization: Bearer [[token]]"
 ```
 
-#### 5. MTPW update
+### 5. MTPW update
 
 Strava information gets synced to Map the Paths web.
 

@@ -8,7 +8,7 @@ This document is written to help developers understand the logic and function of
 
 After reading this, you should be comfortable with how the MTPDU works and how you can modify it to suit your own needs, if so desired.
 
-### 1. Authenticate
+## 1. Authenticate
 
 If;
 
@@ -69,7 +69,7 @@ Token is then automatically passed to MTP Uploader with user automatically redir
 
 This flow is performed every time app is opened to ensure user token is valid.
 
-### 2. Sequence List
+## 2. Sequence List
 
 ![MTPDU Sequence List](../../.gitbook/assets/sequence-list.png)
 
@@ -81,7 +81,7 @@ It pulls the data from `sequence.json` files, under `ROOT/sequences/SEQUENCE_NAM
 
 User can delete a sequence in this view using delete icons in each sequence card. This will completely delete the sequence directory, e.g. `ROOT/sequences/SEQUENCE_NAME` \(including all processed held in it\)
 
-### 3. Add name
+## 3. Add name
 
 ![MTPDU Add sequence name](../../.gitbook/assets/add-sequence-name.png)
 
@@ -91,7 +91,7 @@ User enters a:
 
 All sequence names are user in directory and filenames in snake\_case. As such they must be unique.
 
-### 4. Add description
+## 4. Add description
 
 ![MTPDU Add sequence description](../../.gitbook/assets/add-sequence-description.png)
 
@@ -99,7 +99,7 @@ User enters a:
 
 * Sequence description \(text, optional\)
 
-### 5. Add tags
+## 5. Add tags
 
 ![MTPDU sequence tags](../../.gitbook/assets/add-sequence-tags.png)
 
@@ -107,7 +107,7 @@ User can assign 0 or more tags to the sequence.
 
 User can also define their own tag. Tags can only contain alphanumeric and “-” chars. Max 30 characters per tag. Max 15 tags.
 
-### 6. Add transport type \(parent\)
+## 6. Add transport type \(parent\)
 
 ![MTPDU Add sequence transport type parent](../../.gitbook/assets/add-transport-type-parent.png)
 
@@ -117,7 +117,7 @@ User first selects parent type.
 
 Transport types are modularised and can be modified in `ROOT/transports/transport-methods.json`.
 
-An excerpt of the parent \(`Powered`\) and children \(`Car` and ****`Electric Car`\) transport types are shown below.
+An excerpt of the parent \(`Powered`\) and children \(`Car` and _\*\*_`Electric Car`\) transport types are shown below.
 
 Icons assigned to methods and types are sourced from Font Awesome.
 
@@ -151,13 +151,13 @@ We currently implement the free version of Font Awesome icons. [You must use a f
 }
 ```
 
-### 7. Add transport type \(child\)
+## 7. Add transport type \(child\)
 
 ![MTPDU Add transport type child](../../.gitbook/assets/add-transport-type-child.png)
 
 Depending on parent transport type selected, user shown child transport types and is required to select one by clicking.
 
-### 8. Add camera
+## 8. Add camera
 
 ![MTPDU Add camera](../../.gitbook/assets/add-camera.png)
 
@@ -193,7 +193,7 @@ Inside each directory is a:
 }
 ```
 
-### 9. Add capture method
+## 9. Add capture method
 
 ![MTPDU add capture method](../../.gitbook/assets/add-capture-method.png)
 
@@ -203,7 +203,7 @@ This again is a self validation step for user, and determines the file type user
 
 Both of these items are on the roadmap.
 
-### 10. Select imagery
+## 10. Select imagery
 
 ![MTPDU add sequence imagery](../../.gitbook/assets/add-files-to-sequence.png)
 
@@ -221,7 +221,7 @@ App will validate the extension name only \(case insensitive\). If incorrect, wi
 
 The app does not actually verify if file format actually matches extension. If this is the case, the app will still try to process the files, resulting in an error.
 
-#### 10.1 Check for corrupted images
+### 10.1 Check for corrupted images
 
 User also has option to select:
 
@@ -251,19 +251,19 @@ By default, if user marks checkbox each frame is analysed and if a value of betw
 
 [A Python implementation of this process can also be seen here](https://github.com/trek-view/corrupted-image-cleaner).
 
-### 11. Process input
+## 11. Process input
 
 ![MTPDU process image](../../.gitbook/assets/process-raw-image-video.png)
 
-#### 11.1 Photos input
+### 11.1 Photos input
 
 User must upload at least 2 images in timelapse. Must be accepted format.
 
-#### 11.2 Input Projection
+### 11.2 Input Projection
 
 The app accepts both 2D and 360 images and videos \(`projection=equirectangular`\). In the case of 2D images, user will not be able to add nadir step \([see add a nadir](functions.md#18-add-nadir-advanced-setting)\).
 
-#### 11.3 GPS
+### 11.3 GPS
 
 It is recommended to user images are geotagged and videos have geo telemetry \(e.g CAMM track\) -- but this is not essential \(keep reading\).
 
@@ -290,7 +290,7 @@ This check is performed to understand what workflow to proceed with \([see Image
 
 If no geo data is found in image, image is considered to have no geotag. App therefore defaults to `DateTimeOriginal` of the image.
 
-#### 11.2 Video frame extraction \(VIDEO ONLY\)
+### 11.2 Video frame extraction \(VIDEO ONLY\)
 
 [The app uses ffmpeg to break video into frames \(.jpg image files\)](https://github.com/trek-view/mtp-desktop-uploader/blob/develop/app/scripts/video.ts).
 
@@ -329,7 +329,7 @@ Note, it is possible that GPS signal is lost during a section of video meaning s
 
 In addition to extracted GPS data, app will attempt to copy all original EXIF data from video to each image \(e.g. `[XMP] ProjectionType`\).
 
-#### 11.4 Write out image files
+### 11.4 Write out image files
 
 At this point, a new directory is created under `/mapthepaths/SEQUENCE_NAME`.
 
@@ -340,19 +340,17 @@ In the case of:
 * photos, this holds the raw photos selected \(essentially a mirror copy of directory user selected\)
 * video, this holds the frames extracted from the video and the raw video
 
-#### 11.5 Image / video processing workflow
+### 11.5 Image / video processing workflow
 
 ![](../../.gitbook/assets/explorer-v2-diagrams%20%281%29.jpg)
 
 Step 1 in the diagram above shows the start of the image / video processing workflow that starts at step 10 upload images.
 
-### 12. Add GPX track
+## 12. Add GPX track
 
 ![MTPDU no images have resolvable geotags](../../.gitbook/assets/process-no-gps.png)
 
 ![MTPDU some images have resolvable geotags](../../.gitbook/assets/process-some-gps.png)
-
-
 
 ![MTPDU add gps track optional](../../.gitbook/assets/add-gps-optional.png)
 
@@ -365,7 +363,7 @@ If;
 * no images have resolvable geotags
   * will warn user no images are not tagged. Giving them option to add gps track \(step 6\), OR abandon tour creation.
 
-#### 12.1 Add GPX track
+### 12.1 Add GPX track
 
 This step is required if no images have geotags and user will be forced to upload gpx file.
 
@@ -377,7 +375,7 @@ In such case, the user can access this function on the UI view of step 14. Modif
 
 User must select a valid `.gpx` track for matching.
 
-#### 12.1.1 How GPS-image matching works
+### 12.1.1 How GPS-image matching works
 
 A GPX file with trackpoints `<trkpt>` that contain latitude `lat`, longitude `lon`, elevation `ele` and time `<time>` values, e.g.
 
@@ -403,7 +401,7 @@ If multiple times in gpx trackpoints match `DateTimeOriginal` value, the first r
 If
 
 * a match is found between`DateTimeOriginal` of image and `<time>` in GPX track , the image is geotagged with these values:
-*  * \[GPS\]`GPSTimeStamp` 
+* * \[GPS\]`GPSTimeStamp` 
   * \[GPS\] `GPSDateStamp`
   * \[GPS\] `GPSLatitude`
   * \[GPS\] `GPSLatitudeRef`
@@ -415,7 +413,7 @@ If
 
 This process will overwrite any existing geotags.
 
-#### **12.1.1 Adjusting image`DateTimeOriginal`**
+### **12.1.1 Adjusting image`DateTimeOriginal`**
 
 ![MTPDU image times](../../.gitbook/assets/process-gpx-times.png)
 
@@ -451,7 +449,7 @@ Therefore the time offset would be -9420 seconds \(2 hours 37 minutes\).
 
 Finishing the example, you can see once the offset is applied, the first gpx trackpoint and first image time now match, and a match has been detected.
 
-### 13. Calculate temporary sequence
+## 13. Calculate temporary sequence
 
 This step is invisible to the user.
 
@@ -488,7 +486,7 @@ Whenever user updates variable during modify steps:
 * this will be shown in the map view immediately to user to give them an accurate visual representation of how their changes will affect the final imagery 
 * the temporary sequence information will be immediately updated \(e.g. distance to next photo\)
 
-### 14. Skip modifications
+## 14. Skip modifications
 
 ![Skip advanced settings](../../.gitbook/assets/temp-seq.png)
 
@@ -498,13 +496,13 @@ We do not want to force these users to have to manually skip through the followi
 
 If they are happy with the processing step, they can click skip modifications and will move straight to the upload to integrations step \(step 19\).
 
-### 15. Set image spacing \(advanced setting\)
+## 15. Set image spacing \(advanced setting\)
 
 ![MTPDU set image spacing](../../.gitbook/assets/process-image-spacing.png)
 
 User can select either to space frames by time OR distance. When value entered into one field, the other will grey out.
 
-#### 15.1 Frames ever \[x\] seconds
+### 15.1 Frames ever \[x\] seconds
 
 User can decide how far photos should be spaced using time.
 
@@ -546,7 +544,7 @@ Photos are 1 second apart. User enters value in seconds of 5.
    * Is 1 second so photo 7 discarded
 7. ...
 
-#### 15.2 Frames ever \[x\] meters
+### 15.2 Frames ever \[x\] meters
 
 User can decide how far photos should be spaced using distance.
 
@@ -586,7 +584,7 @@ Photos are 1 meter apart. User enters value in meters of 5.
    * Is 1 meter so photo 7 discarded
 7. ...
 
-### 16. Fix Photo Outliers \(advanced setting\)
+## 16. Fix Photo Outliers \(advanced setting\)
 
 ![MTPDU modify photo outliers](../../.gitbook/assets/process-image-outliers.png)
 
@@ -594,7 +592,7 @@ In many cases, a GPS track might be corrupt in places. This happens for a number
 
 User can use either options entered on this page, but not both. When value entered into one field, the other will grey out.
 
-#### 16.1 Discard photos \[x\] meters off path
+### 16.1 Discard photos \[x\] meters off path
 
 Sometimes, user might want to discard images with corrupt GPS. To to this they can discard all corrupted GPS points based on distance from the expected path.
 
@@ -609,7 +607,7 @@ When user inputs change, the logic of the calculation is as follows:
    * 0 or 1 connection distance values are greater than the discard value \(p1 to p2, and p2 to p3\), then the middle photo \(P2\) is kept
 4. App analyses next 3 photos
 
-#### 16.1.1 Discard photos \[x\] meters off path example
+### 16.1.1 Discard photos \[x\] meters off path example
 
 ![MTPDU discard visualisation](../../.gitbook/assets/discard-viz.jpg)
 
@@ -629,13 +627,13 @@ In example 2;
 2. Distance from P2 to P3 calculated, and distance from P3 to P4 calculated
    * ...
 
-#### 16.2 Discard photos manually
+### 16.2 Discard photos manually
 
 ![MTPDU discard photos manually](../../.gitbook/assets/process-image-outliers-manual-delete.png)
 
 User can also click a point on the map, and then select the delete icon to delete images manually. This is useful to avoid the simple global discard calculation.
 
-#### 16.3 Smooth photos \[x\] meters off path
+### 16.3 Smooth photos \[x\] meters off path
 
 In other cases, user might want to fix corrupt GPS. To to this they can smooth corrupted GPS points based on distance from the expected path.
 
@@ -650,7 +648,7 @@ When user inputs change, the logic of the calculation is as follows:
    * 0 or 1 connection distance values are greater than the smooth value \(p1 to p2, and p2 to p3\), then the middle photo \(P2\) remains unchanged
 4. App analyses next 3 photos
 
-#### 16.3.1 Smooth photos \[x\] meters off path example
+### 16.3.1 Smooth photos \[x\] meters off path example
 
 ![MTPDU normalise visualisation](../../.gitbook/assets/normalisation-viz.jpg)
 
@@ -670,7 +668,7 @@ In example 2;
 2. Distance from P2 to P3 calculated, and distance from P3 to P4 calculated
    * ...
 
-### 17. Modify heading \(advanced setting\)
+## 17. Modify heading \(advanced setting\)
 
 ![MTPDU modify heading](../../.gitbook/assets/process-image-heading.png)
 
@@ -692,11 +690,10 @@ Each point on map should show heading set graphically to allow user to get a qui
 
 If user clicks point on map, will show panorama view and all heading and pitch info. User cannot change values individually, it is just for reference. This is available in all map views during processing.
 
-#### 17.1 Viewing heading of a photo
+### 17.1 Viewing heading of a photo
 
 ![MTPDU image data](../../.gitbook/assets/view-map-point-image.png)
 
-  
 When any map point clicked during sequence creation, the corresponding photo is shown to user \(with interactive Pannellum window if 360\). User can also view the following information about the photo when a map point is clicked:‌
 
 * File Name
@@ -707,7 +704,7 @@ When any map point clicked during sequence creation, the corresponding photo is 
 
 This data is updated as changes are made, and will reflect any previous changes made to sequence edits.
 
-### 18. Add nadir \(advanced setting\)
+## 18. Add nadir \(advanced setting\)
 
 ![MTPDU add nadir](../../.gitbook/assets/add-nadir-1.png)
 
@@ -736,7 +733,7 @@ Essentially to overlay the nadir, the following processing steps are applied:
 
 The app makes a simple assumption that all photos have the same resolution \(width x height\) to reduce processing requirements. Therefore the nadir output is created once during the preview step and then simply overlaid to all sequence images.
 
-#### **18.1 Nadir preview**
+### **18.1 Nadir preview**
 
 ![MTPDU Nadir Preview](../../.gitbook/assets/add-nadir-3.png)
 
@@ -746,7 +743,7 @@ This takes the first image in the sequence and renders it with nadir for user to
 
 16 versions are created with nadir sizes between 10% and 25% of image height. When user modifies % in UI using slider, it calls one of these temporary images. These temporary images are stored in the `ROOT/` directory. If user exits the add nadir step, or once nadir confirmed to be added the app deletes these temporary files.
 
-### 19. Authenticate to integrations
+## 19. Authenticate to integrations
 
 ![MTPW add integration](../../.gitbook/assets/integrations.png)
 
@@ -767,7 +764,7 @@ The integrations step can be performed in the create sequence workflow, at this 
 
 User can select multiple integrations. For example, once Mapillary Oauth granted, goes back to integrations screen showing Mapillary selected but also shows option to add other destinations \(e.g Google Street View\). User can also unselect a destination on this screen if they change their mind.
 
-If  `final_nadir` directory:
+If `final_nadir` directory:
 
 * exists, these images are uploaded to integrations
 * else, upload `final_raw` images
@@ -780,7 +777,7 @@ The app logs all responses \(and oftentimes more\) from each service to keep a l
 
 In sequence list, if user has uploaded to integration should show link \(with logo\) to first photo in sequence uploaded to the destination. For example, will link to Mapillary photo view for 1st photo in sequence, assuming Mapillary integration exists.
 
-### 20. Creation and upload
+## 20. Creation and upload
 
 Once user confirms the final step;
 
@@ -799,7 +796,7 @@ Note `final_raw` and `original` subdirectories are different. `original` subdire
 
 All original metadata in raw images is retained unless changes are made to such value during sequence creation workflow \(e.g. heading updated\).
 
-#### 20.0 Sequence limitations
+### 20.0 Sequence limitations
 
 Sequences can have a maximum of 500 photos. If sequence uploaded by user has more than 500 photos, it will be split into parts with a maximum of 500 photos.
 
@@ -807,7 +804,7 @@ The user does not see this on creation, they simply create one sequence. However
 
 For example, a sequence with 1900 photos will be split into 4 parts. In this case, if a user names the sequence "My sequence" on creation this will be split into 4 sequences on processing named; My sequence Part 1, My sequence Part 2, My sequence Part 3, and My sequence Part 4. 4 output directories and associate files will be generated for each of the 4 sequences.
 
-#### **21.1 Image processing precedence**
+### **21.1 Image processing precedence**
 
 Photos are processed one-by-one in the following order;
 
@@ -816,7 +813,7 @@ Photos are processed one-by-one in the following order;
 
 For example, all images in sequence will be written to `final_original`. When complete, if user has selected to add a nadir, a copy of these photos will be placed in `final_nadir` after nadir patch applied.
 
-#### **21.2 `ImageDescription` JSON object**
+### **21.2 `ImageDescription` JSON object**
 
 [MTPW uses a JSON object in the \[EXIF\] ImageDescription field to process imagery](https://github.com/trek-view/mtp-api).
 
@@ -841,7 +838,7 @@ An example of a final object in the ImageDescription field will look like this:
 {"MTPUploaderSequenceUUID":"cdc04260-6d8f-4d91-8903-fb79a9197b8a","MTPUploaderPhotoUUID":"a092d009-503c-4e19-9dad-63156f4ff573","MAPAltitude":319.248,"MAPLatitude":28.7151519999722,"MAPLongitude":-13.8921749,"MAPCaptureTime":"2020_08_14_11_43_46_000","MTPSequenceName":"My first sequence","MTPSequenceDescription":"It's description","MTPSequenceTransport":"Water-Paddleboard","MTPSequenceTags":["water","river","lake"],"MTPImageCopy":"final_raw","MTPImageProjection":"flat"}
 ```
 
-#### **21.3 Sequence JSON file**
+### **21.3 Sequence JSON file**
 
 The sequence JSON file is used locally by the application to render sequence data in the UI.
 
@@ -851,81 +848,81 @@ The sequence JSON file takes the following format:
 
 ```text
 {
-	"sequence" : {
-		"id": # UUID of sequence,
-		"distance_km": # total distance using all positive distance_mtrs connection values
-		"earliest_time": # earliest time GPSDateStamp + GPSTimeStamp (if connection method gps / filename) or originalDateTime (if connection originalDateTime) value for photo in sequence,
-		"latest_time": # latest time GPSDateStamp + GPSTimeStamp (if connection method gps / filename) or originalDateTime (if connection originalDateTime) value for photo in sequence,
-		"duration_sec: # sequence_latest_time - sequence_earliest_time,
-		"average_speed_kmh": # sequence_distance_km / sequence_duration_sec
-		"sequence_name": # sequence name used to make sequence,
-		"sequence_description": # sequence description used to make sequence,
-		"transport_type": # transport type used to make sequence,
-		"tags": [] # tags used to make sequence,
-		"photo_from_video": # boolean, if video used to make sequence,
-		"nadir_added": # if nadir used during creation,
-		"blur_added": # if blur used during creation,
-		"gps_track_added": # if gpx file used during creation,
-		"gps_modified": # not currently used,
-		"version": # shows version of sequence maker used from version txt,
-	}
-	"photo" : {
-		[UUID]: # generated UUID of this photo {
-			"original": {
-				"filename": # filename of photo before modifications,
-				"GPSDateTime": # GPSDateTime value,
-				"originalDateTime": # originalDateTime value,
-				"altitude": # GPSAltitude value,
-				"latitude": # GPSLatitude value,
-				"longitude": # GPSLongitude value,
-				"gps_direction_ref": # GPSImgDirectionRef value, else "",
-				"gps_speed": # GPSSpeed value, else "",
-				"heading": # XMP PoseHeadingDegrees` else EXIF `GPSImgDirection`, else "",
-				"pitch": # XMP PosePitchDegrees else EXIF GPSPitch, else "",
-				"roll": # XMP PosePoseRollDegrees else EXIF GPSRoll, else "",
-				"camera_make": Make value,
-				"camera_model": Model value,
-				"projection": Projection type value,
-			},
-			"modified": {
-				"filename": # filename of photo before modifications,
-				"GPSDateTime": # GPSDateTime value,
-				"originalDateTime": # originalDateTime value,
-				"altitude": # GPSAltitude value,
-				"latitude": # GPSLatitude value,
-				"longitude": # GPSLongitude value,
-				"gps_direction_ref": # GPSImgDirectionRef value, else "",
-				"gps_speed": # GPSSpeed value, else "",
-				"heading": # XMP PoseHeadingDegrees` else EXIF `GPSImgDirection`, else "",
-				"pitch": # XMP PosePitchDegrees else EXIF GPSPitch, else "",
-				"roll": # XMP PosePoseRollDegrees else EXIF GPSRoll, else "",
-				"camera_make": Make value,
-				"camera_model": Model value,
-				"projection": Projection type value,
-			},		
-			"connections": {
-				"[CONNECTION_1_PHOTO_UUID (NEXT PHOTO)]": {
-					"distance_mtrs": # reported in meters (can be negative, if source photo taken after destination photo),
-					"elevation_mtrs": # reported in meters (can be negative if destination photo is lower)
-					"time_sec": # reported in seconds (can be negative, if source photo taken after destination photo),
-					"speed_kmh": # reported in kilometers per hour (can be negative, if source photo taken after destination photo),
-					"heading_deg": # reported in degrees between 0 and 359.99 degrees,
-					"adj_heading_deg": # reported in degrees between 0 and 359.99 degrees. reported for previous photo connection only,
-					"pitch_deg": # reported in degrees between -90 to 90 degrees
-			},
-				"[CONNECTION_2_PHOTO_UUID (PREVIOUS PHOTO)]": {
-				}
-			},
-		},
-		[UUID]: # generated UUID of this photo {
-		...
-		}
-	}		
+    "sequence" : {
+        "id": # UUID of sequence,
+        "distance_km": # total distance using all positive distance_mtrs connection values
+        "earliest_time": # earliest time GPSDateStamp + GPSTimeStamp (if connection method gps / filename) or originalDateTime (if connection originalDateTime) value for photo in sequence,
+        "latest_time": # latest time GPSDateStamp + GPSTimeStamp (if connection method gps / filename) or originalDateTime (if connection originalDateTime) value for photo in sequence,
+        "duration_sec: # sequence_latest_time - sequence_earliest_time,
+        "average_speed_kmh": # sequence_distance_km / sequence_duration_sec
+        "sequence_name": # sequence name used to make sequence,
+        "sequence_description": # sequence description used to make sequence,
+        "transport_type": # transport type used to make sequence,
+        "tags": [] # tags used to make sequence,
+        "photo_from_video": # boolean, if video used to make sequence,
+        "nadir_added": # if nadir used during creation,
+        "blur_added": # if blur used during creation,
+        "gps_track_added": # if gpx file used during creation,
+        "gps_modified": # not currently used,
+        "version": # shows version of sequence maker used from version txt,
+    }
+    "photo" : {
+        [UUID]: # generated UUID of this photo {
+            "original": {
+                "filename": # filename of photo before modifications,
+                "GPSDateTime": # GPSDateTime value,
+                "originalDateTime": # originalDateTime value,
+                "altitude": # GPSAltitude value,
+                "latitude": # GPSLatitude value,
+                "longitude": # GPSLongitude value,
+                "gps_direction_ref": # GPSImgDirectionRef value, else "",
+                "gps_speed": # GPSSpeed value, else "",
+                "heading": # XMP PoseHeadingDegrees` else EXIF `GPSImgDirection`, else "",
+                "pitch": # XMP PosePitchDegrees else EXIF GPSPitch, else "",
+                "roll": # XMP PosePoseRollDegrees else EXIF GPSRoll, else "",
+                "camera_make": Make value,
+                "camera_model": Model value,
+                "projection": Projection type value,
+            },
+            "modified": {
+                "filename": # filename of photo before modifications,
+                "GPSDateTime": # GPSDateTime value,
+                "originalDateTime": # originalDateTime value,
+                "altitude": # GPSAltitude value,
+                "latitude": # GPSLatitude value,
+                "longitude": # GPSLongitude value,
+                "gps_direction_ref": # GPSImgDirectionRef value, else "",
+                "gps_speed": # GPSSpeed value, else "",
+                "heading": # XMP PoseHeadingDegrees` else EXIF `GPSImgDirection`, else "",
+                "pitch": # XMP PosePitchDegrees else EXIF GPSPitch, else "",
+                "roll": # XMP PosePoseRollDegrees else EXIF GPSRoll, else "",
+                "camera_make": Make value,
+                "camera_model": Model value,
+                "projection": Projection type value,
+            },        
+            "connections": {
+                "[CONNECTION_1_PHOTO_UUID (NEXT PHOTO)]": {
+                    "distance_mtrs": # reported in meters (can be negative, if source photo taken after destination photo),
+                    "elevation_mtrs": # reported in meters (can be negative if destination photo is lower)
+                    "time_sec": # reported in seconds (can be negative, if source photo taken after destination photo),
+                    "speed_kmh": # reported in kilometers per hour (can be negative, if source photo taken after destination photo),
+                    "heading_deg": # reported in degrees between 0 and 359.99 degrees,
+                    "adj_heading_deg": # reported in degrees between 0 and 359.99 degrees. reported for previous photo connection only,
+                    "pitch_deg": # reported in degrees between -90 to 90 degrees
+            },
+                "[CONNECTION_2_PHOTO_UUID (PREVIOUS PHOTO)]": {
+                }
+            },
+        },
+        [UUID]: # generated UUID of this photo {
+        ...
+        }
+    }        
 
-} 
+}
 ```
 
-#### **21.4 GPX track file**
+### **21.4 GPX track file**
 
 This is a standard .gpx file containing latitude `lat`, longitude `lon`, `<ele>`, and `<time>` of each image in sequence.
 
@@ -936,7 +933,7 @@ This is a standard .gpx file containing latitude `lat`, longitude `lon`, `<ele>`
 
 The GPX file is useful when used with other tools for visualisation and analysis.
 
-#### 21.5 MTPW
+### 21.5 MTPW
 
 Some sequence information is synced to a user MTPW account if Map the Paths OAuth is enforced.
 
@@ -946,15 +943,15 @@ For example, if user uploads to Mapillary, all the Mapillary metadata associated
 
 You should see [MTPW API documentation](../../mtp-web/developer-docs/api.md#base-url) and specific [MTPDU Integrations](integrations/) for more specific information about what data is synced.
 
-### 22. Other useful/additional information
+## 22. Other useful/additional information
 
-#### 22.1 Exit sequence creation workflow
+### 22.1 Exit sequence creation workflow
 
 ![MTPDU exist sequence creation warning](../../.gitbook/assets/exit-sequence-creation-warning.png)
 
 If user confirms exit of sequence they will be shown dialog "are you sure you wish to exit?". If they confirm, and data processed/stored will be lost after confirmation.
 
-#### 22.2 Deleting tour data
+### 22.2 Deleting tour data
 
 ![MTPDU delete sequence](../../.gitbook/assets/delete-sequence.png)
 

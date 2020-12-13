@@ -1,10 +1,10 @@
 # Map the Paths Web
 
-### **Setup**
+## **Setup**
 
 If MTPW variables stored in `.env` file, all sequence data can be synced to MTPW. [See setup doc here for more information.](../)
 
-### **Workflow**
+## **Workflow**
 
 ![MTPDU to MTPW sync](../../../.gitbook/assets/mapillary-sync-ui-4-.jpg)
 

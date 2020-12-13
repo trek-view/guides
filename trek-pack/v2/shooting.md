@@ -4,7 +4,7 @@ description: 'How to capture tours, useful checklists...'
 
 # Shooting
 
-### Perform a Test Run
+## Perform a Test Run
 
 Set up your kit as described in the previous sections.
 
@@ -32,7 +32,7 @@ Eject the microSD card USB reader from your computer, replace the SD Card in the
 
 If everything appears to be working correctly, it’s time to shoot.
 
-### Before You Leave the House
+## Before You Leave the House
 
 This part is written from bitter experience -- turning up, excited to start filming, and realising I’ve forgotten something.
 
@@ -47,7 +47,7 @@ Now I perform the following checks before leaving home:
 
 You should also consider safety. Have you got the right gear for the environment? Are you prepared for changes in the weather? Are you going out with a friend? Does someone at home know your plans? Have you packed water and food?
 
-### Capturing a Tour
+## Capturing a Tour
 
 Put on the pack, set the mode to time-lapse \(ensuring the settings are correct\), give the camera a minute for the GPS to lock on and start the capture.
 
@@ -58,7 +58,7 @@ You don’t need any more instructions -- you’re now an expert on the Trek Pac
 * Be prepared for questions. Many people will be intrigued by your Trek Pack. We encourage Trekkers to share what they’re doing with others, and why. Many people will, rightly, be concerned about their privacy. Be prepared to explain how your photos will be used.
 * Make sure you comply with local laws around public photography too. Generally don’t shoot on private property or around children, but make sure you know what is and isn’t allowed beforehand.
 
-### Processing and publishing
+## Processing and publishing
 
 Make sure to keep make a copy of the images on the microSD card on your computer, and back them up.
 

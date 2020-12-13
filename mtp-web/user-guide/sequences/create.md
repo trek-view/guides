@@ -6,17 +6,17 @@ description: >-
 
 # Create
 
-### Upload Sequence
+## Upload Sequence
 
 You can add your images as Sequences to Map the Path in one of two ways:
 
-#### 1. Using Map the Paths Desktop Uploader \(recommended\)
+### 1. Using Map the Paths Desktop Uploader \(recommended\)
 
 The Map the Paths Desktop Uploader will guide you through the sequence creation process whilst also letting you modify the photos or video before they are shared on both Mapillary and Map the Paths.
 
 [Download the Map the Paths here to get started.](https://www.mapthepaths.com/uploader)
 
-####  **2. By directly importing from Mapillary**
+### **2. By directly importing from Mapillary**
 
 If your imagery already exists on Mapillary you can import it as a sequence in Map the Paths. You can import a sequence from Mapillary as follows
 
@@ -64,13 +64,13 @@ You can continue to add more Sequences in this was until you've finished.
 
 Once imported your Sequence\(s\) will be immediately searchable and visible to other Map the Paths users.
 
-### Manage sequences
+## Manage sequences
 
 ![](../../../.gitbook/assets/6502f87c-ab72-400e-b508-664a3a91ee00.png)
 
 You can edit or delete a sequence once it has been imported by navigating to the sequence and selecting the desired option.
 
-### Leaderboards
+## Leaderboards
 
 ![](../../../.gitbook/assets/4c3d6cce-86dd-4be9-ad3a-03c2ae65494a%20%281%29.png)
 
@@ -92,6 +92,4 @@ Leaderboards have filters:
 * By transport type \(parent/child\)
 * By camera make \(make/model\)
 * By date
-
-
 

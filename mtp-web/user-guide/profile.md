@@ -4,7 +4,7 @@ description: Make your profile stand out and showcase your work.
 
 # Profile
 
-### Details
+## Details
 
 You can modify your profile page by including:
 
@@ -26,7 +26,7 @@ It is not possible to change your username.
 We never share your email with other Map the Paths users in the application interface. The only time your email is shared is when another user attempts to contact you via your hiring listing \(if it exists\)
 {% endhint %}
 
-### Hiring
+## Hiring
 
 ![](../../.gitbook/assets/8f5df341-ec62-449a-9c4c-55021171beb4.png)
 
@@ -62,7 +62,7 @@ You can add the following values to your profile, and update them at anytime:
 
 Once published, other users will be able to find your hiring listing via your profile or [through the photographer search feature.](https://www.mapthepaths.com/hire/list/)
 
-### Badges
+## Badges
 
 ![](../../.gitbook/assets/9854b8c9-d7ee-468c-926b-3526bb62dd26.png)
 
@@ -70,7 +70,7 @@ You can earn badges on Map the Paths based on your activity.
 
 Here is a full list of badges currently available:
 
-#### Mapper Badge
+### Mapper Badge
 
 Based on the number of images you've uploaded in your Sequences:
 
@@ -84,7 +84,7 @@ Based on the number of images you've uploaded in your Sequences:
 | 6 | 100,000 |
 | 7 | 1,000,000 |
 
-#### Guide Badge
+### Guide Badge
 
 Based on the number of Guidebooks you've created \(and are published\):
 
@@ -98,7 +98,7 @@ Based on the number of Guidebooks you've created \(and are published\):
 | 6 | 100 |
 | 7 | 200 |
 
-#### Finder Badge
+### Finder Badge
 
 Based on the number of Viewpoints your images have received:
 
@@ -112,7 +112,7 @@ Based on the number of Viewpoints your images have received:
 | 6 | 500 |
 | 7 | 1,000 |
 
-#### Spotter Badge
+### Spotter Badge
 
 Based on the number of Labels you've added to images:
 
@@ -126,7 +126,7 @@ Based on the number of Labels you've added to images:
 | 6 | 100,000 |
 | 7 | 1,000,000 |
 
-### Developer
+## Developer
 
 For those building integrations with Map the Paths you can also create an oAuth application on your profile page.
 

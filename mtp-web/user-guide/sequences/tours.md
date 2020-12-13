@@ -34,7 +34,7 @@ You need to add some information to create a Tour. This data makes it easier for
 
 To add the Sequences to the Tour, click the "Add Sequence" button.
 
-![MTP Add Selected Sequences to Tour](../../../.gitbook/assets/add-sequence-select%20%281%29.png)
+![MTP Add Selected Sequences to Tour](../../../.gitbook/assets/add-sequence-select%20%281%29%20%281%29.png)
 
 [You can only add Sequences you've created and imported to Map the Paths.](create.md)
 
