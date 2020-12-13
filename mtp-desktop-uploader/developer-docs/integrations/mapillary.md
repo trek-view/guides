@@ -26,7 +26,7 @@ Once you click save, the app will be assigned a client id and client secret. Add
 ```text
 MAPILLARY_APP_ID=ABCDEFGHIJK123
 MAPILLARY_SECRET=ZYX987654321
-MAPILLARY_REDIRECT_URI=https://map-the-paths-develop.herokuapp.com/accounts/check-mtpu-gsv-oauth
+MAPILLARY_REDIRECT_URI=https://MTPW_DOMAIN/accounts/check-mtpu-gsv-oauth
 ```
 
 If any of these values are not present in `.env` file, user will not be able to view the Mapillary integration in UI.

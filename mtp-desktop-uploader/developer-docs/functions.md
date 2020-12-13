@@ -49,9 +49,7 @@ To create an app in MTPW you must:
       1. For MTPDU use local path, e.g. `app.mtp.desktop://app`
 3. Copy your MTPW `CLIENT_ID` and `CLIENT_SECRET` into your MTPDU `.env` file.
 4. Set the `MTP_WEB_AUTH_URL` value to the MTPW server
-   1. the default \(production server\) is `https://mtp.trekview.org/authorize`
-   2. the staging server you can user for testing is `https://map-the-paths-develop.herokuapp.com/authorize`
-   3. If you are running a development instance of MTPW, this will be your local server address
+   1. If you are running a development instance of MTPW, this will be your local server address
 
 **Map the Paths OAuth Flow**
 

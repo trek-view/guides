@@ -4,13 +4,13 @@
 
 The Map the Paths Uploader works on both Mac and Windows machines.
 
-Please go to Map the Paths to download the latest version: [http://mtp.trekview.org/uploader](http://mtp.trekview.org/uploader)
+Please go to Map the Paths to download the latest version: [https://www.mapthepaths.com/uploader](https://www.mapthepaths.com/uploader)
 
 ### Login
 
 You must have a Map the Paths account to use the Map the Paths Uploader 
 
-Find out more and create an account at: [https://mtp.trekview.org](https://mtp.trekview.org)
+Find out more and create an account at: [https://www.mapthepaths.com/](https://www.mapthepaths.com/)
 
 ### Create Sequence
 
@@ -45,7 +45,7 @@ You can make the following changes under advance settings:
 
 Map the Paths allows you to share your Sequences with the world.
 
-Find out more and create an account at: [https://mtp.trekview.org](https://mtp.trekview.org)
+Find out more and create an account at: [https://www.mapthepaths.com/](https://www.mapthepaths.com/)
 
 {% hint style="info" %}
 In order to use an integration, you must sync the data with Map the Paths and Mapillary.
