@@ -14,7 +14,7 @@ You can add your images as Sequences to Map the Path in one of two ways:
 
 The Map the Paths Desktop Uploader will guide you through the sequence creation process whilst also letting you modify the photos or video before they are shared on both Mapillary and Map the Paths.
 
-[Download the Map the Paths here to get started.](https://mtp.trekview.org/uploader)
+[Download the Map the Paths here to get started.](https://www.mapthepaths.com/uploader)
 
 ####  **2. By directly importing from Mapillary**
 

@@ -21,7 +21,7 @@ description: >-
 
 ### Browse / Sign Up
 
-[Browse Map the Paths and create your free account here.](https://mtp.trekview.org/)
+[Browse Map the Paths and create your free account here.](https://www.mapthepaths.com/)
 
 ### Support
 

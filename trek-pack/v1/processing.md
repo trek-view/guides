@@ -120,7 +120,7 @@ Rendering in GoPro Fusion Studio is memory intensive. I use a MacBook Pro with a
 
 ### Publishing
 
-You can use the [Map the Paths Desktop Uploader](http://mtp.trekview.org/uploader) to process and publish the images to various online services.
+You can use the [Map the Paths Desktop Uploader](http://www.mapthepaths.com/uploader) to process and publish the images to various online services.
 
 [Read the Map the Paths Desktop Uploader documentation here.](../../mtp-desktop-uploader/overview.md)
 

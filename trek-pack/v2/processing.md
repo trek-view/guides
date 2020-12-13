@@ -9,7 +9,7 @@ Processing steps depend on how you shot imagery:
 * [Photo](processing.md#processing-your-photos)
 * [Video](processing.md#processing-your-videos)
 
-Once processed, you can use the [Map the Paths Desktop Uploader](http://mtp.trekview.org/uploader) to process and publish the images to various online services.
+Once processed, you can use the [Map the Paths Desktop Uploader](http://www.mapthepaths.com/uploader) to process and publish the images to various online services.
 
 [Read the Map the Paths Desktop Uploader documentation here.](../../mtp-desktop-uploader/overview.md)
 

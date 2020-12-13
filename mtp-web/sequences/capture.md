@@ -40,7 +40,7 @@ Map the Paths supports both 2D and 360 imagery \(recommended\) captured using:
 
 For Map the purposes it’s best to capture images in timelapse mode \(e.g. 1 photo every 2 seconds\), not video, because you save a lot on data volume, battery life, reviewing and upload time.
 
-Although the preferred way to contribute to Map the Paths is to upload geotagged images, it is also possible to upload videos to Map the Paths using the [Map the Paths Desktop Uploader](http://mtp.trekview.org/uploader). In that case, the video will be turned into images during the process. This is useful for situations when you are capturing for more than Map the Paths purposes—like when you are using a downhill run to share with friends, but also want to use it for mapping purposes.
+Although the preferred way to contribute to Map the Paths is to upload geotagged images, it is also possible to upload videos to Map the Paths using the [Map the Paths Desktop Uploader](http://www.mapthepaths.com/uploader). In that case, the video will be turned into images during the process. This is useful for situations when you are capturing for more than Map the Paths purposes—like when you are using a downhill run to share with friends, but also want to use it for mapping purposes.
 
 The Map the Paths Desktop Uploader supports both timelapse and video uploads.
 

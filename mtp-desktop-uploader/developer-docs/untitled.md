@@ -18,9 +18,9 @@ MTP_WEB_APP_ID=
 MTP_WEB_APP_SECRET=
 ```
 
-Are defined in `/ROOT/.env`, a user will be required to authenticate with [Map the Paths Web \(MTPW\)](https://mtp.trekview.org/).
+Are defined in `/ROOT/.env`, a user will be required to authenticate with [Map the Paths Web \(MTPW\)](https://www.mapthepaths.com/).
 
-The `MTP_WEB_AUTH_URL=` allows you to change the MTPW server. In production this is `https://mtp.trekview.org/connect` but if your testing MTPW locally or in a staging environment, you can edit this setting as required.
+The `MTP_WEB_AUTH_URL=` allows you to change the MTPW server. In production this is `https://www.mapthepaths.com/connect` but if your testing MTPW locally or in a staging environment, you can edit this setting as required.
 
 You can create an application in MTPW under developers. You can then use `CLIENT_ID` and `CLIENT_SECRET` generated in the web app in the `.env` file.
 
@@ -47,9 +47,7 @@ To create an app in MTPW you must:
       1. For MTPDU use local path, e.g. `app.mtp.desktop://test`
 3. Copy your MTPW `CLIENT_ID` and `CLIENT_SECRET` into your MTPDU `.env` file.
 4. Set the `MTP_WEB_AUTH_URL` value to the MTPW server
-   1. the default \(production server\) is `https://mtp.trekview.org/authorize`
-   2. the staging server you can user for testing is `https://map-the-paths-develop.herokuapp.com/authorize`
-   3. If you are running a development instance of MTPW, this will be your local server address
+   1. If you are running a development instance of MTPW, this will be your local server address
 
 ### 2. Sequence List
 

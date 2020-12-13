@@ -17,12 +17,12 @@ JSON is the default format for all resources. If other formats are avaliable, yo
 All resources are accessible through the root endpoint prefixed with current version `v1`. All URLs referenced in the documentation have this endpoint as base path.
 
 ```text
-https://mtp.trekview.org/api/v1
+https://www.mapthepaths.com/api/v1
 ```
 
 ### Client ID <a id="client-id"></a>
 
-Map the Paths uses a client ID to allow access to API v1. Y[ou can register an application at your developer registration page](https://mtp.trekview.org/accounts/applications/). The MTP API expects that the `client_id` parameter is present in all requests.
+Map the Paths uses a client ID to allow access to API v1. Y[ou can register an application at your developer registration page](https://www.mapthepaths.com/accounts/applications/). The MTP API expects that the `client_id` parameter is present in all requests.
 
 ### OAuth <a id="oauth"></a>
 

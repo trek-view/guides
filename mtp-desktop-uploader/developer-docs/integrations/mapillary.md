@@ -211,7 +211,7 @@ When in this unpublished state, step 7 \(check for upload session errors\) is tr
 
 Mapillary sequence ID and user token information gets synced to Map the Paths Web[ alongside MTPDU sequence information uploaded during MTPW integration.](map-the-paths-web.md)
 
-[This is an automated version of the manual import sequence function in the MTPW UI. I strongly recommend testing how the manual process works here](https://mtp.trekview.org/sequence/import-sequence-list).
+[This is an automated version of the manual import sequence function in the MTPW UI. I strongly recommend testing how the manual process works here](https://www.mapthepaths.com/sequence/import-sequence-list).
 
 Note, this is an overwrite action. If Mapillary sequence key already exists in MTPW DB, this record will be overwritten with new data submission.
 
@@ -230,7 +230,7 @@ The process works in two parts:
 This can be sent using the PUT `/api/v1/sequence/import/MTP_SEQUENCE_ID` endpoint by including: `mapillary_equence_key` and `mapillary_user_token`.
 
 ```text
-curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
+curl --location --request PUT 'https://MTPDOMAIN/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
 --data-raw '{
     "mapillary_sequence_key": "<MAPILLARY_SEQ_KEY>",
     "mapillary_user_token": "<MAPILLARY_USER_TOKEN>"

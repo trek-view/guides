@@ -5,7 +5,7 @@ description: Installation instructions from source code...
 # Install
 
 {% hint style="info" %}
-[This documentation is designed for developers. If you want to use the Map the Path online web application, go here.](https://mtp.trekview.org/)
+[This documentation is designed for developers. If you want to use the Map the Path online web application, go here.](https://www.mapthepaths.com/)
 {% endhint %}
 
 ## Cloud Services
@@ -40,7 +40,7 @@ Under bucket policy set the following, making sure to replace the `"Resource"` v
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::staging-backpack.mtp.trekview.org/*"
+            "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/*"
         }
     ]
 }
@@ -57,7 +57,7 @@ AWS_S3_MAPILLARY_BUCKET
 
 We use Cloudfront to resolve the bucket domains.
 
-For example, making [`https://s3.eu-west-2.amazonaws.com/staging-backpack.mtp.trekview.org`](https://s3.eu-west-2.amazonaws.com/staging-backpack.mtp.trekview.org) resolve to [`http://staging-backpack.mtp.trekview.org`](http://staging-backpack.mtp.trekview.org/)\`\`
+For example, making `https://s3.eu-west-2.amazonaws.com/mybucket.com` resolve to `mybucket.com`
 
 First you'll need an SSL certificate.[ We use free certificates from AWS Certificate Manger that can be created here.](https://eu-west-2.console.aws.amazon.com/acm/home?)
 
@@ -65,7 +65,7 @@ Now create a new CloudFront Web distribution.
 
 Set the origin domain name and path to your S3 bucket from the dropdown list.
 
-Set the CNAME to the URL of the bucket you want to use \(e.g. ``[`http://staging-backpack.mtp.trekview.org`](http://staging-backpack.mtp.trekview.org/)\)
+Set the CNAME to the URL of the bucket you want to use \(e.g. `https://s3.eu-west-2.amazonaws.com/mybucket.com`
 
 Select the certificate created previously and force HTTPS request.
 
@@ -73,9 +73,9 @@ Save the distribution.
 
 As we use Route53 \(DNS\) from AWS, we can get AWS to update the DNS with the CNAME data. If you use another DNS service, you'll need to add a CNAME record manually like so:
 
-`CNAME` [`staging-backpack.mtp.trekview.org`](http://staging-backpack.mtp.trekview.org/) `CLOUDFRONT_DOMAIN`
+`CNAME` `https://s3.eu-west-2.amazonaws.com/mybucket.com` `CLOUDFRONT_DOMAIN`
 
-The CNAME chosen  \(e.g.[http://staging-backpack.mtp.trekview.org](http://staging-backpack.mtp.trekview.org/)\) should then be added to the following app environment variable.
+The CNAME chosen  \(e.g. `https://s3.eu-west-2.amazonaws.com/mybucket.com` \) should then be added to the following app environment variable.
 
 ```text
 AWS_S3_BUCKET_CNAME
@@ -113,8 +113,8 @@ Create a custom policy we can use to restrict bucket access.
             "Effect": "Allow",
             "Action": "s3:*",
             "Resource": [
-                "arn:aws:s3:::staging-mapillary-images.mtp.trekview.org",
-                "arn:aws:s3:::staging-backpack.mtp.trekview.org",
+                "arn:aws:s3:::mapillary-images-bucket",
+                "arn:aws:s3:::static-images-bucket",
                 "arn:aws:s3:*:*:accesspoint/*",
                 "arn:aws:s3:::*/*",
                 "arn:aws:s3:*:*:job/*"
@@ -128,8 +128,8 @@ Here you can see the two buckets under the "Resource" object.
 
 ```text
             "Resource": [
-                "arn:aws:s3:::staging-mapillary-images.mtp.trekview.org",
-                "arn:aws:s3:::staging-backpack.mtp.trekview.org",
+                "arn:aws:s3:::mapillary-images-bucket",
+                "arn:aws:s3:::static-images-bucket",
 ```
 
 Replace these with your own bucket names and create the policy.

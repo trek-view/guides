@@ -197,7 +197,7 @@ The process works in two parts:
 This can be sent using the PUT `/api/v1/sequence/import/MTP_SEQUENCE_ID` endpoint by including: `google_street_view=true`.
 
 ```text
-curl --location --request PUT 'https://mtp.trekview.org/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
+curl --location --request PUT 'https://MTPDOMAIN/api/v1/sequence/import/jjff8djf-jkld87-kls889' \
 --data-raw '{
     "google_street_view": TRUE
 }'

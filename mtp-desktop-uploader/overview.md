@@ -29,7 +29,7 @@ description: >-
 
 ### Download Now
 
-[Download the latest version of Desktop Uploader on Map the Paths here](https://mtp.trekview.org/upload).
+[Download the latest version of Desktop Uploader on Map the Paths here](https://www.mapthepaths.com/upload).
 
 ### Getting Started
 

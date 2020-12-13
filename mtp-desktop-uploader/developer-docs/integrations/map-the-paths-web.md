@@ -15,7 +15,7 @@ If MTPW variables stored in `.env` file, all sequence data can be synced to MTPW
 3. App sends sequence data \(name, description, transport type and tags\) to MTPW. You'll notice it also sends `source=mtpdu`. This is so the origin of the request is known by MTPW. A MTPW sequence id is returned in the response.
 
 ```text
-curl --location --request POST 'https://mtp.trekview.org/api/v1/sequence/create' \
+curl --location --request POST 'https://MTPDOMAIN/api/v1/sequence/create' \
 --form 'name=<name>' \
 --form 'description=<description>' \
 --form 'transport_type=<transport_type>' \

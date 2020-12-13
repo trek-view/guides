@@ -5,7 +5,7 @@ description: Installation instructions from source code...
 # Install
 
 {% hint style="info" %}
-[If you are trying to download and install the latest version of the Map the Paths Desktop Uploader, go here.](http://mtp.trekview.org/uploader)
+[If you are trying to download and install the latest version of the Map the Paths Desktop Uploader, go here.](www.mapthepaths.com/uploader)
 {% endhint %}
 
 ### Environment / build setup

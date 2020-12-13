@@ -10,7 +10,7 @@ v1 of the API has been designed to built for use with the MTP Desktop Uploader. 
 
 ### Base URL
 
-{% embed url="https://mtp.trekview.org/api/v1/" %}
+{% embed url="https://www.mapthepaths.com/api/v1/" %}
 
 ### Authorize
 
@@ -53,7 +53,7 @@ The client ID generated when creating the application on Map the Paths Web. Crea
 **Example Request**
 
 ```text
-curl --location --request GET 'https://mtp.trekview.org/api/v1/authorize?client_id=98fgjsjduf89388&client_id%3E&response_type=token'
+curl --location --request GET 'https://MTPDOMAIN/api/v1/authorize?client_id=98fgjsjduf89388&client_id%3E&response_type=token'
 ```
 
 

@@ -64,7 +64,7 @@ Make sure to keep make a copy of the images on the microSD card on your computer
 
 Don't forget to recharge any batteries ready for the next adventure too.
 
-You can use the [Map the Paths Desktop Uploader](http://mtp.trekview.org/uploader) to process and publish the images to various online services.
+You can use the [Map the Paths Desktop Uploader](http://www.mapthepaths.com/uploader) to process and publish the images to various online services.
 
 [Read the Map the Paths Desktop Uploader documentation here.](../../mtp-desktop-uploader/overview.md)
 

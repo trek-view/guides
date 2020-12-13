@@ -39,7 +39,7 @@ Most action and 360 cameras have these settings by default. Mobile phone cameras
 
 #### **A note on video files**
 
-Although the preferred way to contribute to Map the Paths is to upload geotagged images, it is also possible to upload videos to Map the Paths using the [Map the Paths Desktop Uploader](http://mtp.trekview.org/uploader). In that case, the video will be turned into images during the process. This is useful for situations when you are capturing for more than Map the Paths purposes—like when you are using a downhill run to share with friends, but also want to use it for mapping purposes.
+Although the preferred way to contribute to Map the Paths is to upload geotagged images, it is also possible to upload videos to Map the Paths using the [Map the Paths Desktop Uploader](http://www.mapthepaths.com/uploader). In that case, the video will be turned into images during the process. This is useful for situations when you are capturing for more than Map the Paths purposes—like when you are using a downhill run to share with friends, but also want to use it for mapping purposes.
 
 The Map the Paths Desktop Uploader supports both timelapse and video uploads.
 

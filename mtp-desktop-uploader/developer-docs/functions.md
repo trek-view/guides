@@ -18,9 +18,9 @@ MTP_WEB_APP_ID=
 MTP_WEB_APP_SECRET=
 ```
 
-Are defined in `/ROOT/.env`, a user will be required to authenticate with [Map the Paths Web \(MTPW\)](https://mtp.trekview.org/).
+Are defined in `/ROOT/.env`, a user will be required to authenticate with [Map the Paths Web \(MTPW\)](https://www.mapthepaths.com).
 
-The `MTP_WEB_AUTH_URL=` allows you to change the MTPW server. In production this is `https://mtp.trekview.org/connect` but if your testing MTPW locally or in a staging environment, you can edit this setting as required.
+The `MTP_WEB_AUTH_URL=` allows you to change the MTPW server.
 
 You can create an application in MTPW under developers. You can then use `CLIENT_ID` and `CLIENT_SECRET` generated in the web app in the `.env` file.
 

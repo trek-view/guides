@@ -60,7 +60,7 @@ You can add the following values to your profile, and update them at anytime:
   * Medium \(4k - 11k\)
   * High \(11k +\)
 
-Once published, other users will be able to find your hiring listing via your profile or [through the photographer search feature.](https://mtp.trekview.org/hire/list/)
+Once published, other users will be able to find your hiring listing via your profile or [through the photographer search feature.](https://www.mapthepaths.com/hire/list/)
 
 ### Badges
 
