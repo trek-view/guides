@@ -406,7 +406,7 @@ PasswordAuthentication no
 
 `sudo service ssh restart`
 
-_10. Set up Firewall rules_
+_**10. Set up Firewall rules**_
 
 All non-essential ports should be blocked using ufw.
 
@@ -433,88 +433,177 @@ Then turn on ufw to enable rules: `sudo ufw enable`
 
 **11. Deploy app to server**
 
+You can
+
+1. set up auto deployments
+
 {% embed url="https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps" caption="" %}
 
-**12. Configure app**
+OR 
 
-Described in setup environment above.
+2. Manually clone from the repository:
 
-**13. Setup SSL**
+`git clone` [`https://github.com/trek-view/mtp-web.git`](https://github.com/trek-view/mtp-web.git)\`\`
 
-**For security, all request should be served using SSL \(using Let's Encrypt\).**
+**12. Install PostgreSQL**
 
-`sudo apt-get install letsencrypt`
-
-Before you do anything else, find your Django `settings.py` file and add these lines:
-
-`sudo nano settings.py`
+Docs here: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04
 
 ```text
-# URL that handles encryption files
-ENCRYPT_URL = '/.well-known/'
-ENCRYPT_ROOT = os.path.join(STATIC_ROOT, '.well-known')
+sudo apt install postgresql postgresql-contrib;
+
+sudo -i -u postgres;
+
+psql;
+
+ALTER USER postgres PASSWORD 'myPassword';
+
+exit;
+
+sudo apt install postgis postgresql-12-postgis-3
 ```
 
-Now, find your `urls.py` file and add this:
-
-`sudo nano urls.py`
+**13. Install Python Packages**
 
 ```text
-from django.conf import settings
-from django.conf.urls.static import static
+sudo -H pip3 install virtualenv
 
-urlpatterns = [
-    # ... the rest of your URLconf goes here ...
-] + static(settings.ENCRYPT_URL, document_root=settings.ENCRYPT_ROOT)
+virtualenv venv
+
+source venv/bin/activate
+
+pip install -r requirements.txt
 ```
 
-TODO for webserver
+**14. Update .env file**
 
-\`\`
+[Earlier in this documentation, the cloud services needed to run the app are explained.](install.md#cloud-services)
 
-**I won't detail all steps her**
+Now create an `.env` file in the root directory of the install.
 
-\*\*\*\*[https://ramonmelo.me/en/blog/regarding-ssl/](https://ramonmelo.me/en/blog/regarding-ssl/)
+We've create a sample with all the values \(most are required\):
 
-## Deploying to Heroku \(no longer supported\)
+{% embed url="https://github.com/trek-view/mtp-web/blob/staging/.env.example" %}
 
-To deploy on your own Heroku environment.
-
-1. Create a new app on Heroku
-2. Connect your Github repository to the created app \(and make sure correct branch is connected if using auto deployment\)
-3. Set `DJANGO_SETTINGS_MODULE` to `config.settings_heroku` in `manage.py` and `config/wsgi.py`.
+**15. Install DB tables**
 
 ```text
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_heroku')
+python manage.py migrate
 ```
 
-1. Make sure Heroku environmental vars are set to match those listed in `config/setting_local.py`
-2. ACCESS\_TOKEN\_LIFETIME
-3. BASE\_URL
-4. BUILD\_WITH\_GEO\_LIBRARIES
-5. DATABASE\_URL
-6. DEBUG\_COLLECTSTATIC
-7. DISABLE\_COLLECTSTATIC
-8. LD\_LIBRARY\_PATH
-9. REDIS\_URL
-10. REFRESH\_TOKEN\_LIFETIME
-11. SECRET\_KEY
-12. SITE\_ID
-13. Push code to Github
-
-Quick install and run server using cli on heroku:
+**16. Create first staff user for django admin**
 
 ```text
-heroku git:remote -a your_heroku_app
-git push heroku [git_branch:]master
-heroku run python manage.py migrate [-a your_heroku_app]
-heroku run python manage.py collectstatic --noinput [-a your_heroku_app]
-heroku run python manage.py createsuperuser [-a your_heroku_app]
+python manage.py createsuperuser
 ```
 
-Run following command to check logs.
+**17. exit venv**
 
 ```text
-heroku logs --tail [-a your_heroku_app]
+deactivate
+```
+
+**18. Install Nginx**
+
+```text
+apt-get update
+apt-get install nginx -y
+systemctl enable nginx
+systemctl start nginx
+```
+
+create nginx config file.
+
+```text
+sudo nano /etc/nginx/sites-enabled/myproject.conf
+```
+
+fill the file following contents.
+
+```text
+server {
+    server_name $YOUR_DOMAIN_NAME www.YOUR_DOMAIN_NAME;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/wang/mpt-web;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://127.0.0.1:8000/;
+    }
+}
+```
+
+**19. Install Encrypt SSL**
+
+```text
+snap install core 
+sudo snap refresh core
+snap install --classic certbot
+ln -s /snap/bin/certbot /usr/bin/certbot
+certbot --nginx
+
+certbot --nginx  --agree-tos --register-unsafely-without-email -d $YOUR_DOMAIN_NAME www.$YOUR_DOMAIN_NAME
+```
+
+**20 Create Python Service File**
+
+```text
+sudo nano /etc/systemd/system/python.service
+```
+
+fill the file following content.
+
+```text
+[Unit]
+Description=Python daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=$APP_ROOT_PATH
+ExecStart=$APP_ROOT_PATH/venv/bin/python3 $APP_ROOT_PATH/manage.py runserver
+
+[Install]
+WantedBy=multi-user.target
+```
+
+**21 Run MTPW APP**
+
+```text
+systemctl daemon-reload
+systemctl start python.service
+systemctl enable python.service
+```
+
+Check MTPW Service
+
+```text
+systemctl status python.service
+```
+
+Stop MTPW Service
+
+```text
+systemctl stop python.service
+```
+
+Restart MTPW Service
+
+```text
+systemctl restart python.service
+```
+
+**\* Install Nginx, SSL and Run Service \(Quick Run\)**
+
+**This is a hacky script for running the final setup steps \(18,19,20\)**
+
+```text
+chmod +x nginx+SSL+python.txt
+
+./nginx+SSL+python.txt
 ```
 
