@@ -5,7 +5,7 @@ description: Integrate your own app with Map the Paths...
 # API
 
 {% hint style="info" %}
-v1 of the API has been designed to built for use with the MTP Desktop Uploader. If you have feature requests for v2, please submit them on the forum.
+v1 of the API has been designed to built for use with the MTP Desktop Uploader. If you have feature requests for v2, [please submit them on the forum](https://campfire.trekview.org/).
 {% endhint %}
 
 ## Data Types <a id="data-types"></a>
