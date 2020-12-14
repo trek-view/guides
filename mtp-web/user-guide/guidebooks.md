@@ -32,19 +32,6 @@ Go the Guidebooks page when logged in and select the button "Create Guidebook".
 
 You need to add some information to create a Guidebook. This data makes it easier for you to manage your Guidebooks on Map the Paths and for other users to discover them.
 
-The following categories can be selected:
-
-* Architecture
-* Art
-* Culture and Humanity
-* Current Events
-* History
-* Nature
-* Places and Scenes
-* Sports and Fitness
-* Transport
-* Travel and Leisure
-
 You can add a tag that contains any number or letter, or the "-" character.
 
 #### **3.** Add your first Scene
@@ -80,14 +67,6 @@ To create a POI, click the "Add New POI" button when in the Scene edit view.
 Select a point in the image where the information icon will be displayed to a user visiting that scene.
 
 When you are happy with the positioning of the POI icon, add a name, description and classification. 
-
-The following classifications are available:
-
-* Geography
-* History
-* General Interest
-* Object
-* Other
 
 Then click "Save".
 
