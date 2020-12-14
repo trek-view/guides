@@ -182,6 +182,7 @@ Here are currently available `transport_types`:
 | 35 | Windsurf | Water | Windsurf |
 | 36 | Boat | Water | Boat |
 | 37 | Freedive | Water | Freedive |
+| 38 | Other | Unlisted | Other |
 
 ### **Tag**
 
