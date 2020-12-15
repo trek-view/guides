@@ -485,6 +485,8 @@ We've create a sample with all the values \(most are required\):
 
 {% embed url="https://github.com/trek-view/mtp-web/blob/staging/.env.example" %}
 
+_Note on 2FA. You can enforce two factor authentication for admin using the 2fa setting in the env file. You can then modify and manage the site settings in django admin._
+
 **15. Install DB tables**
 
 ```text
