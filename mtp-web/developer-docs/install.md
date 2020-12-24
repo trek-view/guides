@@ -524,19 +524,35 @@ fill the file following contents.
 
 ```text
 server {
-    server_name $YOUR_DOMAIN_NAME www.YOUR_DOMAIN_NAME;
+    server_name $YOUR_DOMAIN_NAME;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
-        root /home/wang/mpt-web;
+        root /home/mpt-web;
     }
 
     location / {
         include proxy_params;
         proxy_pass http://127.0.0.1:8000/;
     }
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/staging.mapthepaths.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/staging.mapthepaths.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+    client_max_body_size 20M;
+}
+server {
+    if ($host = $YOUR_DOMAIN_NAME) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+    listen 80;
+    server_name $YOUR_DOMAIN_NAME;
+    return 404; # managed by Certbot
 }
 ```
+
+Note, this controls the limit of files that can be uploaded using the web app. Default is 20MB. These are for things like avatars and guidebook images. It **does not** have an impact on the size of sequence images.
 
 **19. Install Encrypt SSL**
 
