@@ -27,7 +27,7 @@ description: >-
 
 ## Download Now
 
-[Download the latest version of Desktop Uploader on Map the Paths here](https://www.mapthepaths.com/upload).
+[Download the latest version of Desktop Uploader on Map the Paths here](https://www.mapthepaths.com/uploader).
 
 ## Getting Started
 
